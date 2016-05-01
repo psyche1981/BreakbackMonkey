@@ -4,7 +4,6 @@ package psyche.breakbackmonkey.gameobjects.inanimate;
 
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
-import com.badlogic.gdx.math.Rectangle;
 
 import psyche.breakbackmonkey.GameFlags;
 import psyche.breakbackmonkey.gameobjects.GameObject;
@@ -28,9 +27,9 @@ public class Door extends GameObject
 		super(state, x, y);
 		setLocked(locked);
 		if(horizontal)
-			rect = new Rectangle(x, y, DOOR_LONG_SIDE, DOOR_SHORT_SIDE);
+			rect.set(x, y, DOOR_LONG_SIDE, DOOR_SHORT_SIDE);
 		else
-			rect = new Rectangle(x, y, DOOR_SHORT_SIDE,DOOR_LONG_SIDE);
+			rect.set(x, y, DOOR_SHORT_SIDE,DOOR_LONG_SIDE);
 	}
 	
 	public Door() {}
@@ -53,7 +52,7 @@ public class Door extends GameObject
 	@Override
 	public void dispose() 
 	{
-		sr.dispose();
+		
 	}
 
 	@Override

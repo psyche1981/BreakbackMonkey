@@ -6,6 +6,7 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Rectangle;
 
+import psyche.breakbackmonkey.Game;
 import psyche.breakbackmonkey.GameFlags;
 import psyche.breakbackmonkey.gamestates.GameState;
 
@@ -29,7 +30,7 @@ public abstract class GameObject
 		this.y = y;
 		this.state = state;
 		camera = state.getCamera();
-		sr = new ShapeRenderer();
+		sr = Game.sr;
 		rect = new Rectangle();
 		flags = new boolean[GameFlags.NUM_FLAGS];
 		init();

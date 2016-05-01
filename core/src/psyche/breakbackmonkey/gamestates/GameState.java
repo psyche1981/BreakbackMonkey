@@ -31,7 +31,7 @@ public abstract class GameState
 		this.gsm = gsm;
 		game = gsm.getGame();
 		camera = game.getCamera();
-		sb = game.getSB();
+		sb = Game.sb;
 		player = new Player();
 		font = new BitmapFont();
 		objects = new ArrayList<GameObject>();

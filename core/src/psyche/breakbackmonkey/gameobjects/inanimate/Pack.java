@@ -3,7 +3,6 @@ package psyche.breakbackmonkey.gameobjects.inanimate;
 
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
-import com.badlogic.gdx.math.Rectangle;
 
 import psyche.breakbackmonkey.GameFlags;
 import psyche.breakbackmonkey.gameobjects.GameObject;
@@ -16,8 +15,8 @@ public class Pack extends GameObject
 	public Pack(GameState state, float x, float y)
 	{
 		super(state, x, y);
-		
-		rect = new Rectangle(x, y, SIZE, SIZE);
+				
+		rect.set(x,y,SIZE,SIZE);
 	}
 	
 	public Pack() {}
@@ -38,7 +37,7 @@ public class Pack extends GameObject
 	@Override
 	public void dispose() 
 	{
-		sr.dispose();
+		
 	}
 
 	@Override

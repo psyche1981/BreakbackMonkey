@@ -24,7 +24,6 @@ public class Laboratory extends GameState
 	@Override
 	public void update(float dt) 
 	{
-		// TODO Auto-generated method stub
 		handleInput();
 	}
 

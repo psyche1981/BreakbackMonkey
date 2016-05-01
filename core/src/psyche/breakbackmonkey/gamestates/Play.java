@@ -8,13 +8,11 @@ import psyche.breakbackmonkey.gameobjects.GameObject;
 import psyche.breakbackmonkey.gameobjects.entities.Player;
 import psyche.breakbackmonkey.gameobjects.inanimate.Door;
 import psyche.breakbackmonkey.gameobjects.inanimate.Pack;
-import psyche.breakbackmonkey.gameobjects.inanimate.Wall;
 import psyche.breakbackmonkey.input.GameKeys;
 
 public class Play extends GameState
 {
 	private Door uht_door, process_door, break_back_door, lab_door;
-	private Wall left_wall;
 	private boolean show_test = false;
 	
 	public Play(GameStateManager gsm)
@@ -132,17 +130,11 @@ public class Play extends GameState
 	{
 		player = new Player(this, gsm.getStats(), gsm.getInventory(), Game.WIDTH / 2 - Player.SIZE / 2, Game.HEIGHT / 2 - Player.SIZE / 2);
 		objects.add(player);
-		doors();		
-		walls();
+		doors();	
 				
 		initRandomPacks();
 	}
 	
-	private void walls()
-	{
-		left_wall = new Wall(this, 0, 0, 3, Game.HEIGHT);
-		objects.add(left_wall);
-	}
 	
 	private void doors()
 	{

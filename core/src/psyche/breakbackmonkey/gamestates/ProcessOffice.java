@@ -8,13 +8,11 @@ import psyche.breakbackmonkey.Physics;
 import psyche.breakbackmonkey.gameobjects.GameObject;
 import psyche.breakbackmonkey.gameobjects.entities.Player;
 import psyche.breakbackmonkey.gameobjects.inanimate.Door;
-import psyche.breakbackmonkey.gameobjects.inanimate.Wall;
 import psyche.breakbackmonkey.input.GameKeys;
 
 public class ProcessOffice extends GameState
 {
 	private Door exit_door; 
-	private Wall notice_board;
 	
 	
 	public ProcessOffice(GameStateManager gsm)
@@ -49,8 +47,6 @@ public class ProcessOffice extends GameState
 			
 			if(Physics.collided(player, go) == exit_door)
 				gsm.setState(GameStateManager.PLAY);
-			if(Physics.collided(player, go) == notice_board)
-				gsm.setState(GameStateManager.PLAY);//change to new gamestate when created
 			
 		}
 	}
@@ -83,20 +79,12 @@ public class ProcessOffice extends GameState
 		objects.add(player);
 		
 		doors();
-		walls();
 	}
 	
 	private void doors()
 	{
 		exit_door = new Door(this, Game.WIDTH / 2 - Door.DOOR_LONG_SIDE / 2, 0, true);
-		objects.add(exit_door);
+		objects.add(exit_door);		
 		
-		
-	}
-	
-	private void walls()
-	{
-		notice_board = new Wall(this, 0, Game.HEIGHT - 10,Game.WIDTH , 10);
-		objects.add(notice_board);
 	}
 }

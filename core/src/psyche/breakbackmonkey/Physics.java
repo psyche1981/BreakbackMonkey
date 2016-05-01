@@ -10,10 +10,7 @@ public class Physics
 		{
 			if(go1.getRect().overlaps((go2.getRect())))
 				return go2;
-		}
-
-		
-		return null;
-		
+		}		
+		return null;		
 	}
 }

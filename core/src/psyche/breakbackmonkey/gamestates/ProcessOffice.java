@@ -1,7 +1,4 @@
 package psyche.breakbackmonkey.gamestates;
-// TODO add a player and see what else can be done in here (mini games hub)
-import com.badlogic.gdx.math.Rectangle;
-
 import psyche.breakbackmonkey.Game;
 import psyche.breakbackmonkey.GameStateManager;
 import psyche.breakbackmonkey.Physics;

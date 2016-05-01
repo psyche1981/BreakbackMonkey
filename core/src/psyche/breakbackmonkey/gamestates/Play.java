@@ -141,10 +141,10 @@ public class Play extends GameState
 		uht_door = new Door(this, 0, 30, false, false);
 		break_back_door = new Door(this, Game.WIDTH - Door.DOOR_SHORT_SIDE,  3 * Game.HEIGHT / 4, false, false);
 		boolean lab_key = player.getInventory().getLabKey();
-		System.out.println(lab_key);
+		System.out.println("got lab key: " + lab_key);
 		
 		lab_door = new Door(this, Game.WIDTH - Door.DOOR_SHORT_SIDE,  1 * Game.HEIGHT / 4, false, !lab_key);
-		System.out.println(lab_door.getLocked());
+		System.out.println("lab door locked:" + lab_door.getLocked());
 		process_door = new Door(this, Game.WIDTH / 2 - Door.DOOR_LONG_SIDE / 2, Game.HEIGHT - Door.DOOR_SHORT_SIDE, true, false);
 		
 		objects.add(uht_door);

@@ -78,7 +78,7 @@ public class UHTTeamLeader extends GameObject
 	@Override
 	public void dispose() 
 	{
-		sr.dispose();
+		
 	}
 
 	@Override

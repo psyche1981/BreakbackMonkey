@@ -41,7 +41,7 @@ public abstract class GameObject
 	public abstract void update(float dt);
 	public abstract void render();
 	public abstract void dispose();
-	public abstract void init();
+	public void init(){}
 	
 	public Rectangle getRect() { return rect; }
 	public boolean getSolid() { return flags[GameFlags.SOLID_FLAG]; }

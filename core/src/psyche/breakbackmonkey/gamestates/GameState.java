@@ -21,7 +21,6 @@ public abstract class GameState
 	protected SpriteBatch sb;
 	protected OrthographicCamera camera;
 	protected BitmapFont font;
-	protected Player player;
 	protected ArrayList<GameObject> objects;
 	protected ArrayList<Pack> packs;
 	protected ArrayList<Pack> packs_to_remove;
@@ -32,7 +31,6 @@ public abstract class GameState
 		game = gsm.getGame();
 		camera = game.getCamera();
 		sb = Game.sb;
-		player = new Player();
 		font = new BitmapFont();
 		objects = new ArrayList<GameObject>();
 		packs = new ArrayList<Pack>();
@@ -61,9 +59,9 @@ public abstract class GameState
 	
 	protected void playerDirections()
 	{
-		player.up(GameKeys.isDown(GameKeys.W));
-		player.left(GameKeys.isDown(GameKeys.A));
-		player.down(GameKeys.isDown(GameKeys.S));
-		player.right(GameKeys.isDown(GameKeys.D));
+		Game.player.up(GameKeys.isDown(GameKeys.W));
+		Game.player.left(GameKeys.isDown(GameKeys.A));
+		Game.player.down(GameKeys.isDown(GameKeys.S));
+		Game.player.right(GameKeys.isDown(GameKeys.D));
 	}
 }

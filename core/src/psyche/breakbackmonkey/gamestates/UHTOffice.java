@@ -64,16 +64,16 @@ public class UHTOffice extends GameState
 		for(GameObject go : objects)
 		{
 			go.update(dt);
-			if(Physics.collided(player, go) == tl )
+			if(Physics.collided(Game.player, go) == tl )
 			{
 				if(tl.getWho() == UHTTeamLeader.GW)
 					gw_dialogue[GW_Q] = true;
 				
 				if(tl.getWho() == UHTTeamLeader.DA)
-					player.getInventory().setLabKey(true);
+					Game.player.getInventory().setLabKey(true);
 			}
 			
-			if(Physics.collided(player, go) == exit_door)
+			if(Physics.collided(Game.player, go) == exit_door)
 				gsm.setState(GameStateManager.UHT_DEPT);
 		}
 		
@@ -89,7 +89,7 @@ public class UHTOffice extends GameState
 		{
 			gw_dialogue[GW_Q] = false;
 			gw_dialogue[GW_Y] = true;
-			player.getStats().setEnergy(-10);
+			Game.player.getStats().setEnergy(-10);
 		}
 		
 		if(gw_dialogue[GW_Q] && GameKeys.isPressed(GameKeys.N))
@@ -101,7 +101,7 @@ public class UHTOffice extends GameState
 	public void dispose() 
 	{
 		// save the players data
-		gsm.setSaveData(player.getSaveData());
+		gsm.setSaveData(Game.player.getSaveData());
 		
 		for(GameObject go : objects)
 		{
@@ -117,8 +117,8 @@ public class UHTOffice extends GameState
 		Random rand = new Random();
 		float rand_spawn = rand.nextFloat();
 		gw_dialogue = new boolean[GW_NUM];
-		player = new Player(this, gsm.getStats(), gsm.getInventory(), Game.WIDTH / 2 - Player.SIZE / 2, Game.HEIGHT / 2 - Player.SIZE / 2);
-		objects.add(player);
+		Game.player.init(this, gsm.getStats(), gsm.getInventory(), Game.WIDTH / 2 - Player.SIZE / 2, Game.HEIGHT / 2 - Player.SIZE / 2);
+		objects.add(Game.player);
 		
 		if(rand_spawn > 0.5f)
 		{

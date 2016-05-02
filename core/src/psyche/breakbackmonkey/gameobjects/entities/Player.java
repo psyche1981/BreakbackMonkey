@@ -5,9 +5,11 @@ import psyche.breakbackmonkey.SaveData;
 import psyche.breakbackmonkey.Stats;
 import psyche.breakbackmonkey.gameobjects.GameObject;
 import psyche.breakbackmonkey.gamestates.GameState;
+import psyche.breakbackmonkey.gamestates.Menu;
 import psyche.breakbackmonkey.input.GameKeys;
 
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
 
 public class Player extends GameObject
@@ -23,20 +25,16 @@ public class Player extends GameObject
 	public static final int SIZE = 8;
 	private boolean[] input;
 	
-	
 	private SaveData save_data;
 	private Stats stats;
 	private Inventory inventory;
 	
 	
-	public Player(GameState state, Stats stats, Inventory inventory, float x, float y)
+	public Player()
 	{
-		super(state, x, y);
-		this.stats = stats;
-		this.inventory = inventory;
-		save_data = new SaveData();
+		super(null, 0, 0 );
 	}
-	public Player() {}
+	
 
 	@Override
 	public void update(float dt) 
@@ -90,9 +88,13 @@ public class Player extends GameObject
 		
 	}
 
-	@Override
-	public void init() 
+	
+	public void init(GameState state, Stats stats, Inventory inventory, float x, float y) 
 	{	
+		this.state = state;
+		this.stats = stats;
+		this.inventory = inventory;
+		save_data = new SaveData();
 		input = new boolean[GameKeys.NUM_KEYS];
 		speed = 100;
 		colour = new Color(1, 1, 1, 1);		

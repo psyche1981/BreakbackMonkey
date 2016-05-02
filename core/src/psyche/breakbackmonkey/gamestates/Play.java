@@ -38,8 +38,8 @@ public class Play extends GameState
 			p.render();
 		}
 		
-		int packs = player.getStats().getPacks();
-		int xp =  player.getStats().getXP();
+		int packs = Game.player.getStats().getPacks();
+		int xp =  Game.player.getStats().getXP();
 		
 		if(show_test)
 		{
@@ -47,7 +47,7 @@ public class Play extends GameState
 			font.draw(sb,  "Packs: " +packs, 100, 120);
 			font.draw(sb,  "XP: " +xp, 200, 120);
 			sb.end();
-			if(packs > player.getInventory().getMaxPacks())
+			if(packs > Game.player.getInventory().getMaxPacks())
 			{
 				sb.begin();
 				font.draw(sb,  "Too Many Packs", 200, 75);
@@ -67,13 +67,13 @@ public class Play extends GameState
 		for(GameObject go : objects)
 		{	
 			go.update(dt);
-			if(Physics.collided(player, go) == process_door)
+			if(Physics.collided(Game.player, go) == process_door)
 				gsm.setState(GameStateManager.PROCESS_OFFICE);
-			if(Physics.collided(player, go) == uht_door)
+			if(Physics.collided(Game.player, go) == uht_door)
 				gsm.setState(GameStateManager.UHT_DEPT);
-			if(Physics.collided(player, go) == break_back_door)
+			if(Physics.collided(Game.player, go) == break_back_door)
 				gsm.setState(GameStateManager.BREAK_BACK);
-			if(Physics.collided(player, go) == lab_door && !go.getLocked())
+			if(Physics.collided(Game.player, go) == lab_door && !go.getLocked())
 				gsm.setState(GameStateManager.LAB);
 			
 			
@@ -82,9 +82,9 @@ public class Play extends GameState
 		//pack collision and updating
 		for(Pack p : packs)
 		{
-			if(Physics.collided(player, p) != null)
+			if(Physics.collided(Game.player, p) != null)
 			{
-				player.getStats().setPacks(1);
+				Game.player.getStats().setPacks(1);
 				packs_to_remove.add(p);
 			}
 		}
@@ -110,7 +110,7 @@ public class Play extends GameState
 	@Override
 	public void dispose() 
 	{
-		gsm.setSaveData(player.getSaveData());
+		gsm.setSaveData(Game.player.getSaveData());
 		
 		for(GameObject go : objects)
 		{
@@ -128,8 +128,8 @@ public class Play extends GameState
 	@Override
 	public void init() 
 	{
-		player = new Player(this, gsm.getStats(), gsm.getInventory(), Game.WIDTH / 2 - Player.SIZE / 2, Game.HEIGHT / 2 - Player.SIZE / 2);
-		objects.add(player);
+		Game.player.init(this, gsm.getStats(), gsm.getInventory(), Game.WIDTH / 2 - Player.SIZE / 2, Game.HEIGHT / 2 - Player.SIZE / 2);
+		objects.add(Game.player);
 		doors();	
 				
 		initRandomPacks();
@@ -140,7 +140,7 @@ public class Play extends GameState
 	{
 		uht_door = new Door(this, 0, 30, false, false);
 		break_back_door = new Door(this, Game.WIDTH - Door.DOOR_SHORT_SIDE,  3 * Game.HEIGHT / 4, false, false);
-		boolean lab_key = player.getInventory().getLabKey();
+		boolean lab_key = Game.player.getInventory().getLabKey();
 		System.out.println("got lab key: " + lab_key);
 		
 		lab_door = new Door(this, Game.WIDTH - Door.DOOR_SHORT_SIDE,  1 * Game.HEIGHT / 4, false, !lab_key);

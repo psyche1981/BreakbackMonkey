@@ -42,7 +42,7 @@ public class ProcessOffice extends GameState
 		{
 			go.update(dt);
 			
-			if(Physics.collided(player, go) == exit_door)
+			if(Physics.collided(Game.player, go) == exit_door)
 				gsm.setState(GameStateManager.PLAY);
 			
 		}
@@ -61,7 +61,7 @@ public class ProcessOffice extends GameState
 	@Override
 	public void dispose() 
 	{	
-		gsm.setSaveData(player.getSaveData());
+		gsm.setSaveData(Game.player.getSaveData());
 		
 		for(GameObject go : objects)
 		{
@@ -72,8 +72,8 @@ public class ProcessOffice extends GameState
 	@Override
 	public void init() 
 	{
-		player = new Player(this, gsm.getStats(), gsm.getInventory(),  Game.WIDTH / 2 - Player.SIZE / 2, Door.DOOR_SHORT_SIDE +  (2 * Player.SIZE));
-		objects.add(player);
+		Game.player.init(this, gsm.getStats(), gsm.getInventory(),  Game.WIDTH / 2 - Player.SIZE / 2, Door.DOOR_SHORT_SIDE +  (2 * Player.SIZE));
+		objects.add(Game.player);
 		
 		doors();
 	}

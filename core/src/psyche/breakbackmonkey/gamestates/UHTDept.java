@@ -42,9 +42,9 @@ public class UHTDept extends GameState
 		{
 			go.update(dt);
 			
-			if(Physics.collided(player, go) == exit_door)
+			if(Physics.collided(Game.player, go) == exit_door)
 				gsm.setState(GameStateManager.PLAY);
-			if(Physics.collided(player,  go) == uht_office_door)
+			if(Physics.collided(Game.player,  go) == uht_office_door)
 				gsm.setState(GameStateManager.UHT_OFFICE);
 		}
 		
@@ -61,7 +61,7 @@ public class UHTDept extends GameState
 	@Override
 	public void dispose() 
 	{
-		gsm.setSaveData(player.getSaveData());
+		gsm.setSaveData(Game.player.getSaveData());
 		
 		for(GameObject go : objects)
 		{
@@ -72,8 +72,8 @@ public class UHTDept extends GameState
 	@Override
 	public void init() 
 	{
-		player = new Player(this, gsm.getStats(), gsm.getInventory(),  Game.WIDTH / 2 - Player.SIZE / 2, Door.DOOR_SHORT_SIDE +  (2 * Player.SIZE));
-		objects.add(player);
+		Game.player.init(this, gsm.getStats(), gsm.getInventory(),  Game.WIDTH / 2 - Player.SIZE / 2, Door.DOOR_SHORT_SIDE +  (2 * Player.SIZE));
+		objects.add(Game.player);
 		exit_door = new Door(this, Game.WIDTH / 2 - Player.SIZE / 2, 0, true, false);
 		objects.add(exit_door);
 		uht_office_door = new Door(this, 0, Game.HEIGHT / 2 - Door.DOOR_LONG_SIDE / 2, false, false );

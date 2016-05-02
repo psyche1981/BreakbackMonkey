@@ -42,7 +42,7 @@ public class BBackRoom extends GameState
 		{
 			go.update(dt);
 			
-			if(Physics.collided(player, go) == exit_door)
+			if(Physics.collided(Game.player, go) == exit_door)
 			{
 				gsm.setState(GameStateManager.PLAY);
 			}
@@ -50,9 +50,9 @@ public class BBackRoom extends GameState
 		
 		for(Pack p : packs)
 		{
-			if(Physics.collided(player, p) != null)
+			if(Physics.collided(Game.player, p) != null)
 			{
-				player.getStats().setPacks(1);
+				Game.player.getStats().setPacks(1);
 				packs_to_remove.add(p);
 			}
 		}
@@ -73,9 +73,9 @@ public class BBackRoom extends GameState
 		
 		if(GameKeys.isPressed(GameKeys.SPACE))
 		{
-			player.getStats().setBalTankVol(player.getStats().getPacks());
-			player.getStats().setXP(player.getStats().getPacks());
-			player.getStats().setPacks(0);
+			Game.player.getStats().setBalTankVol(Game.player.getStats().getPacks());
+			Game.player.getStats().setXP(Game.player.getStats().getPacks());
+			Game.player.getStats().setPacks(0);
 			
 		}
 	}
@@ -83,7 +83,7 @@ public class BBackRoom extends GameState
 	@Override
 	public void dispose() 
 	{
-		gsm.setSaveData(player.getSaveData());
+		gsm.setSaveData(Game.player.getSaveData());
 		
 		for(GameObject go : objects)
 		{
@@ -100,8 +100,8 @@ public class BBackRoom extends GameState
 	@Override
 	public void init() 
 	{
-		player = new Player(this, gsm.getStats(), gsm.getInventory(), Door.DOOR_SHORT_SIDE + (2 * Player.SIZE),  (3 * Game.HEIGHT / 4) - Player.SIZE / 2);
-		objects.add(player);
+		Game.player.init(this, gsm.getStats(), gsm.getInventory(), Door.DOOR_SHORT_SIDE + (2 * Player.SIZE),  (3 * Game.HEIGHT / 4) - Player.SIZE / 2);
+		objects.add(Game.player);
 		exit_door = new Door(this, 0, 3 * Game.HEIGHT / 4, false, false);
 		objects.add(exit_door);
 		

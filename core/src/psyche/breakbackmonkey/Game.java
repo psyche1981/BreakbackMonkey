@@ -23,6 +23,7 @@ public class Game extends ApplicationAdapter
 	
 	public static SpriteBatch sb;
 	public static ShapeRenderer sr;
+	public static Player player;
 	private OrthographicCamera camera;
 	private GameStateManager gsm;
 	
@@ -31,6 +32,7 @@ public class Game extends ApplicationAdapter
 	{
 		sb = new SpriteBatch();
 		sr = new ShapeRenderer();
+		player = new Player();
 		camera = new OrthographicCamera();
 		camera.setToOrtho(false, WIDTH, HEIGHT);
 		Gdx.input.setInputProcessor(new GameInputProcessor());

@@ -1,5 +1,6 @@
 package psyche.breakbackmonkey;
 
+import psyche.breakbackmonkey.gameobjects.entities.Player;
 import psyche.breakbackmonkey.input.GameInputProcessor;
 import psyche.breakbackmonkey.input.GameKeys;
 

@@ -7,6 +7,7 @@ import psyche.breakbackmonkey.Physics;
 import psyche.breakbackmonkey.gameobjects.GameObject;
 import psyche.breakbackmonkey.gameobjects.entities.Player;
 import psyche.breakbackmonkey.gameobjects.inanimate.Door;
+import psyche.breakbackmonkey.gameobjects.inanimate.HUD;
 import psyche.breakbackmonkey.gameobjects.inanimate.Pack;
 import psyche.breakbackmonkey.input.GameKeys;
 
@@ -14,6 +15,8 @@ public class Play extends GameState
 {
 	private Door uht_door, process_door, break_back_door, lab_door;
 	private boolean show_test = false;
+	
+	private HUD hud;
 	
 	public Play(GameStateManager gsm)
 	{
@@ -133,12 +136,14 @@ public class Play extends GameState
 		doors();	
 				
 		initRandomPacks();
+		hud = new HUD(this);
+		objects.add(hud);
 	}
 	
 	
 	private void doors()
 	{
-		uht_door = new Door(this, 0, 30, false, false);
+		uht_door = new Door(this, 0, 80, false, false);
 		break_back_door = new Door(this, Game.WIDTH - Door.DOOR_SHORT_SIDE,  3 * Game.HEIGHT / 4, false, false);
 		boolean lab_key = Game.player.getInventory().getLabKey();
 		System.out.println("got lab key: " + lab_key);

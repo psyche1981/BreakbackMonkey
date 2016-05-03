@@ -94,7 +94,7 @@ public class Player extends GameObject
 		save_data = new SaveData();
 		input = new boolean[GameKeys.NUM_KEYS];
 		speed = 100;
-		colour = new Color(1, 0.8f, 1, 1);		
+		colour = new Color(1, 1, 1, 1);		
 	}
 	
 	public void up(boolean b) {	input[GameKeys.W] = b;	}

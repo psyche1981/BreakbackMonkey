@@ -5,11 +5,9 @@ import psyche.breakbackmonkey.SaveData;
 import psyche.breakbackmonkey.Stats;
 import psyche.breakbackmonkey.gameobjects.GameObject;
 import psyche.breakbackmonkey.gamestates.GameState;
-import psyche.breakbackmonkey.gamestates.Menu;
 import psyche.breakbackmonkey.input.GameKeys;
 
 import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
 
 public class Player extends GameObject

@@ -37,7 +37,6 @@ public class Game extends ApplicationAdapter
 		Gdx.input.setInputProcessor(new GameInputProcessor());
 		
 		gsm = new GameStateManager(this);
-
 		player = new Player(gsm.getCurrentState());
 	}
 

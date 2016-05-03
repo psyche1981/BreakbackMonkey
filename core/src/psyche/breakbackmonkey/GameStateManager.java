@@ -85,6 +85,7 @@ public class GameStateManager
 	public Game getGame() { return game; }
 	public void setSaveData(SaveData sd) { save_data = sd; }
 	public SaveData getSaveData() { return save_data; }
+	public GameState getCurrentState() {return current_state.peek();}
 	public Stats getStats() { return stats; }
 	public Inventory getInventory() { return inventory; }
 }

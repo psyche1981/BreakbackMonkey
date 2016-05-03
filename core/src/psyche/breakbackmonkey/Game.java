@@ -32,12 +32,13 @@ public class Game extends ApplicationAdapter
 	{
 		sb = new SpriteBatch();
 		sr = new ShapeRenderer();
-		player = new Player();
 		camera = new OrthographicCamera();
 		camera.setToOrtho(false, WIDTH, HEIGHT);
 		Gdx.input.setInputProcessor(new GameInputProcessor());
 		
 		gsm = new GameStateManager(this);
+
+		player = new Player(gsm.getCurrentState());
 	}
 
 	@Override

@@ -30,17 +30,15 @@ public class Player extends GameObject
 	private Inventory inventory;
 	
 	
-	public Player()
+	public Player(GameState state)
 	{
-		super(null, 0, 0 );
+		super(state, 0, 0 );
 	}
 	
 
 	@Override
 	public void update(float dt) 
-	{
-		
-		
+	{		
 		if(input[UP])
 		{
 			y += speed * dt;
@@ -65,7 +63,6 @@ public class Player extends GameObject
 	@Override
 	public void render() 
 	{
-		// TODO add a sprite 
 		sr.setProjectionMatrix(camera.combined);
 		sr.begin(ShapeType.Filled);
 		sr.setColor(colour);
@@ -94,10 +91,12 @@ public class Player extends GameObject
 		this.state = state;
 		this.stats = stats;
 		this.inventory = inventory;
+		this.x = x;
+		this.y = y;
 		save_data = new SaveData();
 		input = new boolean[GameKeys.NUM_KEYS];
 		speed = 100;
-		colour = new Color(1, 1, 1, 1);		
+		colour = new Color(1, 0.8f, 1, 1);		
 	}
 	
 	public void up(boolean b) {	input[GameKeys.W] = b;	}

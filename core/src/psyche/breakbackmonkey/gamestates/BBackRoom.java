@@ -100,7 +100,7 @@ public class BBackRoom extends GameState
 	@Override
 	public void init() 
 	{
-		Game.player.init(this, gsm.getStats(), gsm.getInventory(), Door.DOOR_SHORT_SIDE + (2 * Player.SIZE),  (3 * Game.HEIGHT / 4) - Player.SIZE / 2);
+		Game.player.init(this, Door.DOOR_SHORT_SIDE + (2 * Player.SIZE),  (3 * Game.HEIGHT / 4) - Player.SIZE / 2);
 		objects.add(Game.player);
 		exit_door = new Door(this, 0, 3 * Game.HEIGHT / 4, false, false);
 		objects.add(exit_door);

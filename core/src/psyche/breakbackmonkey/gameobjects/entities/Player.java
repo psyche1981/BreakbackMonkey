@@ -31,6 +31,8 @@ public class Player extends GameObject
 	public Player(GameState state)
 	{
 		super(state, 0, 0 );
+		stats = new Stats();
+		inventory = new Inventory();
 	}
 	
 
@@ -84,11 +86,9 @@ public class Player extends GameObject
 	}
 
 	
-	public void init(GameState state, Stats stats, Inventory inventory, float x, float y) 
+	public void init(GameState state, float x, float y) 
 	{	
 		this.state = state;
-		this.stats = stats;
-		this.inventory = inventory;
 		this.x = x;
 		this.y = y;
 		save_data = new SaveData();

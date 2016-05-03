@@ -72,7 +72,7 @@ public class UHTDept extends GameState
 	@Override
 	public void init() 
 	{
-		Game.player.init(this, gsm.getStats(), gsm.getInventory(),  Game.WIDTH / 2 - Player.SIZE / 2, Door.DOOR_SHORT_SIDE +  (2 * Player.SIZE));
+		Game.player.init(this, Game.WIDTH / 2 - Player.SIZE / 2, Door.DOOR_SHORT_SIDE +  (2 * Player.SIZE));
 		objects.add(Game.player);
 		exit_door = new Door(this, Game.WIDTH / 2 - Player.SIZE / 2, 0, true, false);
 		objects.add(exit_door);

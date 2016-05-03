@@ -117,7 +117,7 @@ public class UHTOffice extends GameState
 		Random rand = new Random();
 		float rand_spawn = rand.nextFloat();
 		gw_dialogue = new boolean[GW_NUM];
-		Game.player.init(this, gsm.getStats(), gsm.getInventory(), Game.WIDTH / 2 - Player.SIZE / 2, Game.HEIGHT / 2 - Player.SIZE / 2);
+		Game.player.init(this, Game.WIDTH / 2 - Player.SIZE / 2, Game.HEIGHT / 2 - Player.SIZE / 2);
 		objects.add(Game.player);
 		
 		if(rand_spawn > 0.5f)

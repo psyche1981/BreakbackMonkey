@@ -128,7 +128,7 @@ public class Play extends GameState
 	@Override
 	public void init() 
 	{
-		Game.player.init(this, gsm.getStats(), gsm.getInventory(), Game.WIDTH / 2 - Player.SIZE / 2, Game.HEIGHT / 2 - Player.SIZE / 2);
+		Game.player.init(this, Game.WIDTH / 2 - Player.SIZE / 2, Game.HEIGHT / 2 - Player.SIZE / 2);
 		objects.add(Game.player);
 		doors();	
 				

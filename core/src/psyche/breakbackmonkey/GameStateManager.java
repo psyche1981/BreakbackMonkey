@@ -25,8 +25,6 @@ public class GameStateManager
 	
 	
 	private SaveData save_data;
-	private Stats stats;
-	private Inventory inventory;
 	
 	private Game game;
 	private Stack<GameState> current_state;
@@ -34,8 +32,6 @@ public class GameStateManager
 	public GameStateManager(Game game)
 	{
 		this.game = game;
-		stats = new Stats();
-		inventory = new Inventory();
 		save_data = new SaveData();
 		current_state = new Stack<GameState>();
 		push(MENU);
@@ -86,6 +82,4 @@ public class GameStateManager
 	public void setSaveData(SaveData sd) { save_data = sd; }
 	public SaveData getSaveData() { return save_data; }
 	public GameState getCurrentState() {return current_state.peek();}
-	public Stats getStats() { return stats; }
-	public Inventory getInventory() { return inventory; }
 }

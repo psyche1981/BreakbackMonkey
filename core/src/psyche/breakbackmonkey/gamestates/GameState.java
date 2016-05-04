@@ -16,8 +16,7 @@ import psyche.breakbackmonkey.gameobjects.inanimate.Pack;
 import psyche.breakbackmonkey.input.GameKeys;
 
 public abstract class GameState 
-{
-	public static final int HUD_HEIGHT = 75;
+{	
 	protected GameStateManager gsm;
 	protected Game game;
 	protected SpriteBatch sb;
@@ -54,7 +53,7 @@ public abstract class GameState
 		int no_packs = rand.nextInt(5) + 1;
 		for(int i = 1; i < no_packs + 1; i++)
 		{
-			packs.add(new Pack(this, rand.nextInt(Vars.WIDTH - Pack.SIZE)  , rand.nextInt(Vars.HEIGHT - HUD_HEIGHT - Pack.SIZE) + HUD_HEIGHT));
+			packs.add(new Pack(this, rand.nextInt(Vars.WIDTH - Pack.SIZE)  , rand.nextInt(Vars.HEIGHT - Vars.HUD_HEIGHT - Pack.SIZE) + Vars.HUD_HEIGHT));
 		}
 		
 	}

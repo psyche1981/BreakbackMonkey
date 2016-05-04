@@ -9,4 +9,9 @@ public class Vars
 	public static final float STEP = 1/60f;
 	
 	//Player Variables
+	
+	
+	
+	//HUD Variables
+	public static final int HUD_HEIGHT = 75;
 }

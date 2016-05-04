@@ -18,7 +18,7 @@ public class Res
 	public static HashMap<String, Texture> textures;
 	
 	private static Texture[] the_texture;
-	private static final int NUM_TEXTURES = 5;
+	private static final int NUM_TEXTURES = 6;
 	
 		
 	public static void load()
@@ -51,6 +51,7 @@ public class Res
 		the_texture[2] = new Texture(Gdx.files.internal("textures/white.png"));
 		the_texture[3] = new Texture(Gdx.files.internal("textures/green.png"));
 		the_texture[4] = new Texture(Gdx.files.internal("textures/yellow.png"));
+		the_texture[5] = new Texture(Gdx.files.internal("textures/hud_rect.png"));
 		
 		textures = new HashMap<String, Texture>();
 		textures.put("red", the_texture[0]);
@@ -58,6 +59,7 @@ public class Res
 		textures.put("white", the_texture[2]);
 		textures.put("green", the_texture[3]);
 		textures.put("yellow", the_texture[4]);
+		textures.put("hud", the_texture[5]);
 		
 	}	
 }

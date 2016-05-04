@@ -8,8 +8,10 @@ import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
 
 
 
+
 import psyche.breakbackmonkey.gameobjects.GameObject;
 import psyche.breakbackmonkey.gamestates.GameState;
+import psyche.breakbackmonkey.utils.Res;
 import psyche.breakbackmonkey.utils.Vars;
 
 public class HUD extends GameObject{
@@ -31,18 +33,11 @@ public class HUD extends GameObject{
 
 	@Override
 	public void render(SpriteBatch sb) 
-	{
-		Gdx.gl.glEnable(GL20.GL_BLEND);
-		Gdx.gl.glBlendFunc(GL20.GL_SRC_ALPHA, GL20.GL_ONE_MINUS_SRC_ALPHA);
-		
-		sr.setProjectionMatrix(camera.combined);
-		sr.begin(ShapeType.Filled);
-		sr.setColor(1, 1, 1, 0.8f);
-		sr.rect(x, y, rect.getWidth(), rect.getHeight());
-		sr.end();
-		
-		
-		Gdx.gl.glDisable(GL20.GL_BLEND);
+	{		
+		sb.setProjectionMatrix(camera.combined);
+		sb.begin();
+		sb.draw(Res.textures.get("hud"), x, y, rect.getWidth(), rect.getHeight());
+		sb.end();
 		
 	}
 

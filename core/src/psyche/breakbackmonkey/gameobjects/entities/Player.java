@@ -6,6 +6,7 @@ import psyche.breakbackmonkey.Stats;
 import psyche.breakbackmonkey.gameobjects.GameObject;
 import psyche.breakbackmonkey.gamestates.GameState;
 import psyche.breakbackmonkey.input.GameKeys;
+import psyche.breakbackmonkey.utils.Res;
 
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
@@ -63,11 +64,10 @@ public class Player extends GameObject
 	@Override
 	public void render() 
 	{
-		sr.setProjectionMatrix(camera.combined);
-		sr.begin(ShapeType.Filled);
-		sr.setColor(colour);
-		sr.rect(x, y, rect.getWidth(), rect.getHeight());
-		sr.end();
+		Res.sb.setProjectionMatrix(camera.combined);
+		Res.sb.begin();
+		Res.sb.draw(Res.textures.get("white"),x, y, rect.getWidth(), rect.getHeight());
+		Res.sb.end();
 	}
 	
 	private void setPosition()

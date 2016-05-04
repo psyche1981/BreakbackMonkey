@@ -8,8 +8,6 @@ import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 
 public class Game extends ApplicationAdapter 
 {
@@ -20,9 +18,7 @@ public class Game extends ApplicationAdapter
 	
 	public static final float STEP = 1/60f;
 	private float accumulated_time = 0;
-	
-	public static SpriteBatch sb;
-	public static ShapeRenderer sr;
+		
 	public static Player player;
 	private OrthographicCamera camera;
 	private GameStateManager gsm;
@@ -30,8 +26,7 @@ public class Game extends ApplicationAdapter
 	@Override
 	public void create () 
 	{
-		sb = new SpriteBatch();
-		sr = new ShapeRenderer();
+		Res.load();		
 		camera = new OrthographicCamera();
 		camera.setToOrtho(false, WIDTH, HEIGHT);
 		Gdx.input.setInputProcessor(new GameInputProcessor());
@@ -61,8 +56,8 @@ public class Game extends ApplicationAdapter
 	public void dispose() 
 	{
 		super.dispose();
-		sb.dispose();
-		sr.dispose();
+		Res.sb.dispose();
+		Res.sr.dispose();
 	}
 	
 	public OrthographicCamera getCamera() { return camera; }

@@ -9,6 +9,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 import psyche.breakbackmonkey.Game;
 import psyche.breakbackmonkey.GameStateManager;
+import psyche.breakbackmonkey.Res;
 import psyche.breakbackmonkey.gameobjects.GameObject;
 import psyche.breakbackmonkey.gameobjects.inanimate.Pack;
 import psyche.breakbackmonkey.input.GameKeys;
@@ -30,7 +31,7 @@ public abstract class GameState
 		this.gsm = gsm;
 		game = gsm.getGame();
 		camera = game.getCamera();
-		sb = Game.sb;
+		sb = Res.sb;
 		font = new BitmapFont();
 		objects = new ArrayList<GameObject>();
 		packs = new ArrayList<Pack>();

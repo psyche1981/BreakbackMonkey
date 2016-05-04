@@ -6,8 +6,8 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Rectangle;
 
-import psyche.breakbackmonkey.Game;
 import psyche.breakbackmonkey.GameFlags;
+import psyche.breakbackmonkey.Res;
 import psyche.breakbackmonkey.gamestates.GameState;
 
 //import com.badlogic.gdx.graphics.g2d.SpriteBatch;//will pass sb in render but initially will use a shaperenderer in each objcet class
@@ -30,7 +30,7 @@ public abstract class GameObject
 		this.y = y;
 		this.state = state;
 		camera = state.getCamera();
-		sr = Game.sr;
+		sr = Res.sr;
 		rect = new Rectangle();
 		flags = new boolean[GameFlags.NUM_FLAGS];
 		init();

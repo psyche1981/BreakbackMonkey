@@ -6,7 +6,9 @@ import java.util.HashMap;
 
 
 
+
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
@@ -16,8 +18,10 @@ public class Res
 	public static SpriteBatch sb;
 	public static ShapeRenderer sr;
 	public static HashMap<String, Texture> textures;
+	public static HashMap<String, Sound> sounds;
 	
 	private static Texture[] the_texture;
+	private static Sound[] the_sound;
 	
 		
 	public static void load()
@@ -26,6 +30,7 @@ public class Res
 		sr = new ShapeRenderer();
 		
 		loadTextures();
+		loadSounds();
 	}
 	
 	public static void dispose()
@@ -40,6 +45,23 @@ public class Res
 			the_texture[i].dispose();
 		}
 		textures.clear();
+	}
+	
+	private static void loadSounds()
+	{
+		String[] filenames = {"fart_2.mp3"};
+		
+		String[] keys = {"fart"};
+		
+		final int NUM_SOUNDS = filenames.length;
+		the_sound = new Sound[NUM_SOUNDS];
+		sounds = new HashMap<String, Sound>();
+		
+		for(int i = 0; i < NUM_SOUNDS; i++)
+		{
+			populateSoundArray(i, filenames[i]);
+			addSoundToHash(keys[i], the_sound[i]);
+		}
 	}
 	
 	private static void loadTextures()
@@ -61,9 +83,20 @@ public class Res
 		}		
 	}
 	
+	private static void addSoundToHash(String key, Sound sound)
+	{
+		sounds.put(key, sound);
+	}
+	
 	private static void addTexToHash(String key, Texture texture)
 	{
 		textures.put(key, texture);
+	}
+	
+	private static void populateSoundArray(int index, String path)
+	{
+		String full_path = "sounds/" + path;
+		the_sound[index] = Gdx.audio.newSound(Gdx.files.internal(full_path));
 	}
 	
 	private static void populateTexArray(int index, String path)

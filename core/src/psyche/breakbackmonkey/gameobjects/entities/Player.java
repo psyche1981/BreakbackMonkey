@@ -25,8 +25,8 @@ public class Player extends GameObject
 	private boolean[] input;
 	
 	private SaveData save_data;
-	private Stats stats;
-	private Inventory inventory;
+	public static Stats stats;
+	public static Inventory inventory;
 	
 	
 	public Player(GameState state)

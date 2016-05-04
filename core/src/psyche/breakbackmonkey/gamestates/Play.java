@@ -45,16 +45,12 @@ public class Play extends GameState
 			p.render(sb);
 		}
 		
-		int packs = Game.player.getStats().getPacks();
-		int xp =  Game.player.getStats().getXP();
-		
 		if(show_test)
 		{
 			sb.begin();
-			Fonts.timeless_12.draw(sb,  "Packs: " +packs, 100, 120);
-			Fonts.timeless_12.draw(sb,  "XP: " +xp, 200, 120);
+			
 			sb.end();
-			if(packs > Game.player.getInventory().getMaxPacks())
+			if(Player.stats.getPacks() > Game.player.getInventory().getMaxPacks())
 			{
 				sb.begin();
 				Fonts.timeless_12.draw(sb,  "Too Many Packs", 200, 75);

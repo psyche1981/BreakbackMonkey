@@ -103,9 +103,6 @@ public class UHTOffice extends GameState
 	@Override
 	public void dispose() 
 	{
-		// save the players data
-		gsm.setSaveData(Game.player.getSaveData());
-		
 		for(GameObject go : objects)
 		{
 			go.dispose();

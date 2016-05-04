@@ -1,7 +1,6 @@
 package psyche.breakbackmonkey.gameobjects.entities;
 
 import psyche.breakbackmonkey.Inventory;
-import psyche.breakbackmonkey.SaveData;
 import psyche.breakbackmonkey.Stats;
 import psyche.breakbackmonkey.gameobjects.GameObject;
 import psyche.breakbackmonkey.gameobjects.inanimate.HUD;
@@ -24,7 +23,6 @@ public class Player extends GameObject
 	private float speed;
 	private boolean[] input;
 	
-	private SaveData save_data;
 	public static Stats stats;
 	public static Inventory inventory;
 	
@@ -101,7 +99,6 @@ public class Player extends GameObject
 	@Override
 	public void init()
 	{
-		save_data = new SaveData();
 		input = new boolean[GameKeys.NUM_KEYS];
 		speed = 100;	
 		stats = new Stats();
@@ -123,12 +120,6 @@ public class Player extends GameObject
 	
 	
 	public Stats getStats() { return stats; }
-	public SaveData getSaveData() 
-	{ 
-		save_data.setStats(stats);
-		save_data.setInventory(inventory);
-		return save_data; 
 	
-	}
 	public Inventory getInventory() { return inventory; }
 }

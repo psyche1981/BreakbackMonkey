@@ -89,9 +89,7 @@ public class Play extends GameState
 
 	@Override
 	public void dispose() 
-	{
-		gsm.setSaveData(Game.player.getSaveData());
-		
+	{		
 		for(GameObject go : objects)
 		{
 			go.dispose();

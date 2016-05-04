@@ -34,7 +34,7 @@ public class Player extends GameObject
 	
 	public Player(GameState state)
 	{
-		super(state, 0, 0 );		
+		super(state, 0, 0);		
 	}
 	
 

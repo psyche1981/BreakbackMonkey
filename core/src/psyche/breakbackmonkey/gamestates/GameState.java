@@ -1,5 +1,4 @@
 package psyche.breakbackmonkey.gamestates;
-//FIXME add a text view screen rect to bottom and boundary collisions
 import java.util.ArrayList;
 import java.util.Random;
 

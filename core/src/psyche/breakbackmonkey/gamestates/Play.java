@@ -7,7 +7,6 @@ import psyche.breakbackmonkey.Game;
 import psyche.breakbackmonkey.GameStateManager;
 import psyche.breakbackmonkey.Physics;
 import psyche.breakbackmonkey.gameobjects.GameObject;
-import psyche.breakbackmonkey.gameobjects.entities.Player;
 import psyche.breakbackmonkey.gameobjects.inanimate.Door;
 import psyche.breakbackmonkey.gameobjects.inanimate.Pack;
 import psyche.breakbackmonkey.utils.Fonts;
@@ -107,7 +106,7 @@ public class Play extends GameState
 	@Override
 	public void init() 
 	{
-		Game.player.init(this, Vars.WIDTH / 2 - Player.SIZE / 2, Vars.HEIGHT / 2 - Player.SIZE / 2);
+		Game.player.init(this, Vars.WIDTH / 2 - Vars.PLAYER_SIZE / 2, Vars.HEIGHT / 2 - Vars.PLAYER_SIZE / 2);
 		objects.add(Game.player);
 		doors();	
 				

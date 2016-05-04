@@ -5,7 +5,6 @@ import psyche.breakbackmonkey.Game;
 import psyche.breakbackmonkey.GameStateManager;
 import psyche.breakbackmonkey.Physics;
 import psyche.breakbackmonkey.gameobjects.GameObject;
-import psyche.breakbackmonkey.gameobjects.entities.Player;
 import psyche.breakbackmonkey.gameobjects.inanimate.Door;
 import psyche.breakbackmonkey.input.GameKeys;
 import psyche.breakbackmonkey.utils.Fonts;
@@ -76,7 +75,7 @@ public class ProcessOffice extends GameState
 	@Override
 	public void init() 
 	{
-		Game.player.init(this, Vars.WIDTH / 2 - Player.SIZE / 2, Door.DOOR_SHORT_SIDE +  (2 * Player.SIZE));
+		Game.player.init(this, Vars.WIDTH / 2 - Vars.PLAYER_SIZE / 2, Door.DOOR_SHORT_SIDE +  (2 * Vars.PLAYER_SIZE));
 		objects.add(Game.player);
 		
 		doors();

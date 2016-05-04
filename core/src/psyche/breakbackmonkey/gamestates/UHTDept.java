@@ -6,7 +6,6 @@ import psyche.breakbackmonkey.Game;
 import psyche.breakbackmonkey.GameStateManager;
 import psyche.breakbackmonkey.Physics;
 import psyche.breakbackmonkey.gameobjects.GameObject;
-import psyche.breakbackmonkey.gameobjects.entities.Player;
 import psyche.breakbackmonkey.gameobjects.inanimate.Door;
 import psyche.breakbackmonkey.utils.Fonts;
 import psyche.breakbackmonkey.utils.Vars;
@@ -76,7 +75,7 @@ public class UHTDept extends GameState
 	@Override
 	public void init() 
 	{
-		Game.player.init(this, Vars.WIDTH - Player.SIZE * 5, 100);
+		Game.player.init(this, Vars.WIDTH - Vars.PLAYER_SIZE * 5, 100);
 		objects.add(Game.player);
 		exit_door = new Door(this, 20, Vars.HUD_HEIGHT, true, false);
 		objects.add(exit_door);

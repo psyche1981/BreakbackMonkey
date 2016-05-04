@@ -7,7 +7,6 @@ import psyche.breakbackmonkey.Game;
 import psyche.breakbackmonkey.GameStateManager;
 import psyche.breakbackmonkey.Physics;
 import psyche.breakbackmonkey.gameobjects.GameObject;
-import psyche.breakbackmonkey.gameobjects.entities.Player;
 import psyche.breakbackmonkey.gameobjects.inanimate.Door;
 import psyche.breakbackmonkey.gameobjects.inanimate.Pack;
 import psyche.breakbackmonkey.input.GameKeys;
@@ -103,7 +102,7 @@ public class BBackRoom extends GameState
 	@Override
 	public void init() 
 	{
-		Game.player.init(this, Door.DOOR_SHORT_SIDE + (2 * Player.SIZE),  (3 * Vars.HEIGHT / 4) - Player.SIZE / 2);
+		Game.player.init(this, Door.DOOR_SHORT_SIDE + (2 * Vars.PLAYER_SIZE),  (3 * Vars.HEIGHT / 4) - Vars.PLAYER_SIZE / 2);
 		objects.add(Game.player);
 		exit_door = new Door(this, 0, 3 * Vars.HEIGHT / 4, false, false);
 		objects.add(exit_door);

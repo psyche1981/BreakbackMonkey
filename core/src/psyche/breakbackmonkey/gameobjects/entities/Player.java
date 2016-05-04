@@ -22,7 +22,6 @@ public class Player extends GameObject
 	
 	
 	private float speed;
-	public static final int SIZE = 8;
 	private boolean[] input;
 	
 	private SaveData save_data;
@@ -77,19 +76,19 @@ public class Player extends GameObject
 	
 	private void setPosition()
 	{
-		if(y > Vars.HEIGHT - SIZE)
-			y = Vars.HEIGHT - SIZE;			
+		if(y > Vars.HEIGHT - Vars.PLAYER_SIZE)
+			y = Vars.HEIGHT - Vars.PLAYER_SIZE;			
 		if(y < Vars.HUD_HEIGHT)
 			y = Vars.HUD_HEIGHT;
 		if(x < 0)
 			x = 0;
-		if(x > Vars.WIDTH - SIZE)
-			x = Vars.WIDTH - SIZE;
+		if(x > Vars.WIDTH - Vars.PLAYER_SIZE)
+			x = Vars.WIDTH - Vars.PLAYER_SIZE;
 		
 		rect.x = x;
 		rect.y = y;
-		rect.width = SIZE;
-		rect.height = SIZE;
+		rect.width = Vars.PLAYER_SIZE;
+		rect.height = Vars.PLAYER_SIZE;
 	}
 
 	

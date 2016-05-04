@@ -1,4 +1,4 @@
-package psyche.breakbackmonkey;
+package psyche.breakbackmonkey.utils;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;

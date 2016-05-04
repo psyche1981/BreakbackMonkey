@@ -3,6 +3,7 @@ package psyche.breakbackmonkey;
 import psyche.breakbackmonkey.gameobjects.entities.Player;
 import psyche.breakbackmonkey.input.GameInputProcessor;
 import psyche.breakbackmonkey.input.GameKeys;
+import psyche.breakbackmonkey.utils.Res;
 
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
@@ -14,7 +15,6 @@ public class Game extends ApplicationAdapter
 	public static final String TITLE = "Break Back Monkey";
 	public static final int WIDTH = 640;
 	public static final int HEIGHT = 480;
-	public static final int SCALE = 2;
 	
 	public static final float STEP = 1/60f;
 	private float accumulated_time = 0;
@@ -46,10 +46,10 @@ public class Game extends ApplicationAdapter
 		while(accumulated_time >= STEP)
 		{
 			accumulated_time -= STEP;
-			gsm.update(STEP);
-			gsm.render();
+			gsm.update(STEP);			
 			GameKeys.update();
-		}		
+		}
+		gsm.render();
 	}
 	
 	@Override

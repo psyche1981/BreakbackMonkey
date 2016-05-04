@@ -9,7 +9,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 import psyche.breakbackmonkey.Game;
 import psyche.breakbackmonkey.GameStateManager;
-import psyche.breakbackmonkey.Res;
+import psyche.breakbackmonkey.utils.Res;
 import psyche.breakbackmonkey.gameobjects.GameObject;
 import psyche.breakbackmonkey.gameobjects.inanimate.Pack;
 import psyche.breakbackmonkey.input.GameKeys;

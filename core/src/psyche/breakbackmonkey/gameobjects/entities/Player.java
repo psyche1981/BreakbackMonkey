@@ -4,6 +4,7 @@ import psyche.breakbackmonkey.Inventory;
 import psyche.breakbackmonkey.SaveData;
 import psyche.breakbackmonkey.Stats;
 import psyche.breakbackmonkey.gameobjects.GameObject;
+import psyche.breakbackmonkey.gameobjects.inanimate.HUD;
 import psyche.breakbackmonkey.gamestates.GameState;
 import psyche.breakbackmonkey.input.GameKeys;
 import psyche.breakbackmonkey.utils.Res;
@@ -28,12 +29,15 @@ public class Player extends GameObject
 	public static Stats stats;
 	public static Inventory inventory;
 	
+	private HUD hud;
+	
 	
 	public Player(GameState state)
 	{
 		super(state, 0, 0 );
 		stats = new Stats();
 		inventory = new Inventory();
+		hud = new HUD(state);
 	}
 	
 
@@ -57,6 +61,8 @@ public class Player extends GameObject
 			y -= speed * dt;
 		}
 		setPosition();
+		
+		hud.update(dt);
 	}
 	
 	
@@ -68,6 +74,8 @@ public class Player extends GameObject
 		sb.begin();
 		sb.draw(Res.textures.get("white"),x, y, rect.getWidth(), rect.getHeight());
 		sb.end();
+		
+		hud.render(sb);
 	}
 	
 	private void setPosition()
@@ -82,7 +90,7 @@ public class Player extends GameObject
 	@Override
 	public void dispose() 
 	{
-		
+		hud.dispose();
 	}
 
 	

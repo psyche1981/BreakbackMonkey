@@ -9,18 +9,13 @@ import psyche.breakbackmonkey.Physics;
 import psyche.breakbackmonkey.gameobjects.GameObject;
 import psyche.breakbackmonkey.gameobjects.entities.Player;
 import psyche.breakbackmonkey.gameobjects.inanimate.Door;
-import psyche.breakbackmonkey.gameobjects.inanimate.HUD;
 import psyche.breakbackmonkey.gameobjects.inanimate.Pack;
-import psyche.breakbackmonkey.input.GameKeys;
 import psyche.breakbackmonkey.utils.Fonts;
 import psyche.breakbackmonkey.utils.Vars;
 
 public class Play extends GameState
 {
 	private Door uht_door, process_door, break_back_door, lab_door;
-	private boolean show_test = false;
-	
-	private HUD hud;
 	
 	public Play(GameStateManager gsm)
 	{
@@ -43,10 +38,7 @@ public class Play extends GameState
 		for(Pack p : packs)
 		{
 			p.render(sb);
-		}
-		
-		//HUD
-		hud.render(sb);		
+		}			
 	}
 
 	@Override
@@ -88,18 +80,12 @@ public class Play extends GameState
 		}
 		packs_to_remove.clear();
 		
-		//HUD
-		hud.update(dt);
 	}
 
 	@Override
 	public void handleInput()
 	{
 		playerDirections();
-		
-		if(GameKeys.isPressed(GameKeys.N))
-			show_test = true;
-		
 	}
 
 	@Override
@@ -116,8 +102,6 @@ public class Play extends GameState
 		{
 			p.dispose();
 		}
-		
-		hud.dispose();
 	}
 
 	@Override
@@ -128,7 +112,6 @@ public class Play extends GameState
 		doors();	
 				
 		initRandomPacks();
-		hud = new HUD(this);
 	}
 	
 	

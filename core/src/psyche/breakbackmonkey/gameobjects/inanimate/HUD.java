@@ -1,6 +1,5 @@
 package psyche.breakbackmonkey.gameobjects.inanimate;
 
-import psyche.breakbackmonkey.gameobjects.GameObject;
 import psyche.breakbackmonkey.gameobjects.entities.Player;
 import psyche.breakbackmonkey.gamestates.GameState;
 import psyche.breakbackmonkey.utils.Camera;
@@ -44,6 +43,7 @@ public class HUD
 	{		
 		sb.setProjectionMatrix(Camera.viewport.combined);
 		sb.begin();
+		
 		sb.draw(Res.textures.get("hud"), 0, 0, rect.getWidth(), rect.getHeight());
 		
 		Fonts.timeless_12.draw(sb,  "Packs: " + num_packs, 5, Vars.HUD_HEIGHT - 7);

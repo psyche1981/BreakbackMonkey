@@ -8,8 +8,10 @@ import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
 
 
 
+
 import psyche.breakbackmonkey.gameobjects.GameObject;
 import psyche.breakbackmonkey.gamestates.GameState;
+import psyche.breakbackmonkey.utils.Res;
 import psyche.breakbackmonkey.utils.Vars;
 
 public class HUD extends GameObject{
@@ -37,7 +39,7 @@ public class HUD extends GameObject{
 		
 		sr.setProjectionMatrix(camera.combined);
 		sr.begin(ShapeType.Filled);
-		sr.setColor(new Color(1,1,1,0.8f));
+		sr.setColor(1, 1, 1, 0.8f);
 		sr.rect(x, y, rect.getWidth(), rect.getHeight());
 		sr.end();
 		

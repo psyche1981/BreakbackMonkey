@@ -19,10 +19,9 @@ public abstract class GameObject
 	protected float y;
 	protected GameState state;
 	protected OrthographicCamera camera;
+	protected ShapeRenderer sr;
 	protected Color colour;
 	protected Rectangle rect;
-	//temporary - will eventually use the games spritebatch to render the textures
-	protected ShapeRenderer sr;
 	protected boolean[] flags;
 	
 	public GameObject(GameState state, float x, float y)

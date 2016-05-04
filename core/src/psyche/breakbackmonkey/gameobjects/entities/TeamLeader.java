@@ -2,10 +2,10 @@ package psyche.breakbackmonkey.gameobjects.entities;
 
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
 
 import psyche.breakbackmonkey.gameobjects.GameObject;
 import psyche.breakbackmonkey.gamestates.GameState;
+import psyche.breakbackmonkey.utils.Res;
 
 public class TeamLeader extends GameObject
 {
@@ -68,11 +68,10 @@ public class TeamLeader extends GameObject
 	@Override
 	public void render(SpriteBatch sb) 
 	{
-		sr.setProjectionMatrix(camera.combined);
-		sr.begin(ShapeType.Filled);
-		sr.setColor(colour);
-		sr.rect(x, y, rect.getWidth(), rect.getHeight());
-		sr.end();
+		sb.setProjectionMatrix(camera.combined);
+		sb.begin();
+		sb.draw(Res.textures.get("yellow"), x, y, rect.getWidth(), rect.getHeight());
+		sb.end();
 	}
 
 	@Override

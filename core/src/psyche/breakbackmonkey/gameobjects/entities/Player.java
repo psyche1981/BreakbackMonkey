@@ -64,10 +64,10 @@ public class Player extends GameObject
 	@Override
 	public void render(SpriteBatch sb) 
 	{
-		Res.sb.setProjectionMatrix(camera.combined);
-		Res.sb.begin();
-		Res.sb.draw(Res.textures.get("white"),x, y, rect.getWidth(), rect.getHeight());
-		Res.sb.end();
+		sb.setProjectionMatrix(camera.combined);
+		sb.begin();
+		sb.draw(Res.textures.get("white"),x, y, rect.getWidth(), rect.getHeight());
+		sb.end();
 	}
 	
 	private void setPosition()

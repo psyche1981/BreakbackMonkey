@@ -8,6 +8,7 @@ import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
 import psyche.breakbackmonkey.GameFlags;
 import psyche.breakbackmonkey.gameobjects.GameObject;
 import psyche.breakbackmonkey.gamestates.GameState;
+import psyche.breakbackmonkey.utils.Res;
 
 public class Pack extends GameObject
 {
@@ -28,11 +29,10 @@ public class Pack extends GameObject
 	@Override
 	public void render(SpriteBatch sb) 
 	{
-		sr.setProjectionMatrix(camera.combined);
-		sr.begin(ShapeType.Filled);
-		sr.setColor(colour);
-		sr.rect(rect.getX(), rect.getY(), SIZE, SIZE);
-		sr.end();
+		sb.setProjectionMatrix(camera.combined);
+		sb.begin();
+		sb.draw(Res.textures.get("green"), rect.getX(), rect.getY(), SIZE, SIZE);
+		sb.end();
 	}
 
 	@Override

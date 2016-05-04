@@ -15,7 +15,7 @@ public class HUD
 	private Rectangle rect;
 	private int num_packs;
 	private int xp;
-	private String info_string = "Collect those packs";
+	private String info_string;
 	
 	public HUD(GameState state)
 	{		
@@ -29,6 +29,10 @@ public class HUD
 		if(Player.inventory.getMaxPacks() < num_packs)
 		{
 			info_string = "Too many packs";
+		}
+		else
+		{
+			info_string  = "Collect those packs";
 		}
 		
 		if(Player.inventory.getLabKey())

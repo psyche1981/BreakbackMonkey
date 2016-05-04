@@ -11,7 +11,6 @@ import psyche.breakbackmonkey.utils.Vars;
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
-import com.badlogic.gdx.graphics.OrthographicCamera;
 
 public class Game extends ApplicationAdapter 
 {
@@ -19,7 +18,6 @@ public class Game extends ApplicationAdapter
 	private float accumulated_time = 0;
 		
 	public static Player player;
-	private OrthographicCamera camera;
 	private GameStateManager gsm;
 	
 	@Override
@@ -28,10 +26,8 @@ public class Game extends ApplicationAdapter
 		Res.load();	
 		Fonts.load();
 		Camera.load();
-		camera = new OrthographicCamera();
-		camera.setToOrtho(false, Vars.WIDTH, Vars.HEIGHT);
-		Gdx.input.setInputProcessor(new GameInputProcessor());
 		
+		Gdx.input.setInputProcessor(new GameInputProcessor());		
 		gsm = new GameStateManager(this);
 		player = new Player(gsm.getCurrentState());
 	}
@@ -61,6 +57,5 @@ public class Game extends ApplicationAdapter
 		Fonts.dispose();
 	}
 	
-	public OrthographicCamera getCamera() { return camera; }
 	
 }

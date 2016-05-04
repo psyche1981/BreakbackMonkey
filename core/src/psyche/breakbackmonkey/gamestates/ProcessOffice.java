@@ -81,7 +81,7 @@ public class ProcessOffice extends GameState
 	
 	private void doors()
 	{
-		exit_door = new Door(this, Vars.WIDTH / 2 - Door.DOOR_LONG_SIDE / 2, Vars.HUD_HEIGHT, true);
+		exit_door = new Door(this, 30, Vars.HUD_HEIGHT, true);
 		objects.add(exit_door);		
 		
 	}

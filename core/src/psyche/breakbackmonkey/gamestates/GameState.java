@@ -7,6 +7,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 import psyche.breakbackmonkey.Game;
 import psyche.breakbackmonkey.GameStateManager;
+import psyche.breakbackmonkey.utils.Camera;
 import psyche.breakbackmonkey.utils.Vars;
 import psyche.breakbackmonkey.gameobjects.GameObject;
 import psyche.breakbackmonkey.gameobjects.inanimate.Pack;
@@ -25,7 +26,7 @@ public abstract class GameState
 	{
 		this.gsm = gsm;
 		game = gsm.getGame();
-		camera = game.getCamera();
+		camera = Camera.viewport;
 		objects = new ArrayList<GameObject>();
 		packs = new ArrayList<Pack>();
 		packs_to_remove = new ArrayList<Pack>();

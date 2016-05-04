@@ -34,6 +34,11 @@ public class HUD extends GameObject
 			info_string = "Too many packs";
 		}
 		
+		if(Player.inventory.getLabKey())
+		{
+			info_string = "You have the lab key";
+		}
+		
 	}
 
 	@Override

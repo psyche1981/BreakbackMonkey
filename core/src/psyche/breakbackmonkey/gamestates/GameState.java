@@ -10,6 +10,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import psyche.breakbackmonkey.Game;
 import psyche.breakbackmonkey.GameStateManager;
 import psyche.breakbackmonkey.utils.Res;
+import psyche.breakbackmonkey.utils.Vars;
 import psyche.breakbackmonkey.gameobjects.GameObject;
 import psyche.breakbackmonkey.gameobjects.inanimate.Pack;
 import psyche.breakbackmonkey.input.GameKeys;
@@ -53,7 +54,7 @@ public abstract class GameState
 		int no_packs = rand.nextInt(5) + 1;
 		for(int i = 1; i < no_packs + 1; i++)
 		{
-			packs.add(new Pack(this, rand.nextInt(Game.WIDTH - Pack.SIZE)  , rand.nextInt(Game.HEIGHT - HUD_HEIGHT - Pack.SIZE) + HUD_HEIGHT));
+			packs.add(new Pack(this, rand.nextInt(Vars.WIDTH - Pack.SIZE)  , rand.nextInt(Vars.HEIGHT - HUD_HEIGHT - Pack.SIZE) + HUD_HEIGHT));
 		}
 		
 	}

@@ -4,6 +4,7 @@ import psyche.breakbackmonkey.gameobjects.entities.Player;
 import psyche.breakbackmonkey.input.GameInputProcessor;
 import psyche.breakbackmonkey.input.GameKeys;
 import psyche.breakbackmonkey.utils.Res;
+import psyche.breakbackmonkey.utils.Vars;
 
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
@@ -12,11 +13,7 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 
 public class Game extends ApplicationAdapter 
 {
-	public static final String TITLE = "Break Back Monkey";
-	public static final int WIDTH = 640;
-	public static final int HEIGHT = 480;
 	
-	public static final float STEP = 1/60f;
 	private float accumulated_time = 0;
 		
 	public static Player player;
@@ -28,7 +25,7 @@ public class Game extends ApplicationAdapter
 	{
 		Res.load();		
 		camera = new OrthographicCamera();
-		camera.setToOrtho(false, WIDTH, HEIGHT);
+		camera.setToOrtho(false, Vars.WIDTH, Vars.HEIGHT);
 		Gdx.input.setInputProcessor(new GameInputProcessor());
 		
 		gsm = new GameStateManager(this);
@@ -43,10 +40,10 @@ public class Game extends ApplicationAdapter
 		
 		accumulated_time += Gdx.graphics.getDeltaTime();
 		
-		while(accumulated_time >= STEP)
+		while(accumulated_time >= Vars.STEP)
 		{
-			accumulated_time -= STEP;
-			gsm.update(STEP);			
+			accumulated_time -= Vars.STEP;
+			gsm.update(Vars.STEP);			
 			GameKeys.update();
 		}
 		gsm.render();

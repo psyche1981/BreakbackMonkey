@@ -10,6 +10,7 @@ import psyche.breakbackmonkey.gameobjects.entities.Player;
 import psyche.breakbackmonkey.gameobjects.entities.UHTTeamLeader;
 import psyche.breakbackmonkey.gameobjects.inanimate.Door;
 import psyche.breakbackmonkey.input.GameKeys;
+import psyche.breakbackmonkey.utils.Vars;
 
 public class UHTOffice extends GameState
 {
@@ -117,7 +118,7 @@ public class UHTOffice extends GameState
 		Random rand = new Random();
 		float rand_spawn = rand.nextFloat();
 		gw_dialogue = new boolean[GW_NUM];
-		Game.player.init(this, Game.WIDTH / 2 - Player.SIZE / 2, Game.HEIGHT / 2 - Player.SIZE / 2);
+		Game.player.init(this, Vars.WIDTH / 2 - Player.SIZE / 2, Vars.HEIGHT / 2 - Player.SIZE / 2);
 		objects.add(Game.player);
 		
 		if(rand_spawn > 0.5f)
@@ -131,7 +132,7 @@ public class UHTOffice extends GameState
 			objects.add(tl);
 		}
 		
-		exit_door = new Door(this, Game.WIDTH / 2 - Door.DOOR_LONG_SIDE / 2, 0, true, false);
+		exit_door = new Door(this, Vars.WIDTH / 2 - Door.DOOR_LONG_SIDE / 2, 0, true, false);
 		objects.add(exit_door);
 		
 	}

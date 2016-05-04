@@ -5,9 +5,10 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
 
-import psyche.breakbackmonkey.Game;
+
 import psyche.breakbackmonkey.gameobjects.GameObject;
 import psyche.breakbackmonkey.gamestates.GameState;
+import psyche.breakbackmonkey.utils.Vars;
 
 public class HUD extends GameObject{
 	
@@ -16,7 +17,7 @@ public class HUD extends GameObject{
 		super(state, 0, 0);
 		rect.x = this.x;
 		rect.y = this.y;
-		rect.width = Game.WIDTH;
+		rect.width = Vars.WIDTH;
 		rect.height = 75;		
 	}
 		

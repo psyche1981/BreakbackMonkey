@@ -10,6 +10,7 @@ import psyche.breakbackmonkey.gameobjects.inanimate.Door;
 import psyche.breakbackmonkey.gameobjects.inanimate.HUD;
 import psyche.breakbackmonkey.gameobjects.inanimate.Pack;
 import psyche.breakbackmonkey.input.GameKeys;
+import psyche.breakbackmonkey.utils.Vars;
 
 public class Play extends GameState
 {
@@ -131,7 +132,7 @@ public class Play extends GameState
 	@Override
 	public void init() 
 	{
-		Game.player.init(this, Game.WIDTH / 2 - Player.SIZE / 2, Game.HEIGHT / 2 - Player.SIZE / 2);
+		Game.player.init(this, Vars.WIDTH / 2 - Player.SIZE / 2, Vars.HEIGHT / 2 - Player.SIZE / 2);
 		objects.add(Game.player);
 		doors();	
 				
@@ -144,13 +145,13 @@ public class Play extends GameState
 	private void doors()
 	{
 		uht_door = new Door(this, 0, 80, false, false);
-		break_back_door = new Door(this, Game.WIDTH - Door.DOOR_SHORT_SIDE,  3 * Game.HEIGHT / 4, false, false);
+		break_back_door = new Door(this, Vars.WIDTH - Door.DOOR_SHORT_SIDE,  3 * Vars.HEIGHT / 4, false, false);
 		boolean lab_key = Game.player.getInventory().getLabKey();
 		System.out.println("got lab key: " + lab_key);
 		
-		lab_door = new Door(this, Game.WIDTH - Door.DOOR_SHORT_SIDE,  1 * Game.HEIGHT / 4, false, !lab_key);
+		lab_door = new Door(this, Vars.WIDTH - Door.DOOR_SHORT_SIDE,  1 * Vars.HEIGHT / 4, false, !lab_key);
 		System.out.println("lab door locked:" + lab_door.getLocked());
-		process_door = new Door(this, Game.WIDTH / 2 - Door.DOOR_LONG_SIDE / 2, Game.HEIGHT - Door.DOOR_SHORT_SIDE, true, false);
+		process_door = new Door(this, Vars.WIDTH / 2 - Door.DOOR_LONG_SIDE / 2, Vars.HEIGHT - Door.DOOR_SHORT_SIDE, true, false);
 		
 		objects.add(uht_door);
 		objects.add(process_door);

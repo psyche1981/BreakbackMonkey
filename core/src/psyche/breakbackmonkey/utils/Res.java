@@ -14,6 +14,5 @@ public class Res
 	{
 		sb = new SpriteBatch();
 		sr = new ShapeRenderer();
-		System.out.println("loaded");
 	}
 }

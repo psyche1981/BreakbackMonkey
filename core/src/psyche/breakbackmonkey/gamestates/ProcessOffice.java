@@ -6,6 +6,7 @@ import psyche.breakbackmonkey.gameobjects.GameObject;
 import psyche.breakbackmonkey.gameobjects.entities.Player;
 import psyche.breakbackmonkey.gameobjects.inanimate.Door;
 import psyche.breakbackmonkey.input.GameKeys;
+import psyche.breakbackmonkey.utils.Vars;
 
 public class ProcessOffice extends GameState
 {
@@ -72,7 +73,7 @@ public class ProcessOffice extends GameState
 	@Override
 	public void init() 
 	{
-		Game.player.init(this, Game.WIDTH / 2 - Player.SIZE / 2, Door.DOOR_SHORT_SIDE +  (2 * Player.SIZE));
+		Game.player.init(this, Vars.WIDTH / 2 - Player.SIZE / 2, Door.DOOR_SHORT_SIDE +  (2 * Player.SIZE));
 		objects.add(Game.player);
 		
 		doors();
@@ -80,7 +81,7 @@ public class ProcessOffice extends GameState
 	
 	private void doors()
 	{
-		exit_door = new Door(this, Game.WIDTH / 2 - Door.DOOR_LONG_SIDE / 2, 0, true);
+		exit_door = new Door(this, Vars.WIDTH / 2 - Door.DOOR_LONG_SIDE / 2, 0, true);
 		objects.add(exit_door);		
 		
 	}

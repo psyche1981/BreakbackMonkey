@@ -3,7 +3,9 @@ package psyche.breakbackmonkey.gameobjects.inanimate;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
+
 
 
 import psyche.breakbackmonkey.gameobjects.GameObject;
@@ -28,7 +30,7 @@ public class HUD extends GameObject{
 	}
 
 	@Override
-	public void render() 
+	public void render(SpriteBatch sb) 
 	{
 		Gdx.gl.glEnable(GL20.GL_BLEND);
 		Gdx.gl.glBlendFunc(GL20.GL_SRC_ALPHA, GL20.GL_ONE_MINUS_SRC_ALPHA);

@@ -1,5 +1,7 @@
 package psyche.breakbackmonkey.gamestates;
 
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+
 import psyche.breakbackmonkey.GameStateManager;
 
 public class MiniGames extends GameState
@@ -10,7 +12,7 @@ public class MiniGames extends GameState
 	}
 
 	@Override
-	public void render() 
+	public void render(SpriteBatch sb) 
 	{
 		
 	}

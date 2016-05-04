@@ -2,6 +2,8 @@ package psyche.breakbackmonkey;
 
 import java.util.Stack;
 
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+
 import psyche.breakbackmonkey.gamestates.BBackRoom;
 import psyche.breakbackmonkey.gamestates.GameState;
 import psyche.breakbackmonkey.gamestates.Laboratory;
@@ -43,9 +45,9 @@ public class GameStateManager
 		push(state);
 	}
 	
-	public void render()
+	public void render(SpriteBatch sb)
 	{
-		current_state.peek().render();
+		current_state.peek().render(sb);
 	}
 	
 	public void update(float dt)

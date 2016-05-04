@@ -48,7 +48,7 @@ public class Game extends ApplicationAdapter
 			gsm.update(Vars.STEP);			
 			GameKeys.update();
 		}
-		gsm.render();
+		gsm.render(Res.sb);
 	}
 	
 	@Override

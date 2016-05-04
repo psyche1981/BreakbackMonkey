@@ -1,6 +1,7 @@
 package psyche.breakbackmonkey.gameobjects.entities;
 
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
 
 import psyche.breakbackmonkey.gameobjects.GameObject;
@@ -65,7 +66,7 @@ public class TeamLeader extends GameObject
 	}
 
 	@Override
-	public void render() 
+	public void render(SpriteBatch sb) 
 	{
 		sr.setProjectionMatrix(camera.combined);
 		sr.begin(ShapeType.Filled);

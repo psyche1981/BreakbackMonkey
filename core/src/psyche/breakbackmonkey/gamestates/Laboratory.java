@@ -1,5 +1,7 @@
 package psyche.breakbackmonkey.gamestates;
 
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+
 import psyche.breakbackmonkey.GameStateManager;
 import psyche.breakbackmonkey.input.GameKeys;
 import psyche.breakbackmonkey.utils.Fonts;
@@ -12,7 +14,7 @@ public class Laboratory extends GameState
 	}
 
 	@Override
-	public void render() 
+	public void render(SpriteBatch sb) 
 	{
 		// TODO Auto-generated method stub
 		sb.setProjectionMatrix(camera.combined);

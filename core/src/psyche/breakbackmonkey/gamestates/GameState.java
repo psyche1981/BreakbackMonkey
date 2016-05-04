@@ -8,7 +8,6 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 import psyche.breakbackmonkey.Game;
 import psyche.breakbackmonkey.GameStateManager;
-import psyche.breakbackmonkey.utils.Res;
 import psyche.breakbackmonkey.utils.Vars;
 import psyche.breakbackmonkey.gameobjects.GameObject;
 import psyche.breakbackmonkey.gameobjects.inanimate.Pack;
@@ -18,7 +17,6 @@ public abstract class GameState
 {	
 	protected GameStateManager gsm;
 	protected Game game;
-	protected SpriteBatch sb;
 	protected OrthographicCamera camera;
 	protected ArrayList<GameObject> objects;
 	protected ArrayList<Pack> packs;
@@ -29,14 +27,13 @@ public abstract class GameState
 		this.gsm = gsm;
 		game = gsm.getGame();
 		camera = game.getCamera();
-		sb = Res.sb;
 		objects = new ArrayList<GameObject>();
 		packs = new ArrayList<Pack>();
 		packs_to_remove = new ArrayList<Pack>();
 		init();
 	}
 	
-	public abstract void render();
+	public abstract void render(SpriteBatch sb);
 	public abstract void update(float dt);
 	public abstract void handleInput();	
 	public abstract void dispose();

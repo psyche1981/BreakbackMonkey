@@ -1,6 +1,8 @@
 package psyche.breakbackmonkey.gamestates;
 //TODO add a balance tank
 
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+
 import psyche.breakbackmonkey.Game;
 import psyche.breakbackmonkey.GameStateManager;
 import psyche.breakbackmonkey.Physics;
@@ -21,16 +23,16 @@ public class BBackRoom extends GameState
 	}
 
 	@Override
-	public void render() 
+	public void render(SpriteBatch sb) 
 	{
 		for(GameObject go : objects)
 		{
-			go.render();
+			go.render(sb);
 		}
 		
 		for(Pack p : packs)
 		{
-			p.render();
+			p.render(sb);
 		}
 	}
 

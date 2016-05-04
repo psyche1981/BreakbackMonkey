@@ -1,9 +1,10 @@
 package psyche.breakbackmonkey.gamestates;
 
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+
 import psyche.breakbackmonkey.GameStateManager;
 import psyche.breakbackmonkey.input.GameKeys;
 import psyche.breakbackmonkey.utils.Fonts;
-import psyche.breakbackmonkey.utils.Res;
 import psyche.breakbackmonkey.utils.Vars;
 
 public class Menu extends GameState
@@ -15,7 +16,7 @@ public class Menu extends GameState
 
 
 	@Override
-	public void render() 
+	public void render(SpriteBatch sb) 
 	{
 		// TODO Change menu to have options (play, quit, controls)
 		String s = "Welcome To Break Back Monkey!!!";

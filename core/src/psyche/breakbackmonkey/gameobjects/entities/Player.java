@@ -9,7 +9,7 @@ import psyche.breakbackmonkey.input.GameKeys;
 import psyche.breakbackmonkey.utils.Res;
 
 import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 public class Player extends GameObject
 {
@@ -62,7 +62,7 @@ public class Player extends GameObject
 	
 
 	@Override
-	public void render() 
+	public void render(SpriteBatch sb) 
 	{
 		Res.sb.setProjectionMatrix(camera.combined);
 		Res.sb.begin();

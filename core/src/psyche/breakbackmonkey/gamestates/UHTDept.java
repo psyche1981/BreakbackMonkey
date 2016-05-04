@@ -1,5 +1,7 @@
 package psyche.breakbackmonkey.gamestates;
 
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+
 import psyche.breakbackmonkey.Game;
 import psyche.breakbackmonkey.GameStateManager;
 import psyche.breakbackmonkey.Physics;
@@ -20,7 +22,7 @@ public class UHTDept extends GameState
 	}
 
 	@Override
-	public void render() 
+	public void render(SpriteBatch sb) 
 	{
 		sb.setProjectionMatrix(camera.combined);
 		
@@ -31,7 +33,7 @@ public class UHTDept extends GameState
 		
 		for(GameObject go : objects)
 		{
-			go.render();
+			go.render(sb);
 		}
 	}
 

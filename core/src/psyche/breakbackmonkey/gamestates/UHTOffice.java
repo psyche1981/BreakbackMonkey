@@ -7,9 +7,10 @@ import psyche.breakbackmonkey.GameStateManager;
 import psyche.breakbackmonkey.Physics;
 import psyche.breakbackmonkey.gameobjects.GameObject;
 import psyche.breakbackmonkey.gameobjects.entities.Player;
-import psyche.breakbackmonkey.gameobjects.entities.UHTTeamLeader;
+import psyche.breakbackmonkey.gameobjects.entities.TeamLeader;
 import psyche.breakbackmonkey.gameobjects.inanimate.Door;
 import psyche.breakbackmonkey.input.GameKeys;
+import psyche.breakbackmonkey.utils.Fonts;
 import psyche.breakbackmonkey.utils.Vars;
 
 public class UHTOffice extends GameState
@@ -19,7 +20,7 @@ public class UHTOffice extends GameState
 	public static final int GW_Y = 1;
 	public static final int GW_N = 2;
 	
-	private UHTTeamLeader tl;
+	private TeamLeader tl;
 	private boolean[] gw_dialogue;
 	private Door exit_door;
 	
@@ -34,20 +35,20 @@ public class UHTOffice extends GameState
 		sb.setProjectionMatrix(camera.combined);
 		
 		sb.begin();
-		font.draw(sb, "UHT Office", 0, 480);
+		Fonts.timeless_16.draw(sb, "UHT Office", 0, 480);
 		sb.end();
 		
 		if(gw_dialogue[GW_Q] && !gw_dialogue[GW_Y])
 		{
 			sb.begin();
-			font.draw(sb, "Do you like my trainers? (Y/N) ", 100, 50);
+			Fonts.timeless_16.draw(sb, "Do you like my trainers? (Y/N) ", 100, 50);
 			sb.end();
 		}
 		
 		if(gw_dialogue[GW_Y])
 		{
 			sb.begin();
-			font.draw(sb, "I found them in a field ", 100, 50);
+			Fonts.timeless_16.draw(sb, "I found them in a field ", 100, 50);
 			sb.end();
 		}
 		
@@ -67,10 +68,10 @@ public class UHTOffice extends GameState
 			go.update(dt);
 			if(Physics.collided(Game.player, go) == tl )
 			{
-				if(tl.getWho() == UHTTeamLeader.GW)
+				if(tl.getWho() == TeamLeader.GW)
 					gw_dialogue[GW_Q] = true;
 				
-				if(tl.getWho() == UHTTeamLeader.DA)
+				if(tl.getWho() == TeamLeader.DA)
 					Game.player.getInventory().setLabKey(true);
 			}
 			
@@ -123,12 +124,12 @@ public class UHTOffice extends GameState
 		
 		if(rand_spawn > 0.5f)
 		{
-			tl = new UHTTeamLeader(this, UHTTeamLeader.GW , 200, 400);
+			tl = new TeamLeader(this, TeamLeader.GW , 200, 400);
 			objects.add(tl);
 		}
 		else
 		{
-			tl = new UHTTeamLeader(this, UHTTeamLeader.DA, 300, 200);
+			tl = new TeamLeader(this, TeamLeader.DA, 300, 200);
 			objects.add(tl);
 		}
 		

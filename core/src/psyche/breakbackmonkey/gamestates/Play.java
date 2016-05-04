@@ -10,6 +10,7 @@ import psyche.breakbackmonkey.gameobjects.inanimate.Door;
 import psyche.breakbackmonkey.gameobjects.inanimate.HUD;
 import psyche.breakbackmonkey.gameobjects.inanimate.Pack;
 import psyche.breakbackmonkey.input.GameKeys;
+import psyche.breakbackmonkey.utils.Fonts;
 import psyche.breakbackmonkey.utils.Vars;
 
 public class Play extends GameState
@@ -28,8 +29,8 @@ public class Play extends GameState
 	public void render() 
 	{
 		sb.setProjectionMatrix(camera.combined);
-		sb.begin();
-		font.draw(sb,  "Main Room", 20, 460);
+		sb.begin();		
+		Fonts.timeless_16.draw(sb,  "Main Room", 20, 460);
 		sb.end();
 		
 		for(GameObject go : objects)
@@ -48,13 +49,13 @@ public class Play extends GameState
 		if(show_test)
 		{
 			sb.begin();
-			font.draw(sb,  "Packs: " +packs, 100, 120);
-			font.draw(sb,  "XP: " +xp, 200, 120);
+			Fonts.timeless_16.draw(sb,  "Packs: " +packs, 100, 120);
+			Fonts.timeless_16.draw(sb,  "XP: " +xp, 200, 120);
 			sb.end();
 			if(packs > Game.player.getInventory().getMaxPacks())
 			{
 				sb.begin();
-				font.draw(sb,  "Too Many Packs", 200, 75);
+				Fonts.timeless_16.draw(sb,  "Too Many Packs", 200, 75);
 				sb.end();
 			}
 		}

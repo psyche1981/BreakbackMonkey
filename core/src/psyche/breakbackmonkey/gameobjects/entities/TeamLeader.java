@@ -6,7 +6,7 @@ import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
 import psyche.breakbackmonkey.gameobjects.GameObject;
 import psyche.breakbackmonkey.gamestates.GameState;
 
-public class UHTTeamLeader extends GameObject
+public class TeamLeader extends GameObject
 {
 	public static final int GW = 0;
 	public static final int DA = 1;
@@ -15,7 +15,7 @@ public class UHTTeamLeader extends GameObject
 	private int speed;
 	
 	
-	public UHTTeamLeader(GameState state, int who, float x, float y)
+	public TeamLeader(GameState state, int who, float x, float y)
 	{
 		super(state, x, y);
 		this.who = who;
@@ -25,7 +25,7 @@ public class UHTTeamLeader extends GameObject
 		
 	}
 	
-	public UHTTeamLeader() {}
+	public TeamLeader() {}
 	
 	private void setPosition()
 	{

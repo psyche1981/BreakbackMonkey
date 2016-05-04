@@ -6,6 +6,7 @@ import psyche.breakbackmonkey.Physics;
 import psyche.breakbackmonkey.gameobjects.GameObject;
 import psyche.breakbackmonkey.gameobjects.entities.Player;
 import psyche.breakbackmonkey.gameobjects.inanimate.Door;
+import psyche.breakbackmonkey.utils.Fonts;
 import psyche.breakbackmonkey.utils.Vars;
 
 
@@ -24,7 +25,7 @@ public class UHTDept extends GameState
 		sb.setProjectionMatrix(camera.combined);
 		
 		sb.begin();
-		font.draw(sb, "UHT Department", 0, 480);
+		Fonts.timeless_16.draw(sb, "UHT Department", 0, 480);
 		sb.end();
 		
 		

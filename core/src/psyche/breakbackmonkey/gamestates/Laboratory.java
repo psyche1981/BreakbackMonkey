@@ -2,6 +2,7 @@ package psyche.breakbackmonkey.gamestates;
 
 import psyche.breakbackmonkey.GameStateManager;
 import psyche.breakbackmonkey.input.GameKeys;
+import psyche.breakbackmonkey.utils.Fonts;
 
 public class Laboratory extends GameState
 {
@@ -16,7 +17,7 @@ public class Laboratory extends GameState
 		// TODO Auto-generated method stub
 		sb.setProjectionMatrix(camera.combined);
 		sb.begin();
-		font.draw(sb,  "Lab", 0, 480);
+		Fonts.timeless_16.draw(sb,  "Lab", 0, 480);
 		sb.end();
 		
 	}

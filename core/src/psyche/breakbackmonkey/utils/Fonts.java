@@ -15,7 +15,7 @@ public class Fonts
 	public static void load()
 	{
 		init();
-		parameter.size = 16;
+		parameter.size = (int)Math.ceil(16);		
 		timeless_16 = timeless_gen.generateFont(parameter);
 		parameter.size = 30;
 		timeless_30 = timeless_gen.generateFont(parameter);

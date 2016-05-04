@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 import psyche.breakbackmonkey.Game;
@@ -21,7 +20,6 @@ public abstract class GameState
 	protected Game game;
 	protected SpriteBatch sb;
 	protected OrthographicCamera camera;
-	protected BitmapFont font;
 	protected ArrayList<GameObject> objects;
 	protected ArrayList<Pack> packs;
 	protected ArrayList<Pack> packs_to_remove;
@@ -32,7 +30,6 @@ public abstract class GameState
 		game = gsm.getGame();
 		camera = game.getCamera();
 		sb = Res.sb;
-		font = new BitmapFont();
 		objects = new ArrayList<GameObject>();
 		packs = new ArrayList<Pack>();
 		packs_to_remove = new ArrayList<Pack>();

@@ -8,6 +8,7 @@ import psyche.breakbackmonkey.gameobjects.inanimate.HUD;
 import psyche.breakbackmonkey.gamestates.GameState;
 import psyche.breakbackmonkey.input.GameKeys;
 import psyche.breakbackmonkey.utils.Res;
+import psyche.breakbackmonkey.utils.Vars;
 
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -80,6 +81,15 @@ public class Player extends GameObject
 	
 	private void setPosition()
 	{
+		if(y > Vars.HEIGHT - SIZE)
+			y = Vars.HEIGHT - SIZE;			
+		if(y < Vars.HUD_HEIGHT)
+			y = Vars.HUD_HEIGHT;
+		if(x < 0)
+			x = 0;
+		if(x > Vars.WIDTH - SIZE)
+			x = Vars.WIDTH - SIZE;
+		
 		rect.x = x;
 		rect.y = y;
 		rect.width = SIZE;

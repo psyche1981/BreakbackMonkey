@@ -135,7 +135,7 @@ public class UHTOffice extends GameState
 			objects.add(tl);
 		}
 		
-		exit_door = new Door(this, Vars.WIDTH / 2 - Door.DOOR_LONG_SIDE / 2, 0, true, false);
+		exit_door = new Door(this, Vars.WIDTH / 2 - Door.DOOR_LONG_SIDE / 2, Vars.HUD_HEIGHT, true, false);
 		objects.add(exit_door);
 		
 	}

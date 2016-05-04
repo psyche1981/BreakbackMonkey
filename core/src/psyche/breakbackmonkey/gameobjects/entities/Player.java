@@ -10,7 +10,6 @@ import psyche.breakbackmonkey.input.GameKeys;
 import psyche.breakbackmonkey.utils.Res;
 import psyche.breakbackmonkey.utils.Vars;
 
-import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 public class Player extends GameObject
@@ -35,10 +34,7 @@ public class Player extends GameObject
 	
 	public Player(GameState state)
 	{
-		super(state, 0, 0 );
-		stats = new Stats();
-		inventory = new Inventory();
-		hud = new HUD(state);
+		super(state, 0, 0 );		
 	}
 	
 
@@ -103,16 +99,22 @@ public class Player extends GameObject
 		hud.dispose();
 	}
 
+	@Override
+	public void init()
+	{
+		save_data = new SaveData();
+		input = new boolean[GameKeys.NUM_KEYS];
+		speed = 100;	
+		stats = new Stats();
+		inventory = new Inventory();
+		hud = new HUD(state);
+	}
 	
 	public void init(GameState state, float x, float y) 
 	{	
 		this.state = state;
 		this.x = x;
-		this.y = y;
-		save_data = new SaveData();
-		input = new boolean[GameKeys.NUM_KEYS];
-		speed = 100;
-		colour = new Color(1, 1, 1, 1);		
+		this.y = y;		
 	}
 	
 	public void up(boolean b) {	input[GameKeys.W] = b;	}

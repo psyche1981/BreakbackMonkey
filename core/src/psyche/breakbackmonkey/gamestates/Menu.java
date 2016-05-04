@@ -20,12 +20,12 @@ public class Menu extends GameState
 	{
 		// TODO Change menu to have options (play, quit, controls)
 		String s = "Welcome To Break Back Monkey!!!";
-		float text_width = Fonts.timeless_30.getBounds(s).width;
+		float text_width = Fonts.timeless_32.getBounds(s).width;
 		
 		sb.setProjectionMatrix(camera.combined);
 		sb.begin();
-		Fonts.timeless_30.setColor(1, 1, 1, 1);
-		Fonts.timeless_30.draw(sb, s, Vars.WIDTH / 2 - text_width / 2, 350);
+		Fonts.timeless_32.setColor(1, 1, 1, 1);
+		Fonts.timeless_32.draw(sb, s, Vars.WIDTH / 2 - text_width / 2, 350);
 		Fonts.timeless_16.draw(sb, "Press Enter to Play", 250, 200);
 				
 		sb.end();

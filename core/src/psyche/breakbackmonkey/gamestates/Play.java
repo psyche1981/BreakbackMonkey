@@ -51,13 +51,13 @@ public class Play extends GameState
 		if(show_test)
 		{
 			sb.begin();
-			Fonts.timeless_16.draw(sb,  "Packs: " +packs, 100, 120);
-			Fonts.timeless_16.draw(sb,  "XP: " +xp, 200, 120);
+			Fonts.timeless_12.draw(sb,  "Packs: " +packs, 100, 120);
+			Fonts.timeless_12.draw(sb,  "XP: " +xp, 200, 120);
 			sb.end();
 			if(packs > Game.player.getInventory().getMaxPacks())
 			{
 				sb.begin();
-				Fonts.timeless_16.draw(sb,  "Too Many Packs", 200, 75);
+				Fonts.timeless_12.draw(sb,  "Too Many Packs", 200, 75);
 				sb.end();
 			}
 		}

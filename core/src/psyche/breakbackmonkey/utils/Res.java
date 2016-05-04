@@ -18,7 +18,6 @@ public class Res
 	public static HashMap<String, Texture> textures;
 	
 	private static Texture[] the_texture;
-	private static final int NUM_TEXTURES = 6;
 	
 		
 	public static void load()
@@ -44,22 +43,33 @@ public class Res
 	}
 	
 	private static void loadTextures()
-	{
+	{			
+		String[] filenames = 
+			{"red.png", "blue.png", "white.png", 
+				"green.png", "yellow.png", "hud_rect.png"};
+		
+		String[] keys = {"red", "blue", "white", "green", "yellow", "hud"};
+		
+		final int NUM_TEXTURES = filenames.length;
 		the_texture = new Texture[NUM_TEXTURES];
-		the_texture[0] = new Texture(Gdx.files.internal("textures/red.png"));
-		the_texture[1] = new Texture(Gdx.files.internal("textures/blue.png"));
-		the_texture[2] = new Texture(Gdx.files.internal("textures/white.png"));
-		the_texture[3] = new Texture(Gdx.files.internal("textures/green.png"));
-		the_texture[4] = new Texture(Gdx.files.internal("textures/yellow.png"));
-		the_texture[5] = new Texture(Gdx.files.internal("textures/hud_rect.png"));
-		
 		textures = new HashMap<String, Texture>();
-		textures.put("red", the_texture[0]);
-		textures.put("blue", the_texture[1]);
-		textures.put("white", the_texture[2]);
-		textures.put("green", the_texture[3]);
-		textures.put("yellow", the_texture[4]);
-		textures.put("hud", the_texture[5]);
 		
-	}	
+		for(int i = 0; i < NUM_TEXTURES; i++)
+		{
+			populateTexArray(i, filenames[i]);
+			addTexToHash(keys[i], the_texture[i]);
+		}		
+	}
+	
+	private static void addTexToHash(String key, Texture texture)
+	{
+		textures.put(key, texture);
+	}
+	
+	private static void populateTexArray(int index, String path)
+	{
+		String full_path = "textures/" + path;
+		the_texture[index] = new Texture(Gdx.files.internal(full_path));
+		
+	}
 }

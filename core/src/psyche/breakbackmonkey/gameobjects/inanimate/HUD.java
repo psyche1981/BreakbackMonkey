@@ -1,6 +1,8 @@
 package psyche.breakbackmonkey.gameobjects.inanimate;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
 
 import psyche.breakbackmonkey.Game;
@@ -12,10 +14,10 @@ public class HUD extends GameObject{
 	
 	public HUD(GameState state)
 	{
-		super(state, 1, 0);
+		super(state, 0, 0);
 		rect.x = this.x;
 		rect.y = this.y;
-		rect.width = Game.WIDTH - 1;
+		rect.width = Game.WIDTH;
 		rect.height = 75;		
 	}
 		
@@ -28,11 +30,17 @@ public class HUD extends GameObject{
 	@Override
 	public void render() 
 	{
+		Gdx.gl.glEnable(GL20.GL_BLEND);
+		Gdx.gl.glBlendFunc(GL20.GL_SRC_ALPHA, GL20.GL_ONE_MINUS_SRC_ALPHA);
+		
 		sr.setProjectionMatrix(camera.combined);
-		sr.begin(ShapeType.Line);
-		sr.setColor(new Color(1,1,1,1));
+		sr.begin(ShapeType.Filled);
+		sr.setColor(new Color(1,1,1,0.8f));
 		sr.rect(x, y, rect.getWidth(), rect.getHeight());
 		sr.end();
+		
+		
+		Gdx.gl.glDisable(GL20.GL_BLEND);
 		
 	}
 

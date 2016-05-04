@@ -3,6 +3,7 @@ package psyche.breakbackmonkey.gamestates;
 import psyche.breakbackmonkey.GameStateManager;
 import psyche.breakbackmonkey.input.GameKeys;
 import psyche.breakbackmonkey.utils.Fonts;
+import psyche.breakbackmonkey.utils.Res;
 import psyche.breakbackmonkey.utils.Vars;
 
 public class Menu extends GameState
@@ -25,7 +26,7 @@ public class Menu extends GameState
 		Fonts.timeless_30.setColor(1, 1, 1, 1);
 		Fonts.timeless_30.draw(sb, s, Vars.WIDTH / 2 - text_width / 2, 350);
 		Fonts.timeless_16.draw(sb, "Press Enter to Play", 250, 200);
-		
+				
 		sb.end();
 	}
 

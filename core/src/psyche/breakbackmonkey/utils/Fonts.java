@@ -21,6 +21,12 @@ public class Fonts
 		timeless_30 = timeless_gen.generateFont(parameter);
 	}
 	
+	public static void dispose()
+	{
+		timeless_16.dispose();
+		timeless_30.dispose();
+	}
+	
 	private static void init()
 	{
 		parameter = new FreeTypeFontParameter();

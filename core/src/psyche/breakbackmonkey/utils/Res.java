@@ -45,6 +45,13 @@ public class Res
 			the_texture[i].dispose();
 		}
 		textures.clear();
+		
+		//sounds
+		for(int i = 0; i < the_sound.length; i++)
+		{
+			the_sound[i].dispose();
+		}
+		sounds.clear();
 	}
 	
 	private static void loadSounds()

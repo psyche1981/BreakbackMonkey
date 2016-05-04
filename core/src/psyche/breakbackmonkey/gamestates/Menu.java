@@ -2,6 +2,8 @@ package psyche.breakbackmonkey.gamestates;
 
 import psyche.breakbackmonkey.GameStateManager;
 import psyche.breakbackmonkey.input.GameKeys;
+import psyche.breakbackmonkey.utils.Fonts;
+import psyche.breakbackmonkey.utils.Vars;
 
 public class Menu extends GameState
 {
@@ -15,10 +17,15 @@ public class Menu extends GameState
 	public void render() 
 	{
 		// TODO Change menu to have options (play, quit, controls)
+		String s = "Welcome To Break Back Monkey!!!";
+		float text_width = Fonts.timeless_30.getBounds(s).width;
+		
 		sb.setProjectionMatrix(camera.combined);
 		sb.begin();
-		font.draw(sb, "Welcome To Break Back Monkey!!!", 200, 350);
-		font.draw(sb, "Press Enter to Play", 250, 200);
+		Fonts.timeless_30.setColor(1, 1, 1, 1);
+		Fonts.timeless_30.draw(sb, s, Vars.WIDTH / 2 - text_width / 2, 350);
+		Fonts.timeless_16.draw(sb, "Press Enter to Play", 250, 200);
+		
 		sb.end();
 	}
 

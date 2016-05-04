@@ -9,7 +9,7 @@ public class Vars
 	public static final float STEP = 1/60f;
 	
 	//Player Variables
-	
+	public static final int PLAYER_SIZE = 8;
 	
 	
 	//HUD Variables

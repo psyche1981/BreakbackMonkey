@@ -57,6 +57,8 @@ public class Game extends ApplicationAdapter
 		super.dispose();
 		Res.sb.dispose();
 		Res.sr.dispose();
+		Fonts.timeless_16.dispose();
+		Fonts.timeless_30.dispose();
 	}
 	
 	public OrthographicCamera getCamera() { return camera; }

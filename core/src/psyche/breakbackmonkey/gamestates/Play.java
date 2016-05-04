@@ -45,19 +45,8 @@ public class Play extends GameState
 			p.render(sb);
 		}
 		
-		if(show_test)
-		{
-			sb.begin();
-			
-			sb.end();
-			if(Player.stats.getPacks() > Game.player.getInventory().getMaxPacks())
-			{
-				sb.begin();
-				Fonts.timeless_12.draw(sb,  "Too Many Packs", 200, 75);
-				sb.end();
-			}
-		}
-		
+		//HUD
+		hud.render(sb);		
 	}
 
 	@Override
@@ -98,6 +87,9 @@ public class Play extends GameState
 			packs.remove(p);
 		}
 		packs_to_remove.clear();
+		
+		//HUD
+		hud.update(dt);
 	}
 
 	@Override
@@ -125,7 +117,7 @@ public class Play extends GameState
 			p.dispose();
 		}
 		
-		
+		hud.dispose();
 	}
 
 	@Override
@@ -137,7 +129,6 @@ public class Play extends GameState
 				
 		initRandomPacks();
 		hud = new HUD(this);
-		objects.add(hud);
 	}
 	
 	

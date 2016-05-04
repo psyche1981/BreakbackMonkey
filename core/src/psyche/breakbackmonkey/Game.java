@@ -3,6 +3,7 @@ package psyche.breakbackmonkey;
 import psyche.breakbackmonkey.gameobjects.entities.Player;
 import psyche.breakbackmonkey.input.GameInputProcessor;
 import psyche.breakbackmonkey.input.GameKeys;
+import psyche.breakbackmonkey.utils.Camera;
 import psyche.breakbackmonkey.utils.Fonts;
 import psyche.breakbackmonkey.utils.Res;
 import psyche.breakbackmonkey.utils.Vars;
@@ -26,6 +27,7 @@ public class Game extends ApplicationAdapter
 	{
 		Res.load();	
 		Fonts.load();
+		Camera.load();
 		camera = new OrthographicCamera();
 		camera.setToOrtho(false, Vars.WIDTH, Vars.HEIGHT);
 		Gdx.input.setInputProcessor(new GameInputProcessor());

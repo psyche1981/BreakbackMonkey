@@ -1,7 +1,5 @@
 package psyche.breakbackmonkey.gamestates;
 
-//FIXME need to preserve the playstate when entering the pause state
-
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 import psyche.breakbackmonkey.GameStateManager;

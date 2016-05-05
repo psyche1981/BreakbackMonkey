@@ -1,7 +1,5 @@
 package psyche.breakbackmonkey;
 
-//FIXME need to push the playstate down the stack when entering pause menu
-
 import java.util.Stack;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;

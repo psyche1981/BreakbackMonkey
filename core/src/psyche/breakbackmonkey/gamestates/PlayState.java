@@ -8,6 +8,7 @@ import psyche.breakbackmonkey.utils.Physics;
 import psyche.breakbackmonkey.gameobjects.GameObject;
 import psyche.breakbackmonkey.gameobjects.inanimate.Door;
 import psyche.breakbackmonkey.gameobjects.inanimate.Pack;
+import psyche.breakbackmonkey.gamestates.playstates.FactoryFloor;
 import psyche.breakbackmonkey.input.GameKeys;
 import psyche.breakbackmonkey.utils.Fonts;
 import psyche.breakbackmonkey.utils.Sound;
@@ -15,11 +16,15 @@ import psyche.breakbackmonkey.utils.Vars;
 
 public class PlayState extends GameState
 {
+	private FactoryFloor play;
+	
+	
 	private Door uht_door, process_door, break_back_door, lab_door;
 	
 	public PlayState(GameStateManager gsm)
 	{
 		super(gsm);
+		play = new FactoryFloor(gsm);
 	}
 
 	@Override

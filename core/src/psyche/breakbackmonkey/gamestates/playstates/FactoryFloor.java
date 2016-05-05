@@ -1,9 +1,12 @@
 package psyche.breakbackmonkey.gamestates.playstates;
 
-public class FactoryFloor
+import psyche.breakbackmonkey.GameStateManager;
+import psyche.breakbackmonkey.gamestates.PlayState;
+
+public class FactoryFloor extends PlayState
 {
-	public FactoryFloor()
+	public FactoryFloor(GameStateManager gsm)
 	{
-		
+		super(gsm);
 	}
 }

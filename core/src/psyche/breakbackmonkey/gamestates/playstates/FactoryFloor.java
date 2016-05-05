@@ -5,9 +5,8 @@ import java.util.Random;
 
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-
 import psyche.breakbackmonkey.Game;
-import psyche.breakbackmonkey.GameStateManager;
+import psyche.breakbackmonkey.managers.GameStateManager;
 import psyche.breakbackmonkey.gameobjects.GameObject;
 import psyche.breakbackmonkey.gameobjects.inanimate.Door;
 import psyche.breakbackmonkey.gameobjects.inanimate.Pack;

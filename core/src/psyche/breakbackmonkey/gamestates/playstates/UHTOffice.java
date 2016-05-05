@@ -5,7 +5,7 @@ import java.util.Random;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 import psyche.breakbackmonkey.Game;
-import psyche.breakbackmonkey.GameStateManager;
+import psyche.breakbackmonkey.managers.GameStateManager;
 import psyche.breakbackmonkey.utils.Physics;
 import psyche.breakbackmonkey.gameobjects.GameObject;
 import psyche.breakbackmonkey.gameobjects.entities.TeamLeader;

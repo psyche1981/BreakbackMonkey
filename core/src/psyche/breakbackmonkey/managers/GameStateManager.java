@@ -1,9 +1,10 @@
-package psyche.breakbackmonkey;
+package psyche.breakbackmonkey.managers;
 
 import java.util.Stack;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
+import psyche.breakbackmonkey.Game;
 import psyche.breakbackmonkey.gamestates.playstates.BBackRoom;
 import psyche.breakbackmonkey.gamestates.GameState;
 import psyche.breakbackmonkey.gamestates.PauseState;

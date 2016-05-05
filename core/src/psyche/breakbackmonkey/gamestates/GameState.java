@@ -1,12 +1,11 @@
 package psyche.breakbackmonkey.gamestates;
+
 import java.util.ArrayList;
 import java.util.Random;
-
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-
 import psyche.breakbackmonkey.Game;
-import psyche.breakbackmonkey.GameStateManager;
+import psyche.breakbackmonkey.managers.GameStateManager;
 import psyche.breakbackmonkey.utils.Camera;
 import psyche.breakbackmonkey.utils.Vars;
 import psyche.breakbackmonkey.gameobjects.GameObject;

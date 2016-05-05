@@ -1,6 +1,6 @@
 package psyche.breakbackmonkey.gamestates;
 
-import psyche.breakbackmonkey.GameStateManager;
+import psyche.breakbackmonkey.managers.GameStateManager;
 import psyche.breakbackmonkey.gamestates.playstates.FactoryFloor;
 import psyche.breakbackmonkey.input.GameKeys;
 

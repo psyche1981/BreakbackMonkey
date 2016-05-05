@@ -29,7 +29,7 @@ public class Game extends ApplicationAdapter
 		Camera.load();
 		
 		Gdx.input.setInputProcessor(new GameInputProcessor());		
-		gsm = new GameStateManager(this);
+		gsm = new GameStateManager();
 		player = new Player(gsm.getCurrentState());
 	}
 

@@ -15,7 +15,6 @@ import psyche.breakbackmonkey.input.GameKeys;
 public abstract class GameState 
 {	
 	protected GameStateManager gsm;
-	protected Game game;
 	protected OrthographicCamera camera;
 	protected ArrayList<GameObject> objects;
 	protected ArrayList<Pack> packs;
@@ -24,7 +23,6 @@ public abstract class GameState
 	public GameState(GameStateManager gsm)
 	{
 		this.gsm = gsm;
-		game = gsm.getGame();
 		camera = Camera.viewport;
 		objects = new ArrayList<GameObject>();
 		packs = new ArrayList<Pack>();

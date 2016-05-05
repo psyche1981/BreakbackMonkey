@@ -33,12 +33,10 @@ public class GameStateManager
 	private PlayStateManager psm;
 	
 	private Vars.State state;
-	private Game game;
 	private Stack<GameState> current_state;
 	
-	public GameStateManager(Game game)
+	public GameStateManager()
 	{
-		this.game = game;
 		psm = new PlayStateManager(this);
 		current_state = new Stack<GameState>();
 		state = Vars.State.MENU;
@@ -99,7 +97,6 @@ public class GameStateManager
 		
 		return null;
 	}
-	
-	public Game getGame() { return game; }
+		
 	public GameState getCurrentState() {return current_state.peek();}
 }

@@ -8,12 +8,10 @@ import psyche.breakbackmonkey.utils.Vars;
 
 public abstract class StateManager 
 {
-	private Game game;
 	private Stack<State> current_state;
 	
-	public StateManager(Game game)
+	public StateManager()
 	{
-		this.game = game;
 		current_state = new Stack<State>();
 	}
 	
@@ -41,9 +39,8 @@ public abstract class StateManager
 	public void exitState()
 	{
 		pop();
-	}
+	}	
 	
-	public Game getGame() { return game; }
 	public State getCurrentState() {return current_state.peek();}
 	
 	private void push(Vars.State state)

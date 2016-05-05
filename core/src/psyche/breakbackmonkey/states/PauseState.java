@@ -1,4 +1,4 @@
-package psyche.breakbackmonkey.gamestates;
+package psyche.breakbackmonkey.states;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 

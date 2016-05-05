@@ -1,4 +1,4 @@
-package psyche.breakbackmonkey.gamestates.playstates;
+package psyche.breakbackmonkey.states.playstates;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -10,8 +10,8 @@ import psyche.breakbackmonkey.managers.GameStateManager;
 import psyche.breakbackmonkey.gameobjects.GameObject;
 import psyche.breakbackmonkey.gameobjects.inanimate.Door;
 import psyche.breakbackmonkey.gameobjects.inanimate.Pack;
-import psyche.breakbackmonkey.gamestates.GameState;
-import psyche.breakbackmonkey.gamestates.PlayState;
+import psyche.breakbackmonkey.states.GameState;
+import psyche.breakbackmonkey.states.PlayState;
 import psyche.breakbackmonkey.input.GameKeys;
 import psyche.breakbackmonkey.utils.Fonts;
 import psyche.breakbackmonkey.utils.Physics;

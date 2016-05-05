@@ -9,7 +9,7 @@ import com.badlogic.gdx.math.Rectangle;
 
 import psyche.breakbackmonkey.GameFlags;
 import psyche.breakbackmonkey.utils.Res;
-import psyche.breakbackmonkey.gamestates.GameState;
+import psyche.breakbackmonkey.states.GameState;
 
 //import com.badlogic.gdx.graphics.g2d.SpriteBatch;//will pass sb in render but initially will use a shaperenderer in each objcet class
 

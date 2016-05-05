@@ -1,7 +1,7 @@
-package psyche.breakbackmonkey.gamestates;
+package psyche.breakbackmonkey.states;
 
 import psyche.breakbackmonkey.managers.GameStateManager;
-import psyche.breakbackmonkey.gamestates.playstates.FactoryFloor;
+import psyche.breakbackmonkey.states.playstates.FactoryFloor;
 import psyche.breakbackmonkey.input.GameKeys;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;

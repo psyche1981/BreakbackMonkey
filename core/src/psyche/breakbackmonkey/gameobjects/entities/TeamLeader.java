@@ -4,7 +4,7 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 import psyche.breakbackmonkey.gameobjects.GameObject;
-import psyche.breakbackmonkey.gamestates.GameState;
+import psyche.breakbackmonkey.states.GameState;
 import psyche.breakbackmonkey.utils.Res;
 
 public class TeamLeader extends GameObject

@@ -1,4 +1,4 @@
-package psyche.breakbackmonkey.gamestates;
+package psyche.breakbackmonkey.states;
 
 import java.util.ArrayList;
 import java.util.Random;

@@ -6,7 +6,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 import psyche.breakbackmonkey.GameFlags;
 import psyche.breakbackmonkey.gameobjects.GameObject;
-import psyche.breakbackmonkey.gamestates.GameState;
+import psyche.breakbackmonkey.states.GameState;
 import psyche.breakbackmonkey.utils.Res;
 
 public class Pack extends GameObject

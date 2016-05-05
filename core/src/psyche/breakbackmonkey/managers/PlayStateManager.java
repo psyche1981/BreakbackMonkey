@@ -5,7 +5,7 @@ import java.util.Stack;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 import psyche.breakbackmonkey.managers.GameStateManager;
-import psyche.breakbackmonkey.gamestates.PlayState;
+import psyche.breakbackmonkey.states.PlayState;
 import psyche.breakbackmonkey.utils.Vars;
 
 public class PlayStateManager 

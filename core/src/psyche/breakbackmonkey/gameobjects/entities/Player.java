@@ -4,7 +4,7 @@ import psyche.breakbackmonkey.Inventory;
 import psyche.breakbackmonkey.Stats;
 import psyche.breakbackmonkey.gameobjects.GameObject;
 import psyche.breakbackmonkey.gameobjects.inanimate.HUD;
-import psyche.breakbackmonkey.gamestates.GameState;
+import psyche.breakbackmonkey.states.GameState;
 import psyche.breakbackmonkey.input.GameKeys;
 import psyche.breakbackmonkey.utils.Res;
 import psyche.breakbackmonkey.utils.Vars;

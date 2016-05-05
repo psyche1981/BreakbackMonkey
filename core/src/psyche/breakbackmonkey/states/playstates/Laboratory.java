@@ -1,9 +1,9 @@
-package psyche.breakbackmonkey.gamestates.playstates;
+package psyche.breakbackmonkey.states.playstates;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 import psyche.breakbackmonkey.managers.GameStateManager;
-import psyche.breakbackmonkey.gamestates.GameState;
+import psyche.breakbackmonkey.states.GameState;
 import psyche.breakbackmonkey.input.GameKeys;
 import psyche.breakbackmonkey.utils.Fonts;
 

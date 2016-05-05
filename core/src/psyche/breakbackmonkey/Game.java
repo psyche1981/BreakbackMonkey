@@ -14,11 +14,11 @@ import com.badlogic.gdx.graphics.GL20;
 
 public class Game extends ApplicationAdapter 
 {
-	
-	private float accumulated_time = 0;
-		
 	public static Player player;
+	
 	private GameStateManager gsm;
+	
+	private float accumulated_time = 0;	
 	
 	@Override
 	public void create () 

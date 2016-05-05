@@ -2,7 +2,6 @@ package psyche.breakbackmonkey.gamestates;
 
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-
 import psyche.breakbackmonkey.Game;
 import psyche.breakbackmonkey.GameStateManager;
 import psyche.breakbackmonkey.utils.Physics;

@@ -10,6 +10,7 @@ import psyche.breakbackmonkey.gameobjects.GameObject;
 import psyche.breakbackmonkey.gameobjects.inanimate.Door;
 import psyche.breakbackmonkey.gameobjects.inanimate.Pack;
 import psyche.breakbackmonkey.utils.Fonts;
+import psyche.breakbackmonkey.utils.Sound;
 import psyche.breakbackmonkey.utils.Vars;
 
 public class Play extends GameState
@@ -67,6 +68,7 @@ public class Play extends GameState
 		{
 			if(Physics.collided(Game.player, p) != null)
 			{
+				Sound.play("fart");
 				Game.player.getStats().setPacks(1);
 				packs_to_remove.add(p);
 			}

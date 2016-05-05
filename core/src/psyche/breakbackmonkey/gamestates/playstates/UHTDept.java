@@ -1,4 +1,5 @@
-package psyche.breakbackmonkey.gamestates;
+package psyche.breakbackmonkey.gamestates.playstates;
+
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 import psyche.breakbackmonkey.Game;
@@ -6,16 +7,16 @@ import psyche.breakbackmonkey.GameStateManager;
 import psyche.breakbackmonkey.utils.Physics;
 import psyche.breakbackmonkey.gameobjects.GameObject;
 import psyche.breakbackmonkey.gameobjects.inanimate.Door;
-import psyche.breakbackmonkey.input.GameKeys;
+import psyche.breakbackmonkey.gamestates.GameState;
 import psyche.breakbackmonkey.utils.Fonts;
 import psyche.breakbackmonkey.utils.Vars;
 
-public class ProcessOffice extends GameState
+
+public class UHTDept extends GameState
 {
-	private Door exit_door; 
+	private Door uht_office_door, exit_door;
 	
-	
-	public ProcessOffice(GameStateManager gsm)
+	public UHTDept(GameStateManager gsm)
 	{
 		super(gsm);
 	}
@@ -24,16 +25,16 @@ public class ProcessOffice extends GameState
 	public void render(SpriteBatch sb) 
 	{
 		sb.setProjectionMatrix(camera.combined);
+		
 		sb.begin();
-		Fonts.timeless_16.draw(sb, "Process Office", 0, 480);
+		Fonts.timeless_16.draw(sb, "UHT Department", 0, 480);
 		sb.end();
+		
 		
 		for(GameObject go : objects)
 		{
 			go.render(sb);
 		}
-		
-		
 	}
 
 	@Override
@@ -47,23 +48,23 @@ public class ProcessOffice extends GameState
 			
 			if(Physics.collided(Game.player, go) == exit_door)
 				gsm.setState(GameStateManager.PLAY);
-			
+			if(Physics.collided(Game.player,  go) == uht_office_door)
+				gsm.setState(GameStateManager.UHT_OFFICE);
 		}
+		
+		
 	}
 
 	@Override
 	public void handleInput() 
-	{	
+	{
 		playerDirections();
-		if(GameKeys.isPressed(GameKeys.ESCAPE))
-			gsm.setState(GameStateManager.PLAY);
-		
 		
 	}
 
 	@Override
 	public void dispose() 
-	{	
+	{
 		for(GameObject go : objects)
 		{
 			go.dispose();
@@ -73,16 +74,14 @@ public class ProcessOffice extends GameState
 	@Override
 	public void init() 
 	{
-		Game.player.init(this, Vars.WIDTH / 2 - Vars.PLAYER_SIZE / 2, Door.DOOR_SHORT_SIDE +  (2 * Vars.PLAYER_SIZE));
+		Game.player.init(this, Vars.WIDTH - Vars.PLAYER_SIZE * 5, 100);
 		objects.add(Game.player);
+		exit_door = new Door(this, 20, Vars.HUD_HEIGHT, true, false);
+		objects.add(exit_door);
+		uht_office_door = new Door(this, 0, Vars.HEIGHT / 2 - Door.DOOR_LONG_SIDE / 2, false, false );
+		objects.add(uht_office_door);
 		
-		doors();
-	}
-	
-	private void doors()
-	{
-		exit_door = new Door(this, 30, Vars.HUD_HEIGHT, true);
-		objects.add(exit_door);		
+		
 		
 	}
 }

@@ -1,8 +1,9 @@
-package psyche.breakbackmonkey.gamestates;
+package psyche.breakbackmonkey.gamestates.playstates;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 import psyche.breakbackmonkey.GameStateManager;
+import psyche.breakbackmonkey.gamestates.GameState;
 
 public class MiniGames extends GameState
 {

@@ -4,15 +4,15 @@ import java.util.Stack;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
-import psyche.breakbackmonkey.gamestates.BBackRoom;
+import psyche.breakbackmonkey.gamestates.playstates.BBackRoom;
 import psyche.breakbackmonkey.gamestates.GameState;
-import psyche.breakbackmonkey.gamestates.Laboratory;
+import psyche.breakbackmonkey.gamestates.playstates.Laboratory;
 import psyche.breakbackmonkey.gamestates.MenuState;
-import psyche.breakbackmonkey.gamestates.MiniGames;
+import psyche.breakbackmonkey.gamestates.playstates.MiniGames;
 import psyche.breakbackmonkey.gamestates.PlayState;
-import psyche.breakbackmonkey.gamestates.ProcessOffice;
-import psyche.breakbackmonkey.gamestates.UHTDept;
-import psyche.breakbackmonkey.gamestates.UHTOffice;
+import psyche.breakbackmonkey.gamestates.playstates.ProcessOffice;
+import psyche.breakbackmonkey.gamestates.playstates.UHTDept;
+import psyche.breakbackmonkey.gamestates.playstates.UHTOffice;
 
 public class GameStateManager 
 {

@@ -1,4 +1,4 @@
-package psyche.breakbackmonkey.gamestates;
+package psyche.breakbackmonkey.gamestates.playstates;
 //TODO add a balance tank
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -9,6 +9,7 @@ import psyche.breakbackmonkey.utils.Physics;
 import psyche.breakbackmonkey.gameobjects.GameObject;
 import psyche.breakbackmonkey.gameobjects.inanimate.Door;
 import psyche.breakbackmonkey.gameobjects.inanimate.Pack;
+import psyche.breakbackmonkey.gamestates.GameState;
 import psyche.breakbackmonkey.input.GameKeys;
 import psyche.breakbackmonkey.utils.Vars;
 

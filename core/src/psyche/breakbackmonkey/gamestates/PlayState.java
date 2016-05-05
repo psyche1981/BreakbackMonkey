@@ -90,7 +90,7 @@ public class PlayState extends GameState
 		
 		if(GameKeys.isPressed(GameKeys.P))
 		{
-			gsm.enterPauseState();
+			gsm.enterState(GameStateManager.PAUSE);
 		}
 	}
 

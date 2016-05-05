@@ -44,12 +44,12 @@ public class GameStateManager
 		push(MENU);
 	}
 	
-	public void enterPauseState()
+	public void enterState(int state)
 	{
-		push(PAUSE);
+		push(state);
 	}
 	
-	public void exitPauseState()
+	public void exitState()
 	{
 		pop();
 	}

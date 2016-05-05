@@ -29,7 +29,7 @@ public class PlayStateManager
 		current_state.peek().update(dt);
 	}	
 	
-	public void setState(Vars.PlayStates state)
+	public void setState(Vars.State state)
 	{
 		pop();
 		push(state);
@@ -41,12 +41,12 @@ public class PlayStateManager
 		s.dispose();
 	}
 	
-	private void push(Vars.PlayStates state)
+	private void push(Vars.State state)
 	{
 		current_state.push(getState(state));
 	}
 	
-	private PlayState getState(Vars.PlayStates state)
+	private PlayState getState(Vars.State state)
 	{
 		switch(state)
 		{

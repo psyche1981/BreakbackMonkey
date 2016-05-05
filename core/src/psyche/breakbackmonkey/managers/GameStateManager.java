@@ -1,9 +1,7 @@
 package psyche.breakbackmonkey.managers;
 
 import java.util.Stack;
-
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-
 import psyche.breakbackmonkey.Game;
 import psyche.breakbackmonkey.states.playstates.BBackRoom;
 import psyche.breakbackmonkey.states.GameState;
@@ -34,7 +32,7 @@ public class GameStateManager
 	
 	private PlayStateManager psm;
 	
-	private Vars.GameStates state;
+	private Vars.State state;
 	private Game game;
 	private Stack<GameState> current_state;
 	
@@ -43,7 +41,7 @@ public class GameStateManager
 		this.game = game;
 		psm = new PlayStateManager(this);
 		current_state = new Stack<GameState>();
-		state = Vars.GameStates.MENU;
+		state = Vars.State.MENU;
 		push(MENU);
 	}
 	

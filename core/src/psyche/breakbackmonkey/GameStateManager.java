@@ -40,7 +40,7 @@ public class GameStateManager
 	public GameStateManager(Game game)
 	{
 		this.game = game;
-		psm = new PlayStateManager();
+		psm = new PlayStateManager(this);
 		current_state = new Stack<GameState>();
 		state = Vars.GameStates.MENU;
 		push(MENU);
@@ -88,6 +88,9 @@ public class GameStateManager
 		if(state == PLAY) return new PlayState(this);
 		if(state == MENU) return new MenuState(this);
 		if(state == PAUSE) return new PauseState(this);
+		
+		
+		
 		if(state == UHT_OFFICE) return new UHTOffice(this);
 		if(state == PROCESS_OFFICE) return new ProcessOffice(this);
 		if(state == UHT_DEPT) return new UHTDept(this);

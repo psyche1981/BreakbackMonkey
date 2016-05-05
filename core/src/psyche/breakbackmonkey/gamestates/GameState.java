@@ -33,6 +33,11 @@ public abstract class GameState
 		init();
 	}
 	
+	//temp getters
+	public ArrayList<Pack> getPackList(){return packs;}
+	public ArrayList<Pack> getPackRemoveList(){return packs_to_remove;}
+	public ArrayList<GameObject> getObjectList(){return objects;}
+	
 	public abstract void render(SpriteBatch sb);
 	public abstract void update(float dt);
 	public abstract void handleInput();	

@@ -27,7 +27,12 @@ public class Vars
 	//playstate enum
 	public static enum PlayStates
 	{
-		
+		FACTORY_FLOOR,
+		UHT_OFFICE,
+		BREAK_BACK_ROOM,
+		LAB,
+		PROCESS_OFFICE,
+		MINI_GAMES
 	}
 	
 	

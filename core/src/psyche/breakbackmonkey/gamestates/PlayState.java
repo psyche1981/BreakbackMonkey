@@ -12,11 +12,11 @@ import psyche.breakbackmonkey.utils.Fonts;
 import psyche.breakbackmonkey.utils.Sound;
 import psyche.breakbackmonkey.utils.Vars;
 
-public class Play extends GameState
+public class PlayState extends GameState
 {
 	private Door uht_door, process_door, break_back_door, lab_door;
 	
-	public Play(GameStateManager gsm)
+	public PlayState(GameStateManager gsm)
 	{
 		super(gsm);
 	}

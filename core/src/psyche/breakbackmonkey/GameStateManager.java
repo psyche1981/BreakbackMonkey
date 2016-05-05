@@ -7,9 +7,9 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import psyche.breakbackmonkey.gamestates.BBackRoom;
 import psyche.breakbackmonkey.gamestates.GameState;
 import psyche.breakbackmonkey.gamestates.Laboratory;
-import psyche.breakbackmonkey.gamestates.Menu;
+import psyche.breakbackmonkey.gamestates.MenuState;
 import psyche.breakbackmonkey.gamestates.MiniGames;
-import psyche.breakbackmonkey.gamestates.Play;
+import psyche.breakbackmonkey.gamestates.PlayState;
 import psyche.breakbackmonkey.gamestates.ProcessOffice;
 import psyche.breakbackmonkey.gamestates.UHTDept;
 import psyche.breakbackmonkey.gamestates.UHTOffice;
@@ -68,8 +68,8 @@ public class GameStateManager
 	
 	private GameState getState(int state)
 	{
-		if(state == PLAY) return new Play(this);
-		if(state == MENU) return new Menu(this);
+		if(state == PLAY) return new PlayState(this);
+		if(state == MENU) return new MenuState(this);
 		if(state == UHT_OFFICE) return new UHTOffice(this);
 		if(state == PROCESS_OFFICE) return new ProcessOffice(this);
 		if(state == UHT_DEPT) return new UHTDept(this);

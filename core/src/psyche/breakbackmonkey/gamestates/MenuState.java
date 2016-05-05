@@ -7,9 +7,9 @@ import psyche.breakbackmonkey.input.GameKeys;
 import psyche.breakbackmonkey.utils.Fonts;
 import psyche.breakbackmonkey.utils.Vars;
 
-public class Menu extends GameState
+public class MenuState extends GameState
 {
-	public Menu(GameStateManager gsm)
+	public MenuState(GameStateManager gsm)
 	{
 		super(gsm);
 	}

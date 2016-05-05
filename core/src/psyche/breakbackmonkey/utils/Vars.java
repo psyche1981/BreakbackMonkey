@@ -14,4 +14,21 @@ public class Vars
 	
 	//HUD Variables
 	public static final int HUD_HEIGHT = 75;
+	
+	
+	//GameState Enum
+	public static enum GameStates
+	{
+		MENU,
+		PLAY,
+		PAUSE
+	}
+	
+	//playstate enum
+	public static enum PlayStates
+	{
+		
+	}
+	
+	
 }

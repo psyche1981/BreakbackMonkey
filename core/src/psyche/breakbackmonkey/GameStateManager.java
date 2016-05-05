@@ -1,11 +1,14 @@
 package psyche.breakbackmonkey;
 
+//FIXME need to push the playstate down the stack when entering pause menu
+
 import java.util.Stack;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 import psyche.breakbackmonkey.gamestates.playstates.BBackRoom;
 import psyche.breakbackmonkey.gamestates.GameState;
+import psyche.breakbackmonkey.gamestates.PauseState;
 import psyche.breakbackmonkey.gamestates.playstates.Laboratory;
 import psyche.breakbackmonkey.gamestates.MenuState;
 import psyche.breakbackmonkey.gamestates.playstates.MiniGames;
@@ -13,11 +16,15 @@ import psyche.breakbackmonkey.gamestates.PlayState;
 import psyche.breakbackmonkey.gamestates.playstates.ProcessOffice;
 import psyche.breakbackmonkey.gamestates.playstates.UHTDept;
 import psyche.breakbackmonkey.gamestates.playstates.UHTOffice;
+import psyche.breakbackmonkey.utils.Vars;
 
 public class GameStateManager 
 {
 	public static final int PLAY = 0;
 	public static final int MENU = 1;
+	public static final int PAUSE = 8;
+	
+	
 	public static final int UHT_OFFICE = 2;
 	public static final int PROCESS_OFFICE = 3;
 	public static final int UHT_DEPT = 4;
@@ -25,18 +32,26 @@ public class GameStateManager
 	public static final int LAB = 6;
 	public static final int MINI_GAMES = 7;
 	
-	
-	private SaveData save_data;
-	
+	private Vars.GameStates state;
 	private Game game;
 	private Stack<GameState> current_state;
 	
 	public GameStateManager(Game game)
 	{
 		this.game = game;
-		save_data = new SaveData();
 		current_state = new Stack<GameState>();
+		state = Vars.GameStates.MENU;
 		push(MENU);
+	}
+	
+	public void enterPauseState()
+	{
+		push(PAUSE);
+	}
+	
+	public void exitPauseState()
+	{
+		pop();
 	}
 	
 	public void setState(int state)
@@ -70,6 +85,7 @@ public class GameStateManager
 	{
 		if(state == PLAY) return new PlayState(this);
 		if(state == MENU) return new MenuState(this);
+		if(state == PAUSE) return new PauseState(this);
 		if(state == UHT_OFFICE) return new UHTOffice(this);
 		if(state == PROCESS_OFFICE) return new ProcessOffice(this);
 		if(state == UHT_DEPT) return new UHTDept(this);
@@ -81,7 +97,5 @@ public class GameStateManager
 	}
 	
 	public Game getGame() { return game; }
-	public void setSaveData(SaveData sd) { save_data = sd; }
-	public SaveData getSaveData() { return save_data; }
 	public GameState getCurrentState() {return current_state.peek();}
 }

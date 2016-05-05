@@ -20,8 +20,8 @@ public class GameInputProcessor extends InputAdapter
 			GameKeys.setKey(GameKeys.ENTER, true);
 		if(k == Keys.SPACE)
 			GameKeys.setKey(GameKeys.SPACE, true);
-		if(k == Keys.ESCAPE)
-			GameKeys.setKey(GameKeys.ESCAPE, true);
+		if(k == Keys.P)
+			GameKeys.setKey(GameKeys.P, true);
 		if(k == Keys.Y)
 			GameKeys.setKey(GameKeys.Y, true);
 		if(k == Keys.N)
@@ -44,8 +44,8 @@ public class GameInputProcessor extends InputAdapter
 			GameKeys.setKey(GameKeys.ENTER, false);
 		if(k == Keys.SPACE)
 			GameKeys.setKey(GameKeys.SPACE, false);
-		if(k == Keys.ESCAPE)
-			GameKeys.setKey(GameKeys.ESCAPE, false);
+		if(k == Keys.P)
+			GameKeys.setKey(GameKeys.P, false);
 		if(k == Keys.Y)
 			GameKeys.setKey(GameKeys.Y, false);
 		if(k == Keys.N)

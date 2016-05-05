@@ -9,9 +9,9 @@ public class GameKeys
 	public static final int D = 3;
 	public static final int SPACE = 4;
 	public static final int ENTER = 5;
-	public static final int ESCAPE = 5;
 	public static final int Y = 6;
 	public static final int N = 7;
+	public static final int P = 8;
 	
 	public static boolean[] current_keys;
 	public static boolean[] previous_keys;

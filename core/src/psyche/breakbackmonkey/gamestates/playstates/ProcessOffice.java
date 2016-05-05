@@ -56,7 +56,7 @@ public class ProcessOffice extends GameState
 	public void handleInput() 
 	{	
 		playerDirections();
-		if(GameKeys.isPressed(GameKeys.ESCAPE))
+		if(GameKeys.isPressed(GameKeys.ENTER))
 			gsm.setState(GameStateManager.PLAY);
 		
 		

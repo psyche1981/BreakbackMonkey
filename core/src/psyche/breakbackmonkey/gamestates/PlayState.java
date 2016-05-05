@@ -1,13 +1,14 @@
 package psyche.breakbackmonkey.gamestates;
 
-
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+
 import psyche.breakbackmonkey.Game;
 import psyche.breakbackmonkey.GameStateManager;
 import psyche.breakbackmonkey.utils.Physics;
 import psyche.breakbackmonkey.gameobjects.GameObject;
 import psyche.breakbackmonkey.gameobjects.inanimate.Door;
 import psyche.breakbackmonkey.gameobjects.inanimate.Pack;
+import psyche.breakbackmonkey.input.GameKeys;
 import psyche.breakbackmonkey.utils.Fonts;
 import psyche.breakbackmonkey.utils.Sound;
 import psyche.breakbackmonkey.utils.Vars;
@@ -86,6 +87,11 @@ public class PlayState extends GameState
 	public void handleInput()
 	{
 		playerDirections();
+		
+		if(GameKeys.isPressed(GameKeys.P))
+		{
+			gsm.enterPauseState();
+		}
 	}
 
 	@Override

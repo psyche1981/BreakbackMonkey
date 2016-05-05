@@ -14,6 +14,7 @@ import psyche.breakbackmonkey.gamestates.PlayState;
 import psyche.breakbackmonkey.gamestates.playstates.ProcessOffice;
 import psyche.breakbackmonkey.gamestates.playstates.UHTDept;
 import psyche.breakbackmonkey.gamestates.playstates.UHTOffice;
+import psyche.breakbackmonkey.managers.PlayStateManager;
 import psyche.breakbackmonkey.utils.Vars;
 
 public class GameStateManager 
@@ -30,6 +31,8 @@ public class GameStateManager
 	public static final int LAB = 6;
 	public static final int MINI_GAMES = 7;
 	
+	private PlayStateManager psm;
+	
 	private Vars.GameStates state;
 	private Game game;
 	private Stack<GameState> current_state;
@@ -37,6 +40,7 @@ public class GameStateManager
 	public GameStateManager(Game game)
 	{
 		this.game = game;
+		psm = new PlayStateManager();
 		current_state = new Stack<GameState>();
 		state = Vars.GameStates.MENU;
 		push(MENU);

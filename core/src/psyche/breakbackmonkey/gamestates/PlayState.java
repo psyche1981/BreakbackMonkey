@@ -15,16 +15,12 @@ import psyche.breakbackmonkey.utils.Sound;
 import psyche.breakbackmonkey.utils.Vars;
 
 public class PlayState extends GameState
-{
-	private FactoryFloor play;
-	
-	
+{	
 	private Door uht_door, process_door, break_back_door, lab_door;
 	
 	public PlayState(GameStateManager gsm)
 	{
 		super(gsm);
-		play = new FactoryFloor(gsm);
 	}
 
 	@Override

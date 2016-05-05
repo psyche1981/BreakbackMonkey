@@ -1,4 +1,4 @@
-package psyche.breakbackmonkey;
+package psyche.breakbackmonkey.utils;
 
 import psyche.breakbackmonkey.gameobjects.GameObject;
 

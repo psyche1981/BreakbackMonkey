@@ -6,7 +6,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 import psyche.breakbackmonkey.Game;
 import psyche.breakbackmonkey.GameStateManager;
-import psyche.breakbackmonkey.Physics;
+import psyche.breakbackmonkey.utils.Physics;
 import psyche.breakbackmonkey.gameobjects.GameObject;
 import psyche.breakbackmonkey.gameobjects.entities.TeamLeader;
 import psyche.breakbackmonkey.gameobjects.inanimate.Door;

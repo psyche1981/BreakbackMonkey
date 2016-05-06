@@ -9,11 +9,11 @@ import psyche.breakbackmonkey.utils.Physics;
 import psyche.breakbackmonkey.gameobjects.GameObject;
 import psyche.breakbackmonkey.gameobjects.inanimate.Door;
 import psyche.breakbackmonkey.gameobjects.inanimate.Pack;
-import psyche.breakbackmonkey.states.GameState;
+import psyche.breakbackmonkey.states.mainstates.MainState;
 import psyche.breakbackmonkey.input.GameKeys;
 import psyche.breakbackmonkey.utils.Vars;
 
-public class BBackRoom extends GameState
+public class BBackRoom extends MainState
 {
 	private Door exit_door;
 	

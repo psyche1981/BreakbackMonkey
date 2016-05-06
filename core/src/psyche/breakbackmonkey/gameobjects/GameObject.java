@@ -9,7 +9,7 @@ import com.badlogic.gdx.math.Rectangle;
 
 import psyche.breakbackmonkey.GameFlags;
 import psyche.breakbackmonkey.utils.Res;
-import psyche.breakbackmonkey.states.GameState;
+import psyche.breakbackmonkey.states.mainstates.MainState;
 
 //import com.badlogic.gdx.graphics.g2d.SpriteBatch;//will pass sb in render but initially will use a shaperenderer in each objcet class
 
@@ -17,14 +17,14 @@ public abstract class GameObject
 {	
 	protected float x;
 	protected float y;
-	protected GameState state;
+	protected MainState state;
 	protected OrthographicCamera camera;
 	protected ShapeRenderer sr;
 	protected Color colour;
 	protected Rectangle rect;
 	protected boolean[] flags;
 	
-	public GameObject(GameState state, float x, float y)
+	public GameObject(MainState state, float x, float y)
 	{
 		this.x = x;
 		this.y = y;

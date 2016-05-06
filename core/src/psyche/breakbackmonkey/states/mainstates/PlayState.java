@@ -1,4 +1,4 @@
-package psyche.breakbackmonkey.states;
+package psyche.breakbackmonkey.states.mainstates;
 
 import psyche.breakbackmonkey.managers.GameStateManager;
 import psyche.breakbackmonkey.states.playstates.FactoryFloor;
@@ -6,7 +6,7 @@ import psyche.breakbackmonkey.input.GameKeys;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
-public class PlayState extends GameState
+public class PlayState extends MainState
 {	
 	private FactoryFloor ffloor;
 	

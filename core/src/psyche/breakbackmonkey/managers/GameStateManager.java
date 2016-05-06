@@ -1,15 +1,17 @@
 package psyche.breakbackmonkey.managers;
 
 import java.util.Stack;
+
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+
 import psyche.breakbackmonkey.Game;
+import psyche.breakbackmonkey.states.mainstates.MainState;
+import psyche.breakbackmonkey.states.mainstates.MenuState;
+import psyche.breakbackmonkey.states.mainstates.PauseState;
+import psyche.breakbackmonkey.states.mainstates.PlayState;
 import psyche.breakbackmonkey.states.playstates.BBackRoom;
-import psyche.breakbackmonkey.states.GameState;
-import psyche.breakbackmonkey.states.PauseState;
 import psyche.breakbackmonkey.states.playstates.Laboratory;
-import psyche.breakbackmonkey.states.MenuState;
 import psyche.breakbackmonkey.states.playstates.MiniGames;
-import psyche.breakbackmonkey.states.PlayState;
 import psyche.breakbackmonkey.states.playstates.ProcessOffice;
 import psyche.breakbackmonkey.states.playstates.UHTDept;
 import psyche.breakbackmonkey.states.playstates.UHTOffice;
@@ -30,15 +32,13 @@ public class GameStateManager
 	public static final int LAB = 6;
 	public static final int MINI_GAMES = 7;
 	
-	private PlayStateManager psm;
 	
 	private Vars.State state;
-	private Stack<GameState> current_state;
+	private Stack<MainState> current_state;
 	
 	public GameStateManager()
 	{
-		psm = new PlayStateManager(this);
-		current_state = new Stack<GameState>();
+		current_state = new Stack<MainState>();
 		state = Vars.State.MENU;
 		push(MENU);
 	}
@@ -76,11 +76,11 @@ public class GameStateManager
 	
 	private void pop()
 	{
-		GameState s = current_state.pop();
+		MainState s = current_state.pop();
 		s.dispose();
 	}
 	
-	private GameState getState(int state)
+	private MainState getState(int state)
 	{
 		if(state == PLAY) return new PlayState(this);
 		if(state == MENU) return new MenuState(this);
@@ -98,5 +98,5 @@ public class GameStateManager
 		return null;
 	}
 		
-	public GameState getCurrentState() {return current_state.peek();}
+	public MainState getCurrentState() {return current_state.peek();}
 }

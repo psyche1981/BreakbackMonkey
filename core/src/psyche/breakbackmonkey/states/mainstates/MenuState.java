@@ -1,4 +1,4 @@
-package psyche.breakbackmonkey.states;
+package psyche.breakbackmonkey.states.mainstates;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
@@ -7,7 +7,7 @@ import psyche.breakbackmonkey.input.GameKeys;
 import psyche.breakbackmonkey.utils.Fonts;
 import psyche.breakbackmonkey.utils.Vars;
 
-public class MenuState extends GameState
+public class MenuState extends MainState
 {
 	public MenuState(GameStateManager gsm)
 	{

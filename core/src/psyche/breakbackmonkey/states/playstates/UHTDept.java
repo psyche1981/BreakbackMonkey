@@ -7,12 +7,12 @@ import psyche.breakbackmonkey.managers.GameStateManager;
 import psyche.breakbackmonkey.utils.Physics;
 import psyche.breakbackmonkey.gameobjects.GameObject;
 import psyche.breakbackmonkey.gameobjects.inanimate.Door;
-import psyche.breakbackmonkey.states.GameState;
+import psyche.breakbackmonkey.states.mainstates.MainState;
 import psyche.breakbackmonkey.utils.Fonts;
 import psyche.breakbackmonkey.utils.Vars;
 
 
-public class UHTDept extends GameState
+public class UHTDept extends MainState
 {
 	private Door uht_office_door, exit_door;
 	

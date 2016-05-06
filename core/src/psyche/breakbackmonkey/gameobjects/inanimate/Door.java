@@ -7,7 +7,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 import psyche.breakbackmonkey.GameFlags;
 import psyche.breakbackmonkey.gameobjects.GameObject;
-import psyche.breakbackmonkey.states.GameState;
+import psyche.breakbackmonkey.states.mainstates.MainState;
 import psyche.breakbackmonkey.utils.Res;
 
 public class Door extends GameObject
@@ -15,7 +15,7 @@ public class Door extends GameObject
 	public static final int DOOR_SHORT_SIDE = 4;
 	public static final int DOOR_LONG_SIDE = 32;
 	
-	public Door(GameState state, float x, float y, boolean horizontal)
+	public Door(MainState state, float x, float y, boolean horizontal)
 	{
 		this(state, x, y, horizontal, false);
 	}
@@ -23,7 +23,7 @@ public class Door extends GameObject
 	
 
 	
-	public Door(GameState state, float x, float y, boolean horizontal, boolean locked)
+	public Door(MainState state, float x, float y, boolean horizontal, boolean locked)
 	{
 		super(state, x, y);
 		setLocked(locked);

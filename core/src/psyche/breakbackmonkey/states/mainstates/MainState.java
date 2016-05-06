@@ -1,4 +1,4 @@
-package psyche.breakbackmonkey.states;
+package psyche.breakbackmonkey.states.mainstates;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -12,7 +12,7 @@ import psyche.breakbackmonkey.gameobjects.GameObject;
 import psyche.breakbackmonkey.gameobjects.inanimate.Pack;
 import psyche.breakbackmonkey.input.GameKeys;
 
-public abstract class GameState 
+public abstract class MainState 
 {	
 	protected GameStateManager gsm;
 	protected OrthographicCamera camera;
@@ -20,7 +20,7 @@ public abstract class GameState
 	protected ArrayList<Pack> packs;
 	protected ArrayList<Pack> packs_to_remove;
 	
-	public GameState(GameStateManager gsm)
+	public MainState(GameStateManager gsm)
 	{
 		this.gsm = gsm;
 		camera = Camera.viewport;

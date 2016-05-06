@@ -1,4 +1,4 @@
-package psyche.breakbackmonkey.states;
+package psyche.breakbackmonkey.states.mainstates;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
@@ -8,7 +8,7 @@ import psyche.breakbackmonkey.utils.Camera;
 import psyche.breakbackmonkey.utils.Fonts;
 import psyche.breakbackmonkey.utils.Vars;
 
-public class PauseState extends GameState
+public class PauseState extends MainState
 {
 	public PauseState(GameStateManager gsm)
 	{

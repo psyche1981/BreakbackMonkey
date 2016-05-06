@@ -10,12 +10,12 @@ import psyche.breakbackmonkey.utils.Physics;
 import psyche.breakbackmonkey.gameobjects.GameObject;
 import psyche.breakbackmonkey.gameobjects.entities.TeamLeader;
 import psyche.breakbackmonkey.gameobjects.inanimate.Door;
-import psyche.breakbackmonkey.states.GameState;
+import psyche.breakbackmonkey.states.mainstates.MainState;
 import psyche.breakbackmonkey.input.GameKeys;
 import psyche.breakbackmonkey.utils.Fonts;
 import psyche.breakbackmonkey.utils.Vars;
 
-public class UHTOffice extends GameState
+public class UHTOffice extends MainState
 {
 	public static final int GW_NUM = 3;
 	public static final int GW_Q = 0;

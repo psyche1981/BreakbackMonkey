@@ -6,14 +6,14 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 import psyche.breakbackmonkey.GameFlags;
 import psyche.breakbackmonkey.gameobjects.GameObject;
-import psyche.breakbackmonkey.states.GameState;
+import psyche.breakbackmonkey.states.mainstates.MainState;
 import psyche.breakbackmonkey.utils.Res;
 
 public class Pack extends GameObject
 {
 	public static final int SIZE = 4;
 	
-	public Pack(GameState state, float x, float y)
+	public Pack(MainState state, float x, float y)
 	{
 		super(state, x, y);
 				

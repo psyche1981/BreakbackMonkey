@@ -5,13 +5,14 @@ import java.util.Random;
 
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+
 import psyche.breakbackmonkey.Game;
 import psyche.breakbackmonkey.managers.GameStateManager;
 import psyche.breakbackmonkey.gameobjects.GameObject;
 import psyche.breakbackmonkey.gameobjects.inanimate.Door;
 import psyche.breakbackmonkey.gameobjects.inanimate.Pack;
-import psyche.breakbackmonkey.states.GameState;
-import psyche.breakbackmonkey.states.PlayState;
+import psyche.breakbackmonkey.states.mainstates.MainState;
+import psyche.breakbackmonkey.states.mainstates.PlayState;
 import psyche.breakbackmonkey.input.GameKeys;
 import psyche.breakbackmonkey.utils.Fonts;
 import psyche.breakbackmonkey.utils.Physics;
@@ -23,7 +24,7 @@ public class FactoryFloor
 	private Door uht_door, process_door, break_back_door, lab_door;
 	private GameStateManager gsm;
 	private Game game;
-	private GameState state;
+	private MainState state;
 	private OrthographicCamera camera;
 	private ArrayList<GameObject> objects;
 	private ArrayList<Pack> packs;

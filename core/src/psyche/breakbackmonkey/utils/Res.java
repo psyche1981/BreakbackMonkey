@@ -69,9 +69,9 @@ public class Res
 	{			
 		String[] filenames = 
 			{"red.png", "blue.png", "white.png", 
-				"green.png", "yellow.png", "hud_rect.png"};
+				"green.png", "yellow.png", "hud_rect.png", "blackboard.png"};
 		
-		String[] keys = {"red", "blue", "white", "green", "yellow", "hud"};
+		String[] keys = {"red", "blue", "white", "green", "yellow", "hud", "blackboard"};
 		
 		final int NUM_TEXTURES = filenames.length;
 		the_texture = new Texture[NUM_TEXTURES];

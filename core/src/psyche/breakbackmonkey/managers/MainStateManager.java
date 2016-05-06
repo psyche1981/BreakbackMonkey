@@ -4,6 +4,7 @@ import psyche.breakbackmonkey.states.State;
 import psyche.breakbackmonkey.states.mainstates.MenuState;
 import psyche.breakbackmonkey.states.mainstates.PauseState;
 import psyche.breakbackmonkey.states.mainstates.GameState;
+import psyche.breakbackmonkey.states.mainstates.TestState;
 import psyche.breakbackmonkey.utils.Vars;
 
 public class MainStateManager extends StateManager
@@ -27,6 +28,8 @@ public class MainStateManager extends StateManager
 			return new MenuState(this);
 		case PAUSE:
 			return new PauseState(this);
+		case TEST_STATE:
+			return new TestState(this);
 		default:
 			return new MenuState(this);
 		}

@@ -23,6 +23,7 @@ public class Vars
 		MENU,
 		PLAY,
 		PAUSE,
+		TEST_STATE,
 		
 		//play states
 		FACTORY,

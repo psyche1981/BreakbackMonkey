@@ -40,6 +40,11 @@ public class GameState extends MainState
 		{
 			sm.setState(Vars.State.MENU);
 		}
+		if(GameKeys.isPressed(GameKeys.T))
+		{
+			sm.setState(Vars.State.TEST_STATE);
+		}
+		
 		
 	}
 

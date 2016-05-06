@@ -28,6 +28,7 @@ public class UHTOffice extends PlayState
 	public UHTOffice(PlayStateManager psm)
 	{
 		super(psm);
+		init();
 	}
 
 	@Override

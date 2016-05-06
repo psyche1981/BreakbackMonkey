@@ -19,6 +19,7 @@ public class BBackRoom extends PlayState
 	public BBackRoom(PlayStateManager psm)
 	{
 		super(psm);
+		init();
 	}
 
 	@Override

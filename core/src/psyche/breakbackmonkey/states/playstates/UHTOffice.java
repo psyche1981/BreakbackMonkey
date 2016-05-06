@@ -2,12 +2,12 @@ package psyche.breakbackmonkey.states.playstates;
 
 import java.util.Random;
 
-import psyche.breakbackmonkey.Game;
 import psyche.breakbackmonkey.gameobjects.GameObject;
 import psyche.breakbackmonkey.gameobjects.entities.TeamLeader;
 import psyche.breakbackmonkey.gameobjects.inanimate.Door;
 import psyche.breakbackmonkey.input.GameKeys;
 import psyche.breakbackmonkey.managers.PlayStateManager;
+import psyche.breakbackmonkey.states.mainstates.GameState;
 import psyche.breakbackmonkey.utils.Fonts;
 import psyche.breakbackmonkey.utils.Physics;
 import psyche.breakbackmonkey.utils.Vars;
@@ -68,16 +68,16 @@ public class UHTOffice extends PlayState
 		for(GameObject go : objects)
 		{
 			go.update(dt);
-			if(Physics.collided(Game.player, go) == tl )
+			if(Physics.collided(GameState.player, go) == tl )
 			{
 				if(tl.getWho() == TeamLeader.GW)
 					gw_dialogue[GW_Q] = true;
 				
 				if(tl.getWho() == TeamLeader.DA)
-					Game.player.getInventory().setLabKey(true);
+					GameState.player.getInventory().setLabKey(true);
 			}
 			
-			if(Physics.collided(Game.player, go) == exit_door)
+			if(Physics.collided(GameState.player, go) == exit_door)
 				sm.setState(Vars.State.FACTORY);
 		}
 		
@@ -93,7 +93,7 @@ public class UHTOffice extends PlayState
 		{
 			gw_dialogue[GW_Q] = false;
 			gw_dialogue[GW_Y] = true;
-			Game.player.getStats().setEnergy(-10);
+			GameState.player.getStats().setEnergy(-10);
 		}
 		
 		if(gw_dialogue[GW_Q] && GameKeys.isPressed(GameKeys.N))
@@ -118,8 +118,8 @@ public class UHTOffice extends PlayState
 		Random rand = new Random();
 		float rand_spawn = rand.nextFloat();
 		gw_dialogue = new boolean[GW_NUM];
-		Game.player.init(this, Vars.WIDTH / 2 - Vars.PLAYER_SIZE / 2, Vars.HEIGHT / 2 - Vars.PLAYER_SIZE / 2);
-		objects.add(Game.player);
+		GameState.player.init(this, Vars.WIDTH / 2 - Vars.PLAYER_SIZE / 2, Vars.HEIGHT / 2 - Vars.PLAYER_SIZE / 2);
+		objects.add(GameState.player);
 		
 		if(rand_spawn > 0.5f)
 		{

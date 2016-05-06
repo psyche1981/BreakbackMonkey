@@ -1,10 +1,10 @@
 package psyche.breakbackmonkey.states.playstates;
 
-import psyche.breakbackmonkey.Game;
 import psyche.breakbackmonkey.gameobjects.GameObject;
 import psyche.breakbackmonkey.gameobjects.inanimate.Door;
 import psyche.breakbackmonkey.gameobjects.inanimate.Pack;
 import psyche.breakbackmonkey.managers.PlayStateManager;
+import psyche.breakbackmonkey.states.mainstates.GameState;
 import psyche.breakbackmonkey.utils.Fonts;
 import psyche.breakbackmonkey.utils.Physics;
 import psyche.breakbackmonkey.utils.Sound;
@@ -49,13 +49,13 @@ public class Factory extends PlayState
 		for(GameObject go : objects)
 		{	
 			go.update(dt);
-			if(Physics.collided(Game.player, go) == process_door)
+			if(Physics.collided(GameState.player, go) == process_door)
 				sm.setState(Vars.State.PROCESS_OFFICE);
-			if(Physics.collided(Game.player, go) == uht_door)
+			if(Physics.collided(GameState.player, go) == uht_door)
 				sm.setState(Vars.State.UHT_OFFICE);
-			if(Physics.collided(Game.player, go) == break_back_door)
+			if(Physics.collided(GameState.player, go) == break_back_door)
 				sm.setState(Vars.State.BREAK_BACK_ROOM);
-			if(Physics.collided(Game.player, go) == lab_door && !go.getLocked())
+			if(Physics.collided(GameState.player, go) == lab_door && !go.getLocked())
 				sm.setState(Vars.State.LAB);
 			
 			
@@ -64,10 +64,10 @@ public class Factory extends PlayState
 		//pack collision and updating
 		for(Pack p : packs)
 		{
-			if(Physics.collided(Game.player, p) != null)
+			if(Physics.collided(GameState.player, p) != null)
 			{
 				Sound.play("fart");
-				Game.player.getStats().setPacks(1);
+				GameState.player.getStats().setPacks(1);
 				packs_to_remove.add(p);
 			}
 		}
@@ -101,8 +101,8 @@ public class Factory extends PlayState
 	
 	public void init() 
 	{
-		Game.player.init(this, Vars.WIDTH / 2 - Vars.PLAYER_SIZE / 2, Vars.HEIGHT / 2 - Vars.PLAYER_SIZE / 2);
-		objects.add(Game.player);
+		GameState.player.init(this, Vars.WIDTH / 2 - Vars.PLAYER_SIZE / 2, Vars.HEIGHT / 2 - Vars.PLAYER_SIZE / 2);
+		objects.add(GameState.player);
 		doors();	
 				
 		initRandomPacks();
@@ -112,7 +112,7 @@ public class Factory extends PlayState
 	{
 		uht_door = new Door(this, 0, 80, false, false);
 		break_back_door = new Door(this, Vars.WIDTH - Door.DOOR_SHORT_SIDE,  3 * Vars.HEIGHT / 4, false, false);
-		boolean lab_key = Game.player.getInventory().getLabKey();
+		boolean lab_key = GameState.player.getInventory().getLabKey();
 		System.out.println("got lab key: " + lab_key);
 		
 		lab_door = new Door(this, Vars.WIDTH - Door.DOOR_SHORT_SIDE,  1 * Vars.HEIGHT / 4, false, !lab_key);

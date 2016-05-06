@@ -3,12 +3,12 @@ package psyche.breakbackmonkey.states.playstates;
 import java.util.ArrayList;
 import java.util.Random;
 
-import psyche.breakbackmonkey.Game;
 import psyche.breakbackmonkey.gameobjects.GameObject;
 import psyche.breakbackmonkey.gameobjects.inanimate.Pack;
 import psyche.breakbackmonkey.input.GameKeys;
 import psyche.breakbackmonkey.managers.PlayStateManager;
 import psyche.breakbackmonkey.states.State;
+import psyche.breakbackmonkey.states.mainstates.GameState;
 import psyche.breakbackmonkey.utils.Vars;
 
 public abstract class PlayState extends State
@@ -38,10 +38,10 @@ public abstract class PlayState extends State
 	
 	protected void playerDirections()
 	{
-		Game.player.up(GameKeys.isDown(GameKeys.W));
-		Game.player.left(GameKeys.isDown(GameKeys.A));
-		Game.player.down(GameKeys.isDown(GameKeys.S));
-		Game.player.right(GameKeys.isDown(GameKeys.D));
+		GameState.player.up(GameKeys.isDown(GameKeys.W));
+		GameState.player.left(GameKeys.isDown(GameKeys.A));
+		GameState.player.down(GameKeys.isDown(GameKeys.S));
+		GameState.player.right(GameKeys.isDown(GameKeys.D));
 	}
 
 }

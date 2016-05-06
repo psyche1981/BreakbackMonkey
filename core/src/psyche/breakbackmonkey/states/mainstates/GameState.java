@@ -3,6 +3,7 @@ package psyche.breakbackmonkey.states.mainstates;
 import psyche.breakbackmonkey.managers.MainStateManager;
 import psyche.breakbackmonkey.managers.PlayStateManager;
 import psyche.breakbackmonkey.utils.Vars;
+import psyche.breakbackmonkey.gameobjects.entities.Player;
 import psyche.breakbackmonkey.input.GameKeys;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -10,6 +11,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 public class GameState extends MainState
 {		
 	private PlayStateManager psm;
+	public static Player player;
 	
 	public GameState(MainStateManager msm)
 	{
@@ -58,6 +60,8 @@ public class GameState extends MainState
 	public void init() 
 	{
 		psm = new PlayStateManager();
+		player = new Player(this);
+		
 	}
 	
 	

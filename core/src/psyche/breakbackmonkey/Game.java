@@ -1,6 +1,5 @@
 package psyche.breakbackmonkey;
 
-import psyche.breakbackmonkey.gameobjects.entities.Player;
 import psyche.breakbackmonkey.input.GameInputProcessor;
 import psyche.breakbackmonkey.input.GameKeys;
 import psyche.breakbackmonkey.managers.MainStateManager;
@@ -15,8 +14,6 @@ import com.badlogic.gdx.graphics.GL20;
 
 public class Game extends ApplicationAdapter 
 {
-	public static Player player;
-	
 	private MainStateManager msm;
 	
 	private float accumulated_time = 0;	
@@ -30,7 +27,6 @@ public class Game extends ApplicationAdapter
 		
 		Gdx.input.setInputProcessor(new GameInputProcessor());		
 		msm = new MainStateManager();
-		player = new Player(msm.getCurrentState());
 	}
 
 	@Override

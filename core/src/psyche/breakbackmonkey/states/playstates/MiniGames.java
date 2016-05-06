@@ -2,12 +2,12 @@ package psyche.breakbackmonkey.states.playstates;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
-import psyche.breakbackmonkey.managers.GameStateManager;
+import psyche.breakbackmonkey.managers.MainStateManager;
 import psyche.breakbackmonkey.states.mainstates.MainState;
 
 public class MiniGames extends MainState
 {
-	public MiniGames(GameStateManager gsm)
+	public MiniGames(MainStateManager gsm)
 	{
 		super(gsm);
 	}

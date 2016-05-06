@@ -3,7 +3,7 @@ package psyche.breakbackmonkey;
 import psyche.breakbackmonkey.gameobjects.entities.Player;
 import psyche.breakbackmonkey.input.GameInputProcessor;
 import psyche.breakbackmonkey.input.GameKeys;
-import psyche.breakbackmonkey.managers.GameStateManager;
+import psyche.breakbackmonkey.managers.MainStateManager;
 import psyche.breakbackmonkey.utils.Camera;
 import psyche.breakbackmonkey.utils.Fonts;
 import psyche.breakbackmonkey.utils.Res;
@@ -17,7 +17,7 @@ public class Game extends ApplicationAdapter
 {
 	public static Player player;
 	
-	private GameStateManager gsm;
+	private MainStateManager msm;
 	
 	private float accumulated_time = 0;	
 	
@@ -29,8 +29,8 @@ public class Game extends ApplicationAdapter
 		Camera.load();
 		
 		Gdx.input.setInputProcessor(new GameInputProcessor());		
-		gsm = new GameStateManager();
-		player = new Player(gsm.getCurrentState());
+		msm = new MainStateManager();
+		player = new Player(msm.getCurrentState());
 	}
 
 	@Override
@@ -44,10 +44,10 @@ public class Game extends ApplicationAdapter
 		while(accumulated_time >= Vars.STEP)
 		{
 			accumulated_time -= Vars.STEP;
-			gsm.update(Vars.STEP);			
+			msm.update(Vars.STEP);			
 			GameKeys.update();
 		}
-		gsm.render(Res.sb);
+		msm.render(Res.sb);
 	}
 	
 	@Override

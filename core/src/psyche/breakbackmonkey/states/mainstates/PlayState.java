@@ -1,7 +1,7 @@
 package psyche.breakbackmonkey.states.mainstates;
 
-import psyche.breakbackmonkey.managers.GameStateManager;
-import psyche.breakbackmonkey.states.playstates.FactoryFloor;
+import psyche.breakbackmonkey.managers.MainStateManager;
+import psyche.breakbackmonkey.states.playstates.Factory;
 import psyche.breakbackmonkey.utils.Vars;
 import psyche.breakbackmonkey.input.GameKeys;
 
@@ -9,12 +9,12 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 public class PlayState extends MainState
 {	
-	private FactoryFloor ffloor;
+	private Factory ffloor;
 	
-	public PlayState(GameStateManager gsm)
+	public PlayState(MainStateManager msm)
 	{
-		super(gsm);
-		ffloor = new FactoryFloor(gsm, this);
+		super(msm);
+		ffloor = new Factory(msm, this);
 	}
 
 	@Override

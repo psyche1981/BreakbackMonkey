@@ -5,7 +5,7 @@ import java.util.Random;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 import psyche.breakbackmonkey.Game;
-import psyche.breakbackmonkey.managers.GameStateManager;
+import psyche.breakbackmonkey.managers.MainStateManager;
 import psyche.breakbackmonkey.utils.Physics;
 import psyche.breakbackmonkey.gameobjects.GameObject;
 import psyche.breakbackmonkey.gameobjects.entities.TeamLeader;
@@ -26,7 +26,7 @@ public class UHTOffice extends MainState
 	private boolean[] gw_dialogue;
 	private Door exit_door;
 	
-	public UHTOffice(GameStateManager gsm)
+	public UHTOffice(MainStateManager gsm)
 	{
 		super(gsm);
 	}
@@ -78,7 +78,7 @@ public class UHTOffice extends MainState
 			}
 			
 			if(Physics.collided(Game.player, go) == exit_door)
-				sm.setState(Vars.State.FACTORY_FLOOR);
+				sm.setState(Vars.State.FACTORY);
 		}
 		
 		

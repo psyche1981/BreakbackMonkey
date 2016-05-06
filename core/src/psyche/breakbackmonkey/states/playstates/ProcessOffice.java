@@ -3,7 +3,7 @@ package psyche.breakbackmonkey.states.playstates;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 import psyche.breakbackmonkey.Game;
-import psyche.breakbackmonkey.managers.GameStateManager;
+import psyche.breakbackmonkey.managers.MainStateManager;
 import psyche.breakbackmonkey.utils.Physics;
 import psyche.breakbackmonkey.gameobjects.GameObject;
 import psyche.breakbackmonkey.gameobjects.inanimate.Door;
@@ -17,7 +17,7 @@ public class ProcessOffice extends MainState
 	private Door exit_door; 
 	
 	
-	public ProcessOffice(GameStateManager gsm)
+	public ProcessOffice(MainStateManager gsm)
 	{
 		super(gsm);
 	}

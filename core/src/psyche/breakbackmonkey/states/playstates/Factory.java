@@ -7,7 +7,7 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 import psyche.breakbackmonkey.Game;
-import psyche.breakbackmonkey.managers.GameStateManager;
+import psyche.breakbackmonkey.managers.MainStateManager;
 import psyche.breakbackmonkey.gameobjects.GameObject;
 import psyche.breakbackmonkey.gameobjects.inanimate.Door;
 import psyche.breakbackmonkey.gameobjects.inanimate.Pack;
@@ -19,10 +19,10 @@ import psyche.breakbackmonkey.utils.Physics;
 import psyche.breakbackmonkey.utils.Sound;
 import psyche.breakbackmonkey.utils.Vars;
 
-public class FactoryFloor
+public class Factory
 {
 	private Door uht_door, process_door, break_back_door, lab_door;
-	private GameStateManager gsm;
+	private MainStateManager gsm;
 	private Game game;
 	private MainState state;
 	private OrthographicCamera camera;
@@ -30,7 +30,7 @@ public class FactoryFloor
 	private ArrayList<Pack> packs;
 	private ArrayList<Pack> packs_to_remove;
 	
-	public FactoryFloor(GameStateManager gsm, PlayState play)
+	public Factory(MainStateManager gsm, PlayState play)
 	{
 		state = play;
 		this.gsm = gsm;

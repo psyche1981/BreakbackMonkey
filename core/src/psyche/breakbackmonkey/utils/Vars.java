@@ -23,7 +23,7 @@ public class Vars
 		PAUSE,
 		
 		//playstate
-		FACTORY_FLOOR,
+		FACTORY,
 		UHT_OFFICE,
 		BREAK_BACK_ROOM,
 		LAB,

@@ -4,16 +4,16 @@ import java.util.Stack;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
-import psyche.breakbackmonkey.managers.GameStateManager;
+import psyche.breakbackmonkey.managers.MainStateManager;
 import psyche.breakbackmonkey.states.mainstates.PlayState;
 import psyche.breakbackmonkey.utils.Vars;
 
 public class PlayStateManager 
 {
-	private GameStateManager gsm;
+	private MainStateManager gsm;
 	private Stack<PlayState> current_state;
 	
-	public PlayStateManager(GameStateManager gsm)
+	public PlayStateManager(MainStateManager gsm)
 	{
 		this.gsm = gsm;
 		current_state = new Stack<PlayState>();
@@ -50,7 +50,7 @@ public class PlayStateManager
 	{
 		switch(state)
 		{
-		case FACTORY_FLOOR:
+		case FACTORY:
 			return null;//new FactoryFloor(gsm);
 		default:
 			return null;

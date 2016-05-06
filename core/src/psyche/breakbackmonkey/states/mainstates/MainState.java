@@ -7,7 +7,7 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 import psyche.breakbackmonkey.Game;
-import psyche.breakbackmonkey.managers.GameStateManager;
+import psyche.breakbackmonkey.managers.MainStateManager;
 import psyche.breakbackmonkey.states.State;
 import psyche.breakbackmonkey.utils.Camera;
 import psyche.breakbackmonkey.utils.Vars;
@@ -21,9 +21,9 @@ public abstract class MainState extends State
 	protected ArrayList<Pack> packs;
 	protected ArrayList<Pack> packs_to_remove;
 	
-	public MainState(GameStateManager gsm)
+	public MainState(MainStateManager msm)
 	{
-		super(gsm);
+		super(msm);
 		objects = new ArrayList<GameObject>();
 		packs = new ArrayList<Pack>();
 		packs_to_remove = new ArrayList<Pack>();

@@ -1,10 +1,9 @@
 package psyche.breakbackmonkey.managers;
 
 import java.util.Stack;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import psyche.breakbackmonkey.Game;
 import psyche.breakbackmonkey.states.State;
 import psyche.breakbackmonkey.utils.Vars;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 public abstract class StateManager 
 {

@@ -3,12 +3,11 @@ package psyche.breakbackmonkey.managers;
 import psyche.breakbackmonkey.states.State;
 import psyche.breakbackmonkey.states.mainstates.MenuState;
 import psyche.breakbackmonkey.states.mainstates.PauseState;
-import psyche.breakbackmonkey.states.mainstates.PlayState;
+import psyche.breakbackmonkey.states.mainstates.GameState;
 import psyche.breakbackmonkey.utils.Vars;
 
 public class MainStateManager extends StateManager
-{	
-	
+{		
 	public MainStateManager()
 	{
 		super();
@@ -23,7 +22,7 @@ public class MainStateManager extends StateManager
 		switch(state)
 		{
 		case PLAY:
-			return new PlayState(this);
+			return new GameState(this);
 		case MENU:
 			return new MenuState(this);
 		case PAUSE:

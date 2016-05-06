@@ -1,59 +1,19 @@
 package psyche.breakbackmonkey.managers;
 
-import java.util.Stack;
+import psyche.breakbackmonkey.states.State;
 
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+public class PlayStateManager extends StateManager
+{	
+	public PlayStateManager(MainStateManager msm)
+	{
+		
+	}
 
-import psyche.breakbackmonkey.managers.MainStateManager;
-import psyche.breakbackmonkey.states.mainstates.PlayState;
-import psyche.breakbackmonkey.utils.Vars;
-
-public class PlayStateManager 
-{
-	private MainStateManager gsm;
-	private Stack<PlayState> current_state;
-	
-	public PlayStateManager(MainStateManager gsm)
+	@Override
+	protected State getState(psyche.breakbackmonkey.utils.Vars.State state) 
 	{
-		this.gsm = gsm;
-		current_state = new Stack<PlayState>();
+		return null;
 	}
 	
-	public void render(SpriteBatch sb)
-	{
-		current_state.peek().render(sb);
-	}
 	
-	public void update(float dt)
-	{
-		current_state.peek().update(dt);
-	}	
-	
-	public void setState(Vars.State state)
-	{
-		pop();
-		push(state);
-	}
-	
-	private void pop()
-	{
-		PlayState s = current_state.pop();
-		s.dispose();
-	}
-	
-	private void push(Vars.State state)
-	{
-		current_state.push(getState(state));
-	}
-	
-	private PlayState getState(Vars.State state)
-	{
-		switch(state)
-		{
-		case FACTORY:
-			return null;//new FactoryFloor(gsm);
-		default:
-			return null;
-		}
-	}
 }

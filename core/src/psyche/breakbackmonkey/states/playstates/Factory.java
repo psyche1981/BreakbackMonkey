@@ -8,18 +8,19 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 import psyche.breakbackmonkey.Game;
 import psyche.breakbackmonkey.managers.MainStateManager;
+import psyche.breakbackmonkey.managers.PlayStateManager;
 import psyche.breakbackmonkey.gameobjects.GameObject;
 import psyche.breakbackmonkey.gameobjects.inanimate.Door;
 import psyche.breakbackmonkey.gameobjects.inanimate.Pack;
 import psyche.breakbackmonkey.states.mainstates.MainState;
-import psyche.breakbackmonkey.states.mainstates.PlayState;
+import psyche.breakbackmonkey.states.mainstates.GameState;
 import psyche.breakbackmonkey.input.GameKeys;
 import psyche.breakbackmonkey.utils.Fonts;
 import psyche.breakbackmonkey.utils.Physics;
 import psyche.breakbackmonkey.utils.Sound;
 import psyche.breakbackmonkey.utils.Vars;
 
-public class Factory
+public class Factory extends PlayState
 {
 	private Door uht_door, process_door, break_back_door, lab_door;
 	private MainStateManager gsm;
@@ -30,12 +31,10 @@ public class Factory
 	private ArrayList<Pack> packs;
 	private ArrayList<Pack> packs_to_remove;
 	
-	public Factory(MainStateManager gsm, PlayState play)
+	public Factory(MainStateManager msm, PlayStateManager psm)
 	{
-		state = play;
-		this.gsm = gsm;
-		camera = play.getCamera();
-		objects = play.getObjectList();
+		super(msm, psm);
+		objects = msm.getObjectList();
 		packs = play.getPackList();
 		packs_to_remove = play.getPackRemoveList();
 		init();

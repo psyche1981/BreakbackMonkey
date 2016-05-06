@@ -3,13 +3,9 @@ package psyche.breakbackmonkey.states.mainstates;
 import java.util.ArrayList;
 import java.util.Random;
 
-import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-
 import psyche.breakbackmonkey.Game;
 import psyche.breakbackmonkey.managers.MainStateManager;
 import psyche.breakbackmonkey.states.State;
-import psyche.breakbackmonkey.utils.Camera;
 import psyche.breakbackmonkey.utils.Vars;
 import psyche.breakbackmonkey.gameobjects.GameObject;
 import psyche.breakbackmonkey.gameobjects.inanimate.Pack;
@@ -34,14 +30,7 @@ public abstract class MainState extends State
 	public ArrayList<Pack> getPackList(){return packs;}
 	public ArrayList<Pack> getPackRemoveList(){return packs_to_remove;}
 	public ArrayList<GameObject> getObjectList(){return objects;}
-	
-	public abstract void render(SpriteBatch sb);
-	public abstract void update(float dt);
-	public abstract void handleInput();	
-	public abstract void dispose();
-	public abstract void init();
-	
-	
+		
 	protected void initRandomPacks()
 	{
 		Random rand = new Random();

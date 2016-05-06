@@ -7,11 +7,11 @@ import psyche.breakbackmonkey.input.GameKeys;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
-public class PlayState extends MainState
+public class GameState extends MainState
 {	
 	private Factory ffloor;
 	
-	public PlayState(MainStateManager msm)
+	public GameState(MainStateManager msm)
 	{
 		super(msm);
 		ffloor = new Factory(msm, this);

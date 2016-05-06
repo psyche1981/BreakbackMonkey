@@ -95,6 +95,7 @@ public class Player extends GameObject
 	public void dispose() 
 	{
 		hud.dispose();
+		System.out.println("player disposed");
 	}
 
 	@Override

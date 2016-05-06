@@ -59,9 +59,8 @@ public class GameState extends MainState
 	@Override
 	public void init() 
 	{
-		psm = new PlayStateManager();
 		player = new Player(this);
-		
+		psm = new PlayStateManager();		
 	}
 	
 	

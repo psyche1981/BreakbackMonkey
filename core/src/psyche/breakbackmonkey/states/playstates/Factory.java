@@ -1,42 +1,24 @@
 package psyche.breakbackmonkey.states.playstates;
 
-import java.util.ArrayList;
-import java.util.Random;
-
-import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-
 import psyche.breakbackmonkey.Game;
-import psyche.breakbackmonkey.managers.MainStateManager;
-import psyche.breakbackmonkey.managers.PlayStateManager;
 import psyche.breakbackmonkey.gameobjects.GameObject;
 import psyche.breakbackmonkey.gameobjects.inanimate.Door;
 import psyche.breakbackmonkey.gameobjects.inanimate.Pack;
-import psyche.breakbackmonkey.states.mainstates.MainState;
-import psyche.breakbackmonkey.states.mainstates.GameState;
-import psyche.breakbackmonkey.input.GameKeys;
+import psyche.breakbackmonkey.managers.PlayStateManager;
 import psyche.breakbackmonkey.utils.Fonts;
 import psyche.breakbackmonkey.utils.Physics;
 import psyche.breakbackmonkey.utils.Sound;
 import psyche.breakbackmonkey.utils.Vars;
 
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+
 public class Factory extends PlayState
 {
 	private Door uht_door, process_door, break_back_door, lab_door;
-	private MainStateManager gsm;
-	private Game game;
-	private MainState state;
-	private OrthographicCamera camera;
-	private ArrayList<GameObject> objects;
-	private ArrayList<Pack> packs;
-	private ArrayList<Pack> packs_to_remove;
 	
-	public Factory(MainStateManager msm, PlayStateManager psm)
+	public Factory(PlayStateManager psm) 
 	{
-		super(msm, psm);
-		objects = msm.getObjectList();
-		packs = play.getPackList();
-		packs_to_remove = play.getPackRemoveList();
+		super(psm);
 		init();
 	}
 	
@@ -68,13 +50,13 @@ public class Factory extends PlayState
 		{	
 			go.update(dt);
 			if(Physics.collided(Game.player, go) == process_door)
-				gsm.setState(Vars.State.PROCESS_OFFICE);
+				sm.setState(Vars.State.PROCESS_OFFICE);
 			if(Physics.collided(Game.player, go) == uht_door)
-				gsm.setState(Vars.State.UHT_OFFICE);
+				sm.setState(Vars.State.UHT_OFFICE);
 			if(Physics.collided(Game.player, go) == break_back_door)
-				gsm.setState(Vars.State.BREAK_BACK_ROOM);
+				sm.setState(Vars.State.BREAK_BACK_ROOM);
 			if(Physics.collided(Game.player, go) == lab_door && !go.getLocked())
-				gsm.setState(Vars.State.LAB);
+				sm.setState(Vars.State.LAB);
 			
 			
 		}
@@ -102,11 +84,6 @@ public class Factory extends PlayState
 	public void handleInput()
 	{
 		playerDirections();
-		
-		if(GameKeys.isPressed(GameKeys.P))
-		{
-			gsm.enterState(Vars.State.PAUSE);
-		}
 	}
 	
 	public void dispose() 
@@ -124,7 +101,7 @@ public class Factory extends PlayState
 	
 	public void init() 
 	{
-		Game.player.init(state, Vars.WIDTH / 2 - Vars.PLAYER_SIZE / 2, Vars.HEIGHT / 2 - Vars.PLAYER_SIZE / 2);
+		Game.player.init(this, Vars.WIDTH / 2 - Vars.PLAYER_SIZE / 2, Vars.HEIGHT / 2 - Vars.PLAYER_SIZE / 2);
 		objects.add(Game.player);
 		doors();	
 				
@@ -133,37 +110,18 @@ public class Factory extends PlayState
 	
 	private void doors()
 	{
-		uht_door = new Door(state, 0, 80, false, false);
-		break_back_door = new Door(state, Vars.WIDTH - Door.DOOR_SHORT_SIDE,  3 * Vars.HEIGHT / 4, false, false);
+		uht_door = new Door(this, 0, 80, false, false);
+		break_back_door = new Door(this, Vars.WIDTH - Door.DOOR_SHORT_SIDE,  3 * Vars.HEIGHT / 4, false, false);
 		boolean lab_key = Game.player.getInventory().getLabKey();
 		System.out.println("got lab key: " + lab_key);
 		
-		lab_door = new Door(state, Vars.WIDTH - Door.DOOR_SHORT_SIDE,  1 * Vars.HEIGHT / 4, false, !lab_key);
+		lab_door = new Door(this, Vars.WIDTH - Door.DOOR_SHORT_SIDE,  1 * Vars.HEIGHT / 4, false, !lab_key);
 		System.out.println("lab door locked:" + lab_door.getLocked());
-		process_door = new Door(state, Vars.WIDTH / 2 - Door.DOOR_LONG_SIDE / 2, Vars.HEIGHT - Door.DOOR_SHORT_SIDE, true, false);
+		process_door = new Door(this, Vars.WIDTH / 2 - Door.DOOR_LONG_SIDE / 2, Vars.HEIGHT - Door.DOOR_SHORT_SIDE, true, false);
 		
 		objects.add(uht_door);
 		objects.add(process_door);
 		objects.add(break_back_door);
 		objects.add(lab_door);
-	}
-	
-	private void playerDirections()
-	{
-		Game.player.up(GameKeys.isDown(GameKeys.W));
-		Game.player.left(GameKeys.isDown(GameKeys.A));
-		Game.player.down(GameKeys.isDown(GameKeys.S));
-		Game.player.right(GameKeys.isDown(GameKeys.D));
-	}
-	
-	private void initRandomPacks()
-	{
-		Random rand = new Random();
-		int no_packs = rand.nextInt(5) + 1;
-		for(int i = 1; i < no_packs + 1; i++)
-		{
-			packs.add(new Pack(state, rand.nextInt(Vars.WIDTH - Pack.SIZE)  , rand.nextInt(Vars.HEIGHT - Vars.HUD_HEIGHT - Pack.SIZE) + Vars.HUD_HEIGHT));
-		}
-		
-	}
+	}	
 }

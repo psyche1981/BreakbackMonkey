@@ -1,16 +1,15 @@
 package psyche.breakbackmonkey.gameobjects;
 
 
+import psyche.breakbackmonkey.GameFlags;
+import psyche.breakbackmonkey.states.State;
+import psyche.breakbackmonkey.utils.Res;
+
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Rectangle;
-
-import psyche.breakbackmonkey.GameFlags;
-import psyche.breakbackmonkey.utils.Res;
-import psyche.breakbackmonkey.states.State;
-import psyche.breakbackmonkey.states.mainstates.MainState;
 
 //import com.badlogic.gdx.graphics.g2d.SpriteBatch;//will pass sb in render but initially will use a shaperenderer in each objcet class
 

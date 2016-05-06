@@ -18,12 +18,15 @@ public class PlayStateManager extends StateManager
 		switch(state)
 		{
 		case FACTORY:
-			return new Factory();
+			return new Factory(this);
 		default:
-			return new Factory();
-		}
-		
-		return null;
+			return new Factory(this);
+		}		
+	}
+	
+	public void dispose()
+	{
+		pop();
 	}
 	
 	

@@ -1,19 +1,20 @@
 package psyche.breakbackmonkey.gameobjects.inanimate;
 
 
+import psyche.breakbackmonkey.GameFlags;
+import psyche.breakbackmonkey.gameobjects.GameObject;
+import psyche.breakbackmonkey.states.playstates.PlayState;
+import psyche.breakbackmonkey.utils.Res;
+
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
-import psyche.breakbackmonkey.GameFlags;
-import psyche.breakbackmonkey.gameobjects.GameObject;
-import psyche.breakbackmonkey.states.mainstates.MainState;
-import psyche.breakbackmonkey.utils.Res;
 
 public class Pack extends GameObject
 {
 	public static final int SIZE = 4;
 	
-	public Pack(MainState state, float x, float y)
+	public Pack(PlayState state, float x, float y)
 	{
 		super(state, x, y);
 				

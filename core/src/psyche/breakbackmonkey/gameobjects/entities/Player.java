@@ -4,9 +4,9 @@ import psyche.breakbackmonkey.Inventory;
 import psyche.breakbackmonkey.Stats;
 import psyche.breakbackmonkey.gameobjects.GameObject;
 import psyche.breakbackmonkey.gameobjects.inanimate.HUD;
-import psyche.breakbackmonkey.states.State;
-import psyche.breakbackmonkey.states.mainstates.MainState;
 import psyche.breakbackmonkey.input.GameKeys;
+import psyche.breakbackmonkey.states.State;
+import psyche.breakbackmonkey.states.playstates.PlayState;
 import psyche.breakbackmonkey.utils.Res;
 import psyche.breakbackmonkey.utils.Vars;
 
@@ -107,7 +107,7 @@ public class Player extends GameObject
 		hud = new HUD(state);
 	}
 	
-	public void init(MainState state, float x, float y) 
+	public void init(PlayState state, float x, float y) 
 	{	
 		this.state = state;
 		this.x = x;

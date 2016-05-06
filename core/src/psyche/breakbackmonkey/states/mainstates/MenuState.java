@@ -52,7 +52,7 @@ public class MenuState extends MainState
 	@Override
 	public void init() 
 	{
-		// TODO Auto-generated method stub		
+		
 	}		
 	
 }

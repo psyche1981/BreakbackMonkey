@@ -2,7 +2,6 @@ package psyche.breakbackmonkey.gameobjects.inanimate;
 
 import psyche.breakbackmonkey.gameobjects.entities.Player;
 import psyche.breakbackmonkey.states.State;
-import psyche.breakbackmonkey.states.mainstates.MainState;
 import psyche.breakbackmonkey.utils.Camera;
 import psyche.breakbackmonkey.utils.Fonts;
 import psyche.breakbackmonkey.utils.Res;

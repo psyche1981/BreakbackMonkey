@@ -1,25 +1,24 @@
 package psyche.breakbackmonkey.states.playstates;
 //TODO add a balance tank
 
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-
 import psyche.breakbackmonkey.Game;
-import psyche.breakbackmonkey.managers.MainStateManager;
-import psyche.breakbackmonkey.utils.Physics;
 import psyche.breakbackmonkey.gameobjects.GameObject;
 import psyche.breakbackmonkey.gameobjects.inanimate.Door;
 import psyche.breakbackmonkey.gameobjects.inanimate.Pack;
-import psyche.breakbackmonkey.states.mainstates.MainState;
 import psyche.breakbackmonkey.input.GameKeys;
+import psyche.breakbackmonkey.managers.PlayStateManager;
+import psyche.breakbackmonkey.utils.Physics;
 import psyche.breakbackmonkey.utils.Vars;
 
-public class BBackRoom extends MainState
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+
+public class BBackRoom extends PlayState
 {
 	private Door exit_door;
 	
-	public BBackRoom(MainStateManager gsm)
+	public BBackRoom(PlayStateManager psm)
 	{
-		super(gsm);
+		super(psm);
 	}
 
 	@Override

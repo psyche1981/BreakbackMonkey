@@ -2,7 +2,7 @@ package psyche.breakbackmonkey.input;
 
 public class GameKeys 
 {
-	public static final int NUM_KEYS = 9;
+	public static final int NUM_KEYS = 10;
 	public static final int W = 0;
 	public static final int A = 1;
 	public static final int S = 2;
@@ -12,6 +12,7 @@ public class GameKeys
 	public static final int Y = 6;
 	public static final int N = 7;
 	public static final int P = 8;
+	public static final int ESCAPE = 9;
 	
 	public static boolean[] current_keys;
 	public static boolean[] previous_keys;

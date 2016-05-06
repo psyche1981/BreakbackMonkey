@@ -2,7 +2,6 @@ package psyche.breakbackmonkey.states.mainstates;
 
 import psyche.breakbackmonkey.managers.MainStateManager;
 import psyche.breakbackmonkey.managers.PlayStateManager;
-import psyche.breakbackmonkey.states.playstates.Factory;
 import psyche.breakbackmonkey.utils.Vars;
 import psyche.breakbackmonkey.input.GameKeys;
 
@@ -14,8 +13,7 @@ public class GameState extends MainState
 	
 	public GameState(MainStateManager msm)
 	{
-		super(msm);
-		psm = new PlayStateManager();
+		super(msm);		
 	}
 
 	@Override
@@ -26,31 +24,35 @@ public class GameState extends MainState
 
 	@Override
 	public void update(float dt) 
-	{
-		psm.update(dt);		
+	{		
+		psm.update(dt);	
+		handleInput();
 	}
 
 	@Override
 	public void handleInput()
-	{
-		playerDirections();
-		
+	{		
 		if(GameKeys.isPressed(GameKeys.P))
 		{
 			sm.enterState(Vars.State.PAUSE);
 		}
+		if(GameKeys.isPressed(GameKeys.ESCAPE))
+		{
+			sm.setState(Vars.State.MENU);
+		}
+		
 	}
 
 	@Override
 	public void dispose() 
-	{		
-		
+	{	
+		psm.dispose();		
 	}
 
 	@Override
 	public void init() 
 	{
-		
+		psm = new PlayStateManager();
 	}
 	
 	

@@ -26,6 +26,8 @@ public class GameInputProcessor extends InputAdapter
 			GameKeys.setKey(GameKeys.Y, true);
 		if(k == Keys.N)
 			GameKeys.setKey(GameKeys.N, true);
+		if(k == Keys.ESCAPE)
+			GameKeys.setKey(GameKeys.ESCAPE, true);
 		
 		return true;
 	}
@@ -50,6 +52,8 @@ public class GameInputProcessor extends InputAdapter
 			GameKeys.setKey(GameKeys.Y, false);
 		if(k == Keys.N)
 			GameKeys.setKey(GameKeys.N, false);
+		if(k == Keys.ESCAPE)
+			GameKeys.setKey(GameKeys.ESCAPE, false);
 		
 		return true;
 	}

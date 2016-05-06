@@ -4,7 +4,7 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 import psyche.breakbackmonkey.gameobjects.GameObject;
-import psyche.breakbackmonkey.states.mainstates.MainState;
+import psyche.breakbackmonkey.states.playstates.PlayState;
 import psyche.breakbackmonkey.utils.Res;
 
 public class TeamLeader extends GameObject
@@ -16,7 +16,7 @@ public class TeamLeader extends GameObject
 	private int speed;
 	
 	
-	public TeamLeader(MainState state, int who, float x, float y)
+	public TeamLeader(PlayState state, int who, float x, float y)
 	{
 		super(state, x, y);
 		this.who = who;

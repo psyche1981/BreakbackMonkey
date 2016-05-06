@@ -2,20 +2,19 @@ package psyche.breakbackmonkey.states.playstates;
 
 import java.util.Random;
 
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-
 import psyche.breakbackmonkey.Game;
-import psyche.breakbackmonkey.managers.MainStateManager;
-import psyche.breakbackmonkey.utils.Physics;
 import psyche.breakbackmonkey.gameobjects.GameObject;
 import psyche.breakbackmonkey.gameobjects.entities.TeamLeader;
 import psyche.breakbackmonkey.gameobjects.inanimate.Door;
-import psyche.breakbackmonkey.states.mainstates.MainState;
 import psyche.breakbackmonkey.input.GameKeys;
+import psyche.breakbackmonkey.managers.PlayStateManager;
 import psyche.breakbackmonkey.utils.Fonts;
+import psyche.breakbackmonkey.utils.Physics;
 import psyche.breakbackmonkey.utils.Vars;
 
-public class UHTOffice extends MainState
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+
+public class UHTOffice extends PlayState
 {
 	public static final int GW_NUM = 3;
 	public static final int GW_Q = 0;
@@ -26,9 +25,9 @@ public class UHTOffice extends MainState
 	private boolean[] gw_dialogue;
 	private Door exit_door;
 	
-	public UHTOffice(MainStateManager gsm)
+	public UHTOffice(PlayStateManager psm)
 	{
-		super(gsm);
+		super(psm);
 	}
 
 	@Override
@@ -97,7 +96,7 @@ public class UHTOffice extends MainState
 		}
 		
 		if(gw_dialogue[GW_Q] && GameKeys.isPressed(GameKeys.N))
-			sm.setState(Vars.State.PLAY);
+			sm.setState(Vars.State.FACTORY);
 			
 	}
 

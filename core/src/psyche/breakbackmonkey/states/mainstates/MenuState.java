@@ -1,5 +1,6 @@
 package psyche.breakbackmonkey.states.mainstates;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 import psyche.breakbackmonkey.managers.MainStateManager;
@@ -27,6 +28,8 @@ public class MenuState extends MainState
 		Fonts.timeless_32.setColor(1, 1, 1, 1);
 		Fonts.timeless_32.draw(sb, s, Vars.WIDTH / 2 - text_width / 2, 350);
 		Fonts.timeless_16.draw(sb, "Press Enter to Play", 250, 200);
+		Fonts.timeless_16.draw(sb, "Press Escape to Quit", 250, 170);
+		
 				
 		sb.end();
 	}
@@ -43,6 +46,9 @@ public class MenuState extends MainState
 		// TODO Auto-generated method stub
 		if(GameKeys.isPressed(GameKeys.ENTER))
 			sm.setState(Vars.State.PLAY);
+		
+		if(GameKeys.isPressed(GameKeys.ESCAPE))
+			Gdx.app.exit();
 			
 	}
 

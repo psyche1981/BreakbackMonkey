@@ -15,6 +15,8 @@ public class Vars
 	//HUD Variables
 	public static final int HUD_HEIGHT = 75;
 	
+	
+	//TODO change to separate enums for main and play states
 	public static enum State
 	{
 		//gamestates

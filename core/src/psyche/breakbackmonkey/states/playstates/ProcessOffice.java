@@ -48,7 +48,7 @@ public class ProcessOffice extends MainState
 			go.update(dt);
 			
 			if(Physics.collided(Game.player, go) == exit_door)
-				gsm.setState(GameStateManager.PLAY);
+				sm.setState(Vars.State.PLAY);
 			
 		}
 	}
@@ -58,7 +58,7 @@ public class ProcessOffice extends MainState
 	{	
 		playerDirections();
 		if(GameKeys.isPressed(GameKeys.ENTER))
-			gsm.setState(GameStateManager.PLAY);
+			sm.setState(Vars.State.PLAY);
 		
 		
 	}

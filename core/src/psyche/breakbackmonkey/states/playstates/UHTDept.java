@@ -47,9 +47,9 @@ public class UHTDept extends MainState
 			go.update(dt);
 			
 			if(Physics.collided(Game.player, go) == exit_door)
-				gsm.setState(GameStateManager.PLAY);
+				sm.setState(Vars.State.PLAY);
 			if(Physics.collided(Game.player,  go) == uht_office_door)
-				gsm.setState(GameStateManager.UHT_OFFICE);
+				sm.setState(Vars.State.UHT_OFFICE);
 		}
 		
 		

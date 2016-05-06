@@ -2,28 +2,28 @@ package psyche.breakbackmonkey.states.mainstates;
 
 import java.util.ArrayList;
 import java.util.Random;
+
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+
 import psyche.breakbackmonkey.Game;
 import psyche.breakbackmonkey.managers.GameStateManager;
+import psyche.breakbackmonkey.states.State;
 import psyche.breakbackmonkey.utils.Camera;
 import psyche.breakbackmonkey.utils.Vars;
 import psyche.breakbackmonkey.gameobjects.GameObject;
 import psyche.breakbackmonkey.gameobjects.inanimate.Pack;
 import psyche.breakbackmonkey.input.GameKeys;
 
-public abstract class MainState 
-{	
-	protected GameStateManager gsm;
-	protected OrthographicCamera camera;
+public abstract class MainState extends State
+{		
 	protected ArrayList<GameObject> objects;
 	protected ArrayList<Pack> packs;
 	protected ArrayList<Pack> packs_to_remove;
 	
 	public MainState(GameStateManager gsm)
 	{
-		this.gsm = gsm;
-		camera = Camera.viewport;
+		super(gsm);
 		objects = new ArrayList<GameObject>();
 		packs = new ArrayList<Pack>();
 		packs_to_remove = new ArrayList<Pack>();
@@ -41,7 +41,6 @@ public abstract class MainState
 	public abstract void dispose();
 	public abstract void init();
 	
-	public OrthographicCamera getCamera() { return camera; }
 	
 	protected void initRandomPacks()
 	{

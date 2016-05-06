@@ -4,6 +4,7 @@ import psyche.breakbackmonkey.Inventory;
 import psyche.breakbackmonkey.Stats;
 import psyche.breakbackmonkey.gameobjects.GameObject;
 import psyche.breakbackmonkey.gameobjects.inanimate.HUD;
+import psyche.breakbackmonkey.states.State;
 import psyche.breakbackmonkey.states.mainstates.MainState;
 import psyche.breakbackmonkey.input.GameKeys;
 import psyche.breakbackmonkey.utils.Res;
@@ -29,7 +30,7 @@ public class Player extends GameObject
 	private HUD hud;
 	
 	
-	public Player(MainState state)
+	public Player(State state)
 	{
 		super(state, 0, 0);		
 	}

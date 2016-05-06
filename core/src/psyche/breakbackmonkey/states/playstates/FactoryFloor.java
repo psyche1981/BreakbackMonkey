@@ -69,13 +69,13 @@ public class FactoryFloor
 		{	
 			go.update(dt);
 			if(Physics.collided(Game.player, go) == process_door)
-				gsm.setState(GameStateManager.PROCESS_OFFICE);
+				gsm.setState(Vars.State.PROCESS_OFFICE);
 			if(Physics.collided(Game.player, go) == uht_door)
-				gsm.setState(GameStateManager.UHT_DEPT);
+				gsm.setState(Vars.State.UHT_OFFICE);
 			if(Physics.collided(Game.player, go) == break_back_door)
-				gsm.setState(GameStateManager.BREAK_BACK);
+				gsm.setState(Vars.State.BREAK_BACK_ROOM);
 			if(Physics.collided(Game.player, go) == lab_door && !go.getLocked())
-				gsm.setState(GameStateManager.LAB);
+				gsm.setState(Vars.State.LAB);
 			
 			
 		}
@@ -106,7 +106,7 @@ public class FactoryFloor
 		
 		if(GameKeys.isPressed(GameKeys.P))
 		{
-			gsm.enterState(GameStateManager.PAUSE);
+			gsm.enterState(Vars.State.PAUSE);
 		}
 	}
 	

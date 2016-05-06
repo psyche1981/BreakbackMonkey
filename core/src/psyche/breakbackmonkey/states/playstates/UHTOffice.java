@@ -78,7 +78,7 @@ public class UHTOffice extends MainState
 			}
 			
 			if(Physics.collided(Game.player, go) == exit_door)
-				gsm.setState(GameStateManager.UHT_DEPT);
+				sm.setState(Vars.State.FACTORY_FLOOR);
 		}
 		
 		
@@ -97,7 +97,7 @@ public class UHTOffice extends MainState
 		}
 		
 		if(gw_dialogue[GW_Q] && GameKeys.isPressed(GameKeys.N))
-			gsm.setState(GameStateManager.PLAY);
+			sm.setState(Vars.State.PLAY);
 			
 	}
 

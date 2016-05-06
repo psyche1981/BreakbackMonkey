@@ -47,7 +47,7 @@ public class BBackRoom extends MainState
 			
 			if(Physics.collided(Game.player, go) == exit_door)
 			{
-				gsm.setState(GameStateManager.PLAY);
+				sm.setState(Vars.State.PLAY);
 			}
 		}
 		

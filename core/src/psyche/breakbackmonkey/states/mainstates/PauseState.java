@@ -35,7 +35,7 @@ public class PauseState extends MainState
 	{
 		if(GameKeys.isPressed(GameKeys.ENTER))
 		{
-			gsm.exitState();
+			sm.exitState();
 		}
 	}
 

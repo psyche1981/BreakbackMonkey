@@ -2,6 +2,7 @@ package psyche.breakbackmonkey.states.mainstates;
 
 import psyche.breakbackmonkey.managers.GameStateManager;
 import psyche.breakbackmonkey.states.playstates.FactoryFloor;
+import psyche.breakbackmonkey.utils.Vars;
 import psyche.breakbackmonkey.input.GameKeys;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -35,7 +36,7 @@ public class PlayState extends MainState
 		
 		if(GameKeys.isPressed(GameKeys.P))
 		{
-			gsm.enterState(GameStateManager.PAUSE);
+			sm.enterState(Vars.State.PAUSE);
 		}
 	}
 

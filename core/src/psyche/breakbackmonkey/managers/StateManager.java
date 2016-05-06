@@ -8,7 +8,7 @@ import psyche.breakbackmonkey.utils.Vars;
 
 public abstract class StateManager 
 {
-	private Stack<State> current_state;
+	protected Stack<State> current_state;
 	
 	public StateManager()
 	{
@@ -43,16 +43,16 @@ public abstract class StateManager
 	
 	public State getCurrentState() {return current_state.peek();}
 	
-	private void push(Vars.State state)
+	protected void push(Vars.State state)
 	{
 		current_state.push(getState(state));
 	}
 	
-	private void pop()
+	protected void pop()
 	{
 		State s = current_state.pop();
 		s.dispose();
 	}
 	
-	public abstract State getState(Vars.State state);
+	protected abstract State getState(Vars.State state);
 }

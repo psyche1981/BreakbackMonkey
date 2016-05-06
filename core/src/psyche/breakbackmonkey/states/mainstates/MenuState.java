@@ -42,7 +42,7 @@ public class MenuState extends MainState
 	{
 		// TODO Auto-generated method stub
 		if(GameKeys.isPressed(GameKeys.ENTER))
-			gsm.setState(GameStateManager.PLAY);
+			sm.setState(Vars.State.PLAY);
 			
 	}
 

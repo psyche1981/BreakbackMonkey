@@ -6,6 +6,7 @@ import psyche.breakbackmonkey.managers.GameStateManager;
 import psyche.breakbackmonkey.states.mainstates.MainState;
 import psyche.breakbackmonkey.input.GameKeys;
 import psyche.breakbackmonkey.utils.Fonts;
+import psyche.breakbackmonkey.utils.Vars;
 
 public class Laboratory extends MainState
 {
@@ -35,7 +36,7 @@ public class Laboratory extends MainState
 	public void handleInput() {
 		// TODO Auto-generated method stub
 		if(GameKeys.isPressed(GameKeys.ENTER))
-			gsm.setState(GameStateManager.PLAY);
+			sm.setState(Vars.State.PLAY);
 	}
 
 	@Override

@@ -16,15 +16,15 @@ public class Vars
 	public static final int HUD_HEIGHT = 75;
 	
 	
-	//TODO change to separate enums for main and play states
+	//State enumerations
 	public static enum State
-	{
-		//gamestates
+	{	
+		//main states
 		MENU,
 		PLAY,
 		PAUSE,
 		
-		//playstate
+		//play states
 		FACTORY,
 		UHT_OFFICE,
 		BREAK_BACK_ROOM,

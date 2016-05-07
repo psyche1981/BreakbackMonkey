@@ -45,9 +45,7 @@ public class GameState extends MainState
 		if(GameKeys.isPressed(GameKeys.T))
 		{
 			sm.setState(Vars.State.TEST_STATE);
-		}
-		
-		
+		}		
 	}
 
 	@Override

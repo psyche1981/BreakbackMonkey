@@ -3,6 +3,7 @@ package psyche.breakbackmonkey.states.playstates;
 import java.util.Random;
 
 import psyche.breakbackmonkey.gameobjects.GameObject;
+import psyche.breakbackmonkey.gameobjects.entities.Player;
 import psyche.breakbackmonkey.gameobjects.entities.TeamLeader;
 import psyche.breakbackmonkey.gameobjects.inanimate.Door;
 import psyche.breakbackmonkey.input.GameKeys;
@@ -68,7 +69,7 @@ public class UHTOffice extends PlayState
 		for(GameObject go : objects)
 		{
 			go.update(dt);
-			if(Physics.collided(GameState.player, go) == tl )
+			if(Physics.collided(go) == tl )
 			{
 				if(tl.getWho() == TeamLeader.GW)
 					gw_dialogue[GW_Q] = true;
@@ -77,7 +78,7 @@ public class UHTOffice extends PlayState
 					GameState.player.getInventory().setLabKey(true);
 			}
 			
-			if(Physics.collided(GameState.player, go) == exit_door)
+			if(Physics.collided(go) == exit_door)
 				sm.setState(Vars.State.FACTORY);
 		}
 		
@@ -118,9 +119,8 @@ public class UHTOffice extends PlayState
 		Random rand = new Random();
 		float rand_spawn = rand.nextFloat();
 		gw_dialogue = new boolean[GW_NUM];
-		GameState.player.init(this, Vars.WIDTH / 2 - Vars.PLAYER_SIZE / 2, Vars.HEIGHT / 2 - Vars.PLAYER_SIZE / 2);
-		objects.add(GameState.player);
-		
+		Player.init(this, Vars.WIDTH / 2 - Vars.PLAYER_SIZE / 2, Vars.HEIGHT / 2 - Vars.PLAYER_SIZE / 2);
+				
 		if(rand_spawn > 0.5f)
 		{
 			tl = new TeamLeader(this, TeamLeader.GW , 200, 400);

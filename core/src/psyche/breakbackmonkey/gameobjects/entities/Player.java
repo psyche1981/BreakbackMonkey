@@ -2,17 +2,18 @@ package psyche.breakbackmonkey.gameobjects.entities;
 
 import psyche.breakbackmonkey.Inventory;
 import psyche.breakbackmonkey.Stats;
-import psyche.breakbackmonkey.gameobjects.GameObject;
 import psyche.breakbackmonkey.gameobjects.inanimate.HUD;
 import psyche.breakbackmonkey.input.GameKeys;
 import psyche.breakbackmonkey.states.State;
 import psyche.breakbackmonkey.states.playstates.PlayState;
+import psyche.breakbackmonkey.utils.Camera;
 import psyche.breakbackmonkey.utils.Res;
 import psyche.breakbackmonkey.utils.Vars;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.math.Rectangle;
 
-public class Player extends GameObject
+public class Player
 {
 	
 	public static final int UP = GameKeys.W;
@@ -20,24 +21,27 @@ public class Player extends GameObject
 	public static final int LEFT = GameKeys.A;
 	public static final int RIGHT = GameKeys.D;
 	
+	private static State state;
+	private static float x, y, speed;
+	private static boolean[] input;
 	
-	private float speed;
-	private boolean[] input;
-	
+	public static Rectangle rect;	
 	public static Stats stats;
 	public static Inventory inventory;
 	
-	private HUD hud;
+	private static HUD hud;
 	
 	
 	public Player(State state)
 	{
-		super(state, 0, 0);		
+		Player.state = state;
+		rect = new Rectangle();
+		init();
 	}
 	
 
-	@Override
-	public void update(float dt) 
+	
+	public static void update(float dt) 
 	{		
 		if(input[UP])
 		{
@@ -60,12 +64,9 @@ public class Player extends GameObject
 		hud.update(dt);
 	}
 	
-	
-
-	@Override
-	public void render(SpriteBatch sb) 
+	public static void render(SpriteBatch sb) 
 	{
-		sb.setProjectionMatrix(camera.combined);
+		sb.setProjectionMatrix(Camera.viewport.combined);
 		sb.begin();
 		sb.draw(Res.textures.get("white"),x, y, rect.getWidth(), rect.getHeight());
 		sb.end();
@@ -73,7 +74,7 @@ public class Player extends GameObject
 		hud.render(sb);
 	}
 	
-	private void setPosition()
+	private static void setPosition()
 	{
 		if(y > Vars.HEIGHT - Vars.PLAYER_SIZE)
 			y = Vars.HEIGHT - Vars.PLAYER_SIZE;			
@@ -91,15 +92,13 @@ public class Player extends GameObject
 	}
 
 	
-	@Override
-	public void dispose() 
+	public static void dispose() 
 	{
 		hud.dispose();
 		System.out.println("player disposed");
 	}
 
-	@Override
-	public void init()
+	public static void init()
 	{
 		input = new boolean[GameKeys.NUM_KEYS];
 		speed = 100;	
@@ -108,11 +107,11 @@ public class Player extends GameObject
 		hud = new HUD(state);
 	}
 	
-	public void init(PlayState state, float x, float y) 
+	public static void init(PlayState state, float x, float y) 
 	{	
-		this.state = state;
-		this.x = x;
-		this.y = y;		
+		Player.state = state;
+		Player.x = x;
+		Player.y = y;		
 	}
 	
 	public void up(boolean b) {	input[GameKeys.W] = b;	}

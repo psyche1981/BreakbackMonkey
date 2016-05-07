@@ -1,6 +1,7 @@
 package psyche.breakbackmonkey.states.playstates;
 
 import psyche.breakbackmonkey.gameobjects.GameObject;
+import psyche.breakbackmonkey.gameobjects.entities.Player;
 import psyche.breakbackmonkey.gameobjects.inanimate.Door;
 import psyche.breakbackmonkey.gameobjects.inanimate.Pack;
 import psyche.breakbackmonkey.managers.PlayStateManager;
@@ -29,9 +30,11 @@ public class Factory extends PlayState
 		Fonts.timeless_16.draw(sb,  "Main Room", 20, 460);
 		sb.end();
 		
+		Player.render(sb);
+		
 		for(GameObject go : objects)
 		{
-			go.render(sb);//will eventually pass sb with the call to render
+			go.render(sb);
 		}
 		
 		for(Pack p : packs)
@@ -45,17 +48,19 @@ public class Factory extends PlayState
 		handleInput();
 		
 		//update player and other gameobjects
+		
+		Player.update(dt);;
 			
 		for(GameObject go : objects)
 		{	
 			go.update(dt);
-			if(Physics.collided(GameState.player, go) == process_door)
+			if(Physics.collided(go) == process_door)
 				sm.setState(Vars.State.PROCESS_OFFICE);
-			if(Physics.collided(GameState.player, go) == uht_door)
+			if(Physics.collided(go) == uht_door)
 				sm.setState(Vars.State.UHT_OFFICE);
-			if(Physics.collided(GameState.player, go) == break_back_door)
+			if(Physics.collided(go) == break_back_door)
 				sm.setState(Vars.State.BREAK_BACK_ROOM);
-			if(Physics.collided(GameState.player, go) == lab_door && !go.getLocked())
+			if(Physics.collided(go) == lab_door && !go.getLocked())
 				sm.setState(Vars.State.LAB);
 			
 			
@@ -64,7 +69,7 @@ public class Factory extends PlayState
 		//pack collision and updating
 		for(Pack p : packs)
 		{
-			if(Physics.collided(GameState.player, p) != null)
+			if(Physics.collided(p) != null)
 			{
 				Sound.play("fart");
 				GameState.player.getStats().setPacks(1);
@@ -101,8 +106,7 @@ public class Factory extends PlayState
 	
 	public void init() 
 	{
-		GameState.player.init(this, Vars.WIDTH / 2 - Vars.PLAYER_SIZE / 2, Vars.HEIGHT / 2 - Vars.PLAYER_SIZE / 2);
-		objects.add(GameState.player);
+		Player.init(this, Vars.WIDTH / 2 - Vars.PLAYER_SIZE / 2, Vars.HEIGHT / 2 - Vars.PLAYER_SIZE / 2);
 		doors();	
 				
 		initRandomPacks();

@@ -51,6 +51,7 @@ public class GameState extends MainState
 	@Override
 	public void dispose() 
 	{	
+		player.dispose();
 		psm.dispose();		
 	}
 

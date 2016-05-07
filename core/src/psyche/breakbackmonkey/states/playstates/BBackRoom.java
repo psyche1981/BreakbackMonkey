@@ -2,6 +2,7 @@ package psyche.breakbackmonkey.states.playstates;
 //TODO add a balance tank
 
 import psyche.breakbackmonkey.gameobjects.GameObject;
+import psyche.breakbackmonkey.gameobjects.entities.Player;
 import psyche.breakbackmonkey.gameobjects.inanimate.Door;
 import psyche.breakbackmonkey.gameobjects.inanimate.Pack;
 import psyche.breakbackmonkey.input.GameKeys;
@@ -45,7 +46,7 @@ public class BBackRoom extends PlayState
 		{
 			go.update(dt);
 			
-			if(Physics.collided(GameState.player, go) == exit_door)
+			if(Physics.collided(go) == exit_door)
 			{
 				sm.setState(Vars.State.PLAY);
 			}
@@ -53,7 +54,7 @@ public class BBackRoom extends PlayState
 		
 		for(Pack p : packs)
 		{
-			if(Physics.collided(GameState.player, p) != null)
+			if(Physics.collided(p) != null)
 			{
 				GameState.player.getStats().setPacks(1);
 				packs_to_remove.add(p);
@@ -101,8 +102,7 @@ public class BBackRoom extends PlayState
 	@Override
 	public void init() 
 	{
-		GameState.player.init(this, Door.DOOR_SHORT_SIDE + (2 * Vars.PLAYER_SIZE),  (3 * Vars.HEIGHT / 4) - Vars.PLAYER_SIZE / 2);
-		objects.add(GameState.player);
+		Player.init(this, Door.DOOR_SHORT_SIDE + (2 * Vars.PLAYER_SIZE),  (3 * Vars.HEIGHT / 4) - Vars.PLAYER_SIZE / 2);
 		exit_door = new Door(this, 0, 3 * Vars.HEIGHT / 4, false, false);
 		objects.add(exit_door);
 		

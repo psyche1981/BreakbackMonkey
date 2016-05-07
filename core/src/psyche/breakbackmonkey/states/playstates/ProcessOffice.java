@@ -1,6 +1,7 @@
 package psyche.breakbackmonkey.states.playstates;
 
 import psyche.breakbackmonkey.gameobjects.GameObject;
+import psyche.breakbackmonkey.gameobjects.entities.Player;
 import psyche.breakbackmonkey.gameobjects.inanimate.Door;
 import psyche.breakbackmonkey.input.GameKeys;
 import psyche.breakbackmonkey.managers.PlayStateManager;
@@ -46,7 +47,7 @@ public class ProcessOffice extends PlayState
 		{
 			go.update(dt);
 			
-			if(Physics.collided(GameState.player, go) == exit_door)
+			if(Physics.collided(go) == exit_door)
 				sm.setState(Vars.State.PLAY);
 			
 		}
@@ -74,8 +75,7 @@ public class ProcessOffice extends PlayState
 	@Override
 	public void init() 
 	{
-		GameState.player.init(this, Vars.WIDTH / 2 - Vars.PLAYER_SIZE / 2, Door.DOOR_SHORT_SIDE +  (2 * Vars.PLAYER_SIZE));
-		objects.add(GameState.player);
+		Player.init(this, Vars.WIDTH / 2 - Vars.PLAYER_SIZE / 2, Door.DOOR_SHORT_SIDE +  (2 * Vars.PLAYER_SIZE));
 		
 		doors();
 	}

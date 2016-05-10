@@ -26,6 +26,8 @@ public class BBackRoom extends PlayState
 	@Override
 	public void render(SpriteBatch sb) 
 	{
+		Player.render(sb);
+		
 		for(GameObject go : objects)
 		{
 			go.render(sb);
@@ -41,6 +43,8 @@ public class BBackRoom extends PlayState
 	public void update(float dt) 
 	{
 		handleInput();
+		
+		Player.update(dt);
 		
 		for(GameObject go : objects)
 		{

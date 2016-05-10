@@ -5,7 +5,6 @@ import psyche.breakbackmonkey.gameobjects.entities.Player;
 import psyche.breakbackmonkey.gameobjects.inanimate.Door;
 import psyche.breakbackmonkey.input.GameKeys;
 import psyche.breakbackmonkey.managers.PlayStateManager;
-import psyche.breakbackmonkey.states.mainstates.GameState;
 import psyche.breakbackmonkey.utils.Fonts;
 import psyche.breakbackmonkey.utils.Physics;
 import psyche.breakbackmonkey.utils.Vars;
@@ -30,6 +29,8 @@ public class ProcessOffice extends PlayState
 		Fonts.timeless_16.draw(sb, "Process Office", 0, 480);
 		sb.end();
 		
+		Player.render(sb);
+		
 		for(GameObject go : objects)
 		{
 			go.render(sb);
@@ -42,6 +43,8 @@ public class ProcessOffice extends PlayState
 	public void update(float dt) 
 	{
 		handleInput();
+		
+		Player.update(dt);
 		
 		for(GameObject go : objects)
 		{

@@ -36,7 +36,7 @@ public class Player
 	{
 		Player.state = state;
 		rect = new Rectangle();
-		init();
+		init();		
 	}
 	
 

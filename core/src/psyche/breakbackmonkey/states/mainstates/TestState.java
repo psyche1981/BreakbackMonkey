@@ -22,6 +22,7 @@ public class TestState extends MainState
 	private int letter_counter = 0;
 	private String word;
 	private String[] guesses;
+	private String[] correct_guesses;
 	private int guess_counter = 0;
 
 	public TestState(MainStateManager msm) 
@@ -35,9 +36,9 @@ public class TestState extends MainState
 		sb.setProjectionMatrix(camera.combined);
 		sb.begin();
 		Fonts.timeless_16.draw(sb, "Testing Arena", 10, Vars.HEIGHT - 10);
-		sb.draw(Res.textures.get("blackboard"), board_rect.x, board_rect.y);
 		
 		//testing area
+		sb.draw(Res.textures.get("blackboard"), board_rect.x, board_rect.y); 
 		
 		
 		//the word
@@ -47,10 +48,11 @@ public class TestState extends MainState
 			Fonts.timeless_16.draw(sb, "_", board_rect.x + 20 + i * 20, board_rect.y +100);
 		}
 		
-		//guesses
+		//guess
 		for(int i = 0; i < guesses.length; i++)
 		{
 			Fonts.timeless_16.draw(sb, guesses[i], board_rect.x +300, board_rect.y + 250 - i * 25);
+						
 		}
 		
 		//alphabet
@@ -115,6 +117,13 @@ public class TestState extends MainState
 		{
 			guesses[i] = "";
 		}
+		//temp until implement the get unique letters function
+		final int WORD_LENGTH = word.length();
+		correct_guesses = new String[WORD_LENGTH];
+		for(int i = 0; i < WORD_LENGTH; i++)
+		{
+			correct_guesses[i] = "";
+		}
 	}
 
 	private void bindLetterCounter()
@@ -127,7 +136,7 @@ public class TestState extends MainState
 	
 	private void limitGuessCounter()
 	{
-		if(guess_counter > 26)
+		if(guess_counter == 26)
 			guess_counter = 0;
 	}
 

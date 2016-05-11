@@ -61,8 +61,7 @@ public class Factory extends PlayState
 			if(Physics.collided(go) == break_back_door)
 				sm.setState(Vars.State.BREAK_BACK_ROOM);
 			if(Physics.collided(go) == lab_door && !go.getLocked())
-				sm.setState(Vars.State.LAB);
-			
+				sm.setState(Vars.State.LAB);	
 			
 		}
 	

@@ -55,6 +55,8 @@ public class UHTOffice extends PlayState
 			sb.end();
 		}
 		
+		Player.render(sb);
+		
 		for(GameObject go : objects)
 		{
 			go.render(sb);
@@ -65,6 +67,8 @@ public class UHTOffice extends PlayState
 	public void update(float dt) 
 	{
 		handleInput();
+		
+		Player.update(dt);
 		
 		for(GameObject go : objects)
 		{

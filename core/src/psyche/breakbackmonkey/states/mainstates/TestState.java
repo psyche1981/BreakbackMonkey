@@ -21,6 +21,8 @@ public class TestState extends MainState
 	
 	private int letter_counter = 0;
 	private String word;
+	private String[] guesses;
+	private int guess_counter = 0;
 
 	public TestState(MainStateManager msm) 
 	{
@@ -37,14 +39,21 @@ public class TestState extends MainState
 		
 		//testing area
 		
-		int word_length = word.length();
-		for(int i = 0; i < word_length; i++)
+		
+		//the word
+		
+		for(int i = 0; i < word.length(); i++)
 		{
 			Fonts.timeless_16.draw(sb, "_", board_rect.x + 20 + i * 20, board_rect.y +100);
 		}
 		
+		//guesses
+		for(int i = 0; i < guesses.length; i++)
+		{
+			Fonts.timeless_16.draw(sb, guesses[i], board_rect.x +300, board_rect.y + 250 - i * 25);
+		}
 		
-		
+		//alphabet
 		for(int i = 0; i < letters.length; i++)
 		{
 			if(letter_counter == i)
@@ -68,6 +77,7 @@ public class TestState extends MainState
 		handleInput();
 		//testing area
 		bindLetterCounter();
+		limitGuessCounter();
 	}
 
 	@Override
@@ -81,6 +91,12 @@ public class TestState extends MainState
 			letter_counter--;
 		if(GameKeys.isPressed(GameKeys.RIGHT))
 			letter_counter++;
+		if(GameKeys.isPressed(GameKeys.SPACE))
+		{
+			guesses[guess_counter] = letters[letter_counter];
+			guess_counter++;
+		}
+			
 	}
 
 	@Override
@@ -94,6 +110,11 @@ public class TestState extends MainState
 	{
 		board_rect = new Rectangle(100, 100, 400, 300);		
 		word = "ball bag";
+		guesses = new String[26];
+		for(int i = 0; i < 26; i++)
+		{
+			guesses[i] = "";
+		}
 	}
 
 	private void bindLetterCounter()
@@ -102,6 +123,12 @@ public class TestState extends MainState
 			letter_counter = letters.length - 1;
 		if(letter_counter == letters.length)
 			letter_counter = 0;
+	}
+	
+	private void limitGuessCounter()
+	{
+		if(guess_counter > 26)
+			guess_counter = 0;
 	}
 
 }

@@ -3,6 +3,7 @@ package psyche.breakbackmonkey;
 import psyche.breakbackmonkey.input.GameInputProcessor;
 import psyche.breakbackmonkey.input.GameKeys;
 import psyche.breakbackmonkey.managers.MainStateManager;
+import psyche.breakbackmonkey.utils.Benchmark;
 import psyche.breakbackmonkey.utils.Camera;
 import psyche.breakbackmonkey.utils.Fonts;
 import psyche.breakbackmonkey.utils.Res;
@@ -17,6 +18,7 @@ public class Game extends ApplicationAdapter
 	private MainStateManager msm;
 	
 	private float accumulated_time = 0;	
+	private Benchmark timer;
 	
 	@Override
 	public void create () 
@@ -24,6 +26,8 @@ public class Game extends ApplicationAdapter
 		Res.load();	
 		Fonts.load();
 		Camera.load();
+		timer = new Benchmark();
+		timer.start();
 		
 		Gdx.input.setInputProcessor(new GameInputProcessor());		
 		msm = new MainStateManager();
@@ -52,6 +56,11 @@ public class Game extends ApplicationAdapter
 		super.dispose();
 		Res.dispose();
 		Fonts.dispose();
+		timer.stop();
+		System.out.println("Elapsed Time: " + timer.elapsedTime("seconds") + " s");
+		System.out.println("Elapsed Time: " + timer.elapsedTime("milliseconds") + " ms");
+		System.out.println("Elapsed Time: " + timer.elapsedTime() + " ms");
+		System.out.println("Elapsed Time: " + timer.elapsedTime("nanoseconds") + " ns");
 	}
 	
 	
